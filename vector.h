@@ -31,3 +31,4 @@ private:
     double num;
     const int default_capacity = 20;
 };
+
