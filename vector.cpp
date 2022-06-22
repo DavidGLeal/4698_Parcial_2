@@ -5,6 +5,7 @@ Vector<T>::~Vector() {
     delete [] arr;
 }
 
+
 template<typename T>
 void Vector<T>::push_back(const T &data) {
     if (elems < cap) {
