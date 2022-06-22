@@ -1,6 +1,5 @@
 #include "ImprimirExterno.h"
 
-
 void ImprimirExterno::abrir(fstream *f, char nom[], int tip){
 	if (tip == 1)                          // LECTURA
     (*f).open(nom, ios::in);             //->
