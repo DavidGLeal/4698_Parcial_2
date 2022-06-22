@@ -13,4 +13,4 @@ class OrdenamientoInterno{
 		virtual void ordenarDistribucion();
 		virtual void ordenarRadix();
 		
-}
+};
