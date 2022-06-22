@@ -4,6 +4,7 @@ using namespace std;
 #pragma once
    
 class MetodosExternos{
+
     private:
         string nombreArchivo; 
     public:
@@ -12,4 +13,5 @@ class MetodosExternos{
     ~MetodosExternos();
     void ordenarPorDirecta();
     void ordenarPorNatural();
+    
 };
