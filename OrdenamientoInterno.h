@@ -7,9 +7,9 @@ class OrdenamientoInterno{
 	
 	public:
 		
-		virtual void ordenarIntercambio(Vector<int> &arreglo);
+		virtual void ordenarIntercambio();
 		virtual void ordenarBurbuja();
-		virtual void ordenarQuicksort(Vector <int> &arreglo, int left, int right);
+		virtual void ordenarQuicksort();
 		virtual void ordenarShellSort();
 		virtual void ordenarDistribucion();
 		virtual void ordenarBucket();

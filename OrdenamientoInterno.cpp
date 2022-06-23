@@ -3,10 +3,12 @@
 #include "vector.h"
 #include "vector.cpp"
 
-Vector <int> v;
+Vector v ;
 Vector <int> vShell;
 
-void OrdenamientoInterno::ordenarIntercambio(Vector<int> &arreglo){
+void OrdenamientoInterno::ordenarIntercambio(){
+    int aux;
+    Vector arreglo;
     for (int i{}; i < arreglo.size(); i++) {
         for (int j = i; j < arreglo.size(); j++) {
             if (arreglo[i] > arreglo[j]) {
@@ -19,6 +21,7 @@ void OrdenamientoInterno::ordenarIntercambio(Vector<int> &arreglo){
 }
 
 void OrdenamientoInterno::ordenarBurbuja(){ 
+    //GRUPO 2 - ORDENAMIENTO BURBUJA
     int aux;
     int i, j;
     for (i = 0 ; i < v.size() ; i++) {
@@ -32,8 +35,7 @@ void OrdenamientoInterno::ordenarBurbuja(){
     }
 }
 
-void OrdenamientoInterno::ordenarQuicksort(Vector< int > &arreglo, int izq, int der) {
-
+void OrdenamientoInterno::ordenarQuicksort() {
         int pivot = arreglo[(izq + der) / 2]; //pivote 
         int i = izq;
         int j = der;
@@ -56,11 +58,12 @@ void OrdenamientoInterno::ordenarQuicksort(Vector< int > &arreglo, int izq, int 
 
         if (i < der)
             ordenarQuicksort(arreglo, i, der);
+            
 }
 
 
 void OrdenamientoInterno::ordenarShellSort(){
-    int j, incremento, aux; // incremento: Tamaño del bloque de separación de los elementos dentro del método Shell.
+   int j, incremento, aux; // incremento: Tamaño del bloque de separación de los elementos dentro del método Shell.
     incremento = vShell.size() / 2; // De acuerdo al algoritmo original, el incremento se divide en 2 en cada iteración.
     while (incremento > 0)
     {
@@ -106,3 +109,6 @@ void OrdenamientoInterno::imprimirInterno() {
 		for (int i = 0; i < tam; i++)
 			cout << *(vector + i) << " ";
 	}*/
+void OrdenamientoInterno::ordenarBucket(){
+    
+}
