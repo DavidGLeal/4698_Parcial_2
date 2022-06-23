@@ -71,7 +71,7 @@ void OrdenamientoInterno::ordenarShellSort(){
             {
                 if (*(vShell.get(j)) >= *(vShell.get(j + incremento))) // Se comparan los elementos distales a un factor incremental de separación.
                 {
-                    aux = *(vect.get(j)); // Se intercambian los valores, logrando el ordenamiento.
+                    aux = *(vShell.get(j)); // Se intercambian los valores, logrando el ordenamiento.
                     *(vShell.get(j)) = *(vShell.get(j + incremento));
                     *(vShell.get(j + incremento)) = aux;
                 }
