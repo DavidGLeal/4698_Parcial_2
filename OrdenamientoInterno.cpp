@@ -4,7 +4,7 @@
 #include "vector.cpp"
 
 Vector v ;
-Vector <int> vShell;
+Vector vShell;
 
 void OrdenamientoInterno::ordenarIntercambio(){
     int aux;
