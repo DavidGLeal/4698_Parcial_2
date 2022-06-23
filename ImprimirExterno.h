@@ -8,7 +8,7 @@ class ImprimirExterno{
     
     public:
    	 
-   	  void abrir(fstream *f, char nom[], int tip = 1);
+   	  	void abrir(fstream *f, char nom[], int tip = 1);
      	void cerrar(fstream *f);
      	void imprimir(char nom[]);
    	 //virtual void imprimir();

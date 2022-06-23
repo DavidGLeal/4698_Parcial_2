@@ -1,4 +1,4 @@
-#pragma onde
+#pragma once
 #include <iostream>
 using namespace std;
 
@@ -13,4 +13,4 @@ class OrdenamientoInterno{
 		virtual void ordenarDistribucion();
 		virtual void ordenarRadix();
 		
-}
+};
