@@ -95,7 +95,7 @@ void OrdenamientoInterno::ordenarRadix(){
 }
 
 
-void imprimirInterno() {
+void OrdenamientoInterno::imprimirInterno() {
 		for (int i = 0; i < v.size(); i++)
 			//for (int i = 0; i < arreglo.size(); i++)
 			cout << *(v.get(i)) << " ";
