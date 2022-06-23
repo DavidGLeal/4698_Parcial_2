@@ -7,6 +7,7 @@ class MetodoExterno: public ImprimirExterno{
 
     private:
         string nombreArchivo{"ordenada.txt"}; //Por default
+        int N{0};
 
         //!METODOS DE AMBAS FUNCIONES
 
@@ -25,15 +26,18 @@ class MetodoExterno: public ImprimirExterno{
 
         //!ORDENACION DIRECTA. METODOS INTERNOS
 
+        void particiona(int l);
+        void fusiona(int l);
 
 
     public:
         MetodoExterno(string);
         ~MetodoExterno();
         
+        //!ORDENACION DIRECTA
         void ordenarPorDirecta();
 
         //!ORDENACION NATURAL.
         void ordenarPorNatural();
-    
+
 };
