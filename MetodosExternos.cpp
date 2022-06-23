@@ -1,21 +1,22 @@
+#pragma once
 #include "MetodosExternos.h"
 
-MetodosExternos::MetodosExternos(string str){
+MetodoExterno::MetodoExterno(string str){
     this->nombreArchivo = str;
 }
 
-MetodosExternos::~MetodosExternos(){
+MetodoExterno::~MetodoExterno(){
     delete this;
 }
 
-void MetodosExternos::ordenarPorDirecta(){
+void MetodoExterno::ordenarPorDirecta(){
     //!Implementacion del metodo
 }
 
 /**
  * Genera números aleatorios y luego los ordena.
  */
-void MetodosExternos::ordenarPorNatural(){
+void MetodoExterno::ordenarPorNatural(){
     
     limpiar();
     generarAleatorios(-1000, 1000);
@@ -29,7 +30,7 @@ void MetodosExternos::ordenarPorNatural(){
 /**
  * Abre (o crea) tres archivos para limpiarlos.
  */
-void MetodosExternos::limpiar(){
+void MetodoExterno::limpiar(){
     fstream F, F1, F2;
     abrir(&F, nombreArchivo, 3);
     abrir(&F1, "F1.txt"  , 3);
@@ -48,7 +49,7 @@ void MetodosExternos::limpiar(){
  * @param nom nombre del archivo
  * @param tip 1 = leer, 2 = escribir, 3 = escribir y borrar
  */
-void MetodosExternos::abrir(fstream *f, string nom, int tip){
+void MetodoExterno::abrir(fstream *f, string nom, int tip){
     if(tip==1){ //LECTURA
         (*f).open(nom, ios::in );//->
         //MODO TEXTO (Acceder a los datos) usaré ">>"
@@ -67,7 +68,7 @@ void MetodosExternos::abrir(fstream *f, string nom, int tip){
  * 
  * @param f es el archivo que quiero cerrar
  */
-void MetodosExternos::cerrar(fstream *f){
+void MetodoExterno::cerrar(fstream *f){
  (*f).close();
 }
 
@@ -78,7 +79,7 @@ void MetodosExternos::cerrar(fstream *f){
  * @param min -250
  * @param max 1000
  */
-void MetodosExternos::generarAleatorios(int min, int max){
+void MetodoExterno::generarAleatorios(int min, int max){
 
     int RND{0};
 
@@ -86,7 +87,7 @@ void MetodosExternos::generarAleatorios(int min, int max){
         do{
          RND=rand() % 1000 - 250;
         }while(RND<min || RND>max);
-        cout<<RND<<" ";
+        //cout<<RND<<" ";
         insertar(RND, nombreArchivo);
     }    
 }
@@ -98,7 +99,7 @@ void MetodosExternos::generarAleatorios(int min, int max){
  * @param d Los datos a insertar
  * @param nom nombre del archivo
  */
-void MetodosExternos::insertar(int d, string nom){
+void MetodoExterno::insertar(int d, string nom){
     fstream F;
     abrir(&F, nom, 2);
     F<<d<<" ";
@@ -110,7 +111,7 @@ void MetodosExternos::insertar(int d, string nom){
  * Lee un archivo y escribe la primera mitad del archivo en un archivo y la segunda mitad en otro
  * archivo
  */
-void MetodosExternos::particionInicial(){
+void MetodoExterno::particionInicial(){
 
     int aux{0}, dato{0}; //?Inizializar siempre es una buena practica
     bool ban=true;
@@ -147,7 +148,7 @@ void MetodosExternos::particionInicial(){
 /**
  * Lee el archivo, lo ordena y luego lo escribe en otro archivo
  */
-void MetodosExternos::particionFusion(){
+void MetodoExterno::particionFusion(){
     fstream F1;
     abrir(&F1, "F1.txt", 1);
     int con=0;
@@ -182,7 +183,7 @@ void MetodosExternos::particionFusion(){
  * @param nom3 "Fichero3.txt"
  * @param nom4 "Fichero4.txt"
  */
-void MetodosExternos::intercalacionDeArchivo(string nom1, string nom2, string nom3, string nom4){
+void MetodoExterno::intercalacionDeArchivo(string nom1, string nom2, string nom3, string nom4){
  
     int aux1{0}, aux2{0}, dato{0}, mayor1{0}, mayor2{0}; 
     bool bandera1{false}, bandera2{true};

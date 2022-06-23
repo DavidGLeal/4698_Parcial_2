@@ -5,7 +5,7 @@ void ImprimirExterno::imprimir(string nombre){
 
   fstream F;
   F.open(nombre, ios::in);
-  int dato;
+  int dato{0};
   F >> dato;
 
   while (!F.eof())
@@ -15,5 +15,4 @@ void ImprimirExterno::imprimir(string nombre){
   }
 
   F.close();
-
 }

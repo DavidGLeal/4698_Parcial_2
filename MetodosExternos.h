@@ -1,9 +1,9 @@
-#include <iostream>
-#include "ImprimirExterno.h"
-using namespace std;
 #pragma once
+#include <iostream>
+#include "ImprimirExterno.cpp"
+using namespace std;
    
-class MetodosExternos: public ImprimirExterno{
+class MetodoExterno: public ImprimirExterno{
 
     private:
         string nombreArchivo{"ordenada.txt"}; //Por default
@@ -25,8 +25,8 @@ class MetodosExternos: public ImprimirExterno{
         //!ORDENACION DIRECTA. METODOS INTERNOS
 
     public:
-        MetodosExternos(string);
-        ~MetodosExternos();
+        MetodoExterno(string);
+        ~MetodoExterno();
         
         void ordenarPorDirecta();
 
