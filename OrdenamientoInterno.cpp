@@ -93,3 +93,11 @@ void OrdenamientoInterno::ordenarDistribucion(){
 void OrdenamientoInterno::ordenarRadix(){
 	
 }
+
+
+void imprimir() {
+		for (int i = 0; i < v.size(); i++)
+			//for (int i = 0; i < arreglo.size(); i++)
+			cout << *(v.get(i)) << " ";
+			//cout << *(v + i) << " ";
+	}
