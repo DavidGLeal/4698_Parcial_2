@@ -4,6 +4,7 @@
 #include "vector.cpp"
 
 Vector <int> v;
+Vector <int> vShell;
 
 void OrdenamientoInterno::ordenarIntercambio(Vector<int> &arreglo){
     for (int i{}; i < arreglo.size(); i++) {
@@ -59,7 +60,30 @@ void OrdenamientoInterno::ordenarQuicksort(Vector< int > &arreglo, int izq, int 
 
 
 void OrdenamientoInterno::ordenarShellSort(){
-	
+    int j, incremento, aux; // incremento: Tamaño del bloque de separación de los elementos dentro del método Shell.
+    incremento = vShell.size() / 2; // De acuerdo al algoritmo original, el incremento se divide en 2 en cada iteración.
+    while (incremento > 0)
+    {
+        for (int i = incremento; i < vect.size(); i++)
+        {
+            j = i - incremento; // j es un índice de secuenciamiento.
+            while (j >= 0)
+            {
+                if (*(vShell.get(j)) >= *(vShell.get(j + incremento))) // Se comparan los elementos distales a un factor incremental de separación.
+                {
+                    aux = *(vect.get(j)); // Se intercambian los valores, logrando el ordenamiento.
+                    *(vShell.get(j)) = *(vShell.get(j + incremento));
+                    *(vShell.get(j + incremento)) = aux;
+                }
+                else
+                {
+                    j = 0; // Se retrocede el índice de secuenciamiento del vector.
+                }
+                j = j - incremento;
+            }
+        }
+        incremento = incremento / 2; // Se divide el bloque de comparación en cada iteración.
+    }
 }
 
 void OrdenamientoInterno::ordenarDistribucion(){
