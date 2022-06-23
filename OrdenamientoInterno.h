@@ -12,6 +12,7 @@ class OrdenamientoInterno{
 		virtual void ordenarQuicksort(Vector <int> &arreglo, int left, int right);
 		virtual void ordenarShellSort();
 		virtual void ordenarDistribucion();
+		virtual void ordenarBucket();
 		virtual void ordenarRadix();
 		
 };
