@@ -31,9 +31,32 @@ void OrdenamientoInterno::ordenarBurbuja(){
     }
 }
 
-void OrdenamientoInterno::ordenarQuicksort(){
-	
+void OrdenamientoInterno::ordenarQuicksort(Vector< int > &arreglo, int izq, int der) {
+
+        int pivot = arreglo[(izq + der) / 2]; //pivote 
+        int i = izq;
+        int j = der;
+
+        while (izq <= der) {
+
+            while (arreglo[izq] < pivot) ++izq;
+
+            while (arreglo[der] > pivot) --der;
+
+            if (izq <= der) {
+                std::swap(arreglo[izq], arreglo[der]);
+                ++izq;
+                --der;
+            }
+        }
+
+        if (izq < j)
+            ordenarQuicksort(arreglo, izq, j);
+
+        if (i < der)
+            ordenarQuicksort(arreglo, i, der);
 }
+
 
 void OrdenamientoInterno::ordenarShellSort(){
 	
