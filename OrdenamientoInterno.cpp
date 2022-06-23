@@ -93,3 +93,16 @@ void OrdenamientoInterno::ordenarDistribucion(){
 void OrdenamientoInterno::ordenarRadix(){
 	
 }
+
+
+void OrdenamientoInterno::imprimirInterno() {
+		for (int i = 0; i < v.size(); i++)
+			//for (int i = 0; i < arreglo.size(); i++)
+			cout << *(v.get(i)) << " ";
+			//cout << *(v + i) << " ";
+	}
+
+/*void OrdenamientoInterno::imprimirInterno (int* vector, int tam) {
+		for (int i = 0; i < tam; i++)
+			cout << *(vector + i) << " ";
+	}*/

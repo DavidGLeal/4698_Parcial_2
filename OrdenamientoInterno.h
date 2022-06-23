@@ -14,5 +14,6 @@ class OrdenamientoInterno{
 		virtual void ordenarDistribucion();
 		virtual void ordenarBucket();
 		virtual void ordenarRadix();
+		virtual void imprimirInterno(); 
 		
 };
