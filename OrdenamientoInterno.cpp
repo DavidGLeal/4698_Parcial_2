@@ -6,6 +6,14 @@
 Vector v ;
 Vector vShell;
 
+Vector OrdenamientoInterno::getVector(){
+	return this->vector;
+}
+
+void OrdenamientoInterno::setVector(Vector _vector){
+	this->vector = _vector;
+} 
+
 void OrdenamientoInterno::ordenarIntercambio(){
     int aux;
     Vector arreglo;
