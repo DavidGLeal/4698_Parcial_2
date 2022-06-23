@@ -5,32 +5,30 @@
 using std::cout; using std::cin;
 using std::endl; using std::string;
 
-template<typename T>
 class Vector {
 public:
     Vector() {
-        arr = new T[default_capacity];
-        cap = default_capacity;
+        arr = new int[10];
+        cap = 10;
         elems = 0;
     };
 
-    void push_back(const T &data);
+    void push_back(const int &data);
     void pop_back();
 
-    [[nodiscard]]bool empty() const;
-    [[nodiscard]]size_t size() const;
-    [[nodiscard]]size_t capacity() const;
-    T &operator[](size_t pos);
+    bool empty() const;
+    size_t size() const;
+    size_t capacity() const;
+    int &operator[](size_t pos);
 
     ~Vector();
-    T *get(int);
+    int *get(int);
 
 private:
-    T *arr = NULL;
+    int *arr = NULL;
     size_t cap;
     size_t elems;
     string name;
     double num;
-    const int default_capacity = 20;
 };
 

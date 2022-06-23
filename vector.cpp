@@ -1,19 +1,16 @@
-#pragma once 
+
 #include "vector.h"
 
-template<typename T>
-Vector<T>::~Vector() {
+Vector<int>::~Vector() {
     delete [] arr;
 }
 
-
-template<typename T>
-void Vector<T>::push_back(const T &data) {
+void Vector<int>::push_back(const int &data) {
     if (elems < cap) {
         *(arr + elems) = data;
         elems++;
     } else {
-        auto tmp_arr = new T[cap * 2];
+        auto tmp_arr = new int[cap * 2];
         cap *= 2;
         for (int i = 0; i < elems; i++) {
             tmp_arr[i] = arr[i];
@@ -26,37 +23,31 @@ void Vector<T>::push_back(const T &data) {
     }
 }
 
-template<typename T>
-T &Vector<T>::operator[](size_t pos) {
+int &Vector<int>::operator[](size_t pos) {
     if (pos >= 0 &&  pos <= elems)
         return *(this->arr + pos);
     throw std::out_of_range("Out of bounds element access");
 }
 
-template<typename T>
-size_t Vector<T>::size() const {
+size_t Vector<int>::size() const {
     return elems;
 }
 
-template<typename T>
-size_t Vector<T>::capacity() const {
+size_t Vector<int>::capacity() const {
     return cap;
 }
 
-template<typename T>
-void Vector<T>::pop_back() {
+void Vector<int>::pop_back() {
     if (empty())
         return;
     elems--;
 }
 
-template<typename T>
-bool Vector<T>::empty() const {
+bool Vector<int>::empty() const {
     return elems == 0;
 }
 
-template <typename T>
-T *Vector<T>::get(int pos) {
+int *Vector<int>::get(int pos) {
     if (pos >= 0 && pos < elems)
         return arr + pos;
 }
