@@ -14,7 +14,7 @@ MetodoExterno::~MetodoExterno()
 void MetodoExterno::ordenarPorDirecta()
 {
     limpiar();
-    generarAleatorios(-1000, 1000);
+    generarAleatorios(-100, 100);
     int longitud = 1;
     while (longitud < N)
     {
@@ -25,13 +25,13 @@ void MetodoExterno::ordenarPorDirecta()
 }
 
 /**
- * Genera nÃºmeros aleatorios y luego los ordena.
+ * Genera números aleatorios y luego los ordena.
  */
 void MetodoExterno::ordenarPorNatural()
 {
 
     limpiar();
-    generarAleatorios(-1000, 1000);
+    generarAleatorios(-1001, 1002);
     particionInicial();
     particionFusion();
 
@@ -55,8 +55,8 @@ void MetodoExterno::limpiar()
 
 //! Metodo para ordenacion natural
 /**
- * Esta funciÃ³n abre un archivo para leerlo, escribirlo o agregarlo, segÃºn el valor del segundo
- * parÃ¡metro.
+ * Esta función abre un archivo para leerlo, escribirlo o agregarlo, según el valor del segundo
+ * parámetro.
  *
  * @param f es el flujo de archivos
  * @param nom nombre del archivo
@@ -67,23 +67,23 @@ void MetodoExterno::abrir(fstream *f, string nom, int tip)
     if (tip == 1)
     {                            // LECTURA
         (*f).open(nom, ios::in); //->
-        // MODO TEXTO (Acceder a los datos) usarÃ© ">>"
+        // MODO TEXTO (Acceder a los datos) usaré ">>"
     }
     else if (tip == 2)
     {                                        // ESCRITURA SIN BORRAR
         (*f).open(nom, ios::out | ios::app); //->
-        // MODO TEXTO (Colocar datos y no borrarÃ¡) usarÃ© "<<"
+        // MODO TEXTO (Colocar datos y no borrará) usaré "<<"
     }
     else
     {                             // ESCRITURA y BORRAR
         (*f).open(nom, ios::out); //->
-        // MODO TEXTO (Colocar datos) usarÃ© "<<"
+        // MODO TEXTO (Colocar datos) usaré "<<"
     }
 }
 
 //! Metodo para ordenacion natural
 /**
- * Esta funciÃ³n cierra el archivo que se abriÃ³ en la funciÃ³n abrir().
+ * Esta función cierra el archivo que se abrió en la función abrir().
  *
  * @param f es el archivo que quiero cerrar
  */
@@ -94,7 +94,7 @@ void MetodoExterno::cerrar(fstream *f)
 
 //! Metodo para ordenacion natural
 /**
- * Genera nÃºmeros aleatorios entre un valor mÃ­nimo y mÃ¡ximo y los inserta en un archivo.
+ * Genera números aleatorios entre un valor mínimo y máximo y los inserta en un archivo.
  *
  * @param min -250
  * @param max 1000
@@ -117,7 +117,7 @@ void MetodoExterno::generarAleatorios(int min, int max)
 
 //! Metodo para ordenacion natural
 /**
- * Abre un archivo, escribe un nÃºmero entero en Ã©l y cierra el archivo.
+ * Abre un archivo, escribe un número entero en él y cierra el archivo.
  *
  * @param d Los datos a insertar
  * @param nom nombre del archivo
@@ -206,10 +206,10 @@ void MetodoExterno::particionFusion()
 
 //! Metodo para ordenacion natural
 /**
- * Lee dos archivos, compara el primer nÃºmero de cada archivo y escribe el nÃºmero mÃ¡s pequeÃ±o en un
- * tercer archivo. Luego lee el siguiente nÃºmero del archivo que contenÃ­a el nÃºmero mÃ¡s pequeÃ±o, lo
- * compara con el nÃºmero en el otro archivo y escribe el nÃºmero mÃ¡s pequeÃ±o en el tercer archivo.
- * ContinÃºa este proceso hasta llegar al final de uno de los archivos. Luego escribe los nÃºmeros
+ * Lee dos archivos, compara el primer número de cada archivo y escribe el número más pequeño en un
+ * tercer archivo. Luego lee el siguiente número del archivo que contenía el número más pequeño, lo
+ * compara con el número en el otro archivo y escribe el número más pequeño en el tercer archivo.
+ * Continúa este proceso hasta llegar al final de uno de los archivos. Luego escribe los números
  * restantes del otro archivo al tercer archivo.
  *
  * @param nom1 Nombre del primer archivo.
