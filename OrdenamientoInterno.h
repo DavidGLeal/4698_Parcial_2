@@ -17,5 +17,7 @@ class OrdenamientoInterno{
 		virtual void ordenarBucket();
 		virtual void ordenarRadix();
 		virtual void imprimirInterno(); 
-		
+	
+		Vector getVector();
+		void setVector(Vector vector);
 };
