@@ -5,6 +5,8 @@ using namespace std;
 
 class OrdenamientoInterno{
 	
+	private:
+		Vector vector;
 	public:
 		
 		virtual void ordenarIntercambio();
