@@ -64,7 +64,7 @@ void OrdenamientoInterno::ordenarShellSort(){
     incremento = vShell.size() / 2; // De acuerdo al algoritmo original, el incremento se divide en 2 en cada iteración.
     while (incremento > 0)
     {
-        for (int i = incremento; i < vect.size(); i++)
+        for (int i = incremento; i < vShell.size(); i++)
         {
             j = i - incremento; // j es un índice de secuenciamiento.
             while (j >= 0)
