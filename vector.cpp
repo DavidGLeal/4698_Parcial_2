@@ -1,11 +1,11 @@
 
 #include "vector.h"
 
-Vector<int>::~Vector() {
+Vector::~Vector() {
     delete [] arr;
 }
 
-void Vector<int>::push_back(const int &data) {
+void Vector::push_back(const int &data) {
     if (elems < cap) {
         *(arr + elems) = data;
         elems++;
@@ -23,31 +23,31 @@ void Vector<int>::push_back(const int &data) {
     }
 }
 
-int &Vector<int>::operator[](size_t pos) {
+int &Vector::operator[](size_t pos) {
     if (pos >= 0 &&  pos <= elems)
         return *(this->arr + pos);
     throw std::out_of_range("Out of bounds element access");
 }
 
-size_t Vector<int>::size() const {
+size_t Vector::size() const {
     return elems;
 }
 
-size_t Vector<int>::capacity() const {
+size_t Vector::capacity() const {
     return cap;
 }
 
-void Vector<int>::pop_back() {
+void Vector::pop_back() {
     if (empty())
         return;
     elems--;
 }
 
-bool Vector<int>::empty() const {
+bool Vector::empty() const {
     return elems == 0;
 }
 
-int *Vector<int>::get(int pos) {
+int *Vector::get(int pos) {
     if (pos >= 0 && pos < elems)
         return arr + pos;
 }
