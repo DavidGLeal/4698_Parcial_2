@@ -102,7 +102,7 @@ void imprimirInterno() {
 			//cout << *(v + i) << " ";
 	}
 
-/*void imprimirInterno (int* vector, int tam) {
+/*void OrdenamientoInterno::imprimirInterno (int* vector, int tam) {
 		for (int i = 0; i < tam; i++)
 			cout << *(vector + i) << " ";
 	}*/
