@@ -55,3 +55,10 @@ bool Vector<T>::empty() const {
     return elems == 0;
 }
 
+template <typename T>
+T *Vector<T>::get(int pos) {
+    if (pos >= 0 && pos < elems)
+        return arr + pos;
+}
+
+

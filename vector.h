@@ -23,6 +23,8 @@ public:
     T &operator[](size_t pos);
 
     ~Vector();
+    T *get(int);
+
 private:
     T *arr = NULL;
     size_t cap;
