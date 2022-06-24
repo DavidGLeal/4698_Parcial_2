@@ -11,21 +11,24 @@ Vector OrdenamientoInterno::getVector(){
 }
 
 void OrdenamientoInterno::setVector(Vector _vector){
-	this->vector = _vector;
+
+    for (int i{}; i < _vector.size() - 1; i++) {
+        this->vector.push_back(_vector[i]);
+    }
 } 
 
-void OrdenamientoInterno::ordenarIntercambio(){
-    int aux;
-    Vector arreglo;
-    for (int i{}; i < arreglo.size(); i++) {
-        for (int j = i; j < arreglo.size(); j++) {
-            if (arreglo[i] > arreglo[j]) {
-                auto aux = arreglo[i];
-                arreglo[i] = arreglo[j];
-                arreglo[j] = aux;
+Vector &OrdenamientoInterno::ordenarIntercambio(){
+    for (int i{}; i < this->vector.size(); i++) {
+        for (int j = i; j < this->vector.size(); j++) {
+            if (this->vector[i] > this->vector[j]) {
+                auto aux = this->vector[i];
+                this->vector[i] = this->vector[j];
+                this->vector[j] = aux;
             }
         }
     }
+
+    return this->vector;
 }
 
 void OrdenamientoInterno::ordenarBurbuja(){ 
@@ -44,7 +47,7 @@ void OrdenamientoInterno::ordenarBurbuja(){
 }
 
 void OrdenamientoInterno::ordenarQuicksort() {
-        int pivot = arreglo[(izq + der) / 2]; //pivote 
+        /* int pivot = arreglo[(izq + der) / 2]; //pivote 
         int i = izq;
         int j = der;
 
@@ -65,7 +68,7 @@ void OrdenamientoInterno::ordenarQuicksort() {
             ordenarQuicksort(arreglo, izq, j);
 
         if (i < der)
-            ordenarQuicksort(arreglo, i, der);
+            ordenarQuicksort(arreglo, i, der); */
             
 }
 
@@ -141,10 +144,10 @@ void OrdenamientoInterno::imprimirInterno() {
 			//cout << *(v + i) << " ";
 	}
 
-/*void OrdenamientoInterno::imprimirInterno (int* vector, int tam) {
+/* void OrdenamientoInterno::imprimirInterno (int* vector, int tam) {
 		for (int i = 0; i < tam; i++)
 			cout << *(vector + i) << " ";
-	}*/
+	} */
 void OrdenamientoInterno::ordenarBucket(){
     
 }
