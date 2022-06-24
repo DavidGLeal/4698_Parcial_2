@@ -265,45 +265,39 @@ void OrdenamientoInterno::ordenarBucket(){
     
 }
 
-/* a partir de aqui va todo el desarrollo del metodo Radixsort*/
-//METODO PARA OBTENER EL MAXIMOELEMENTOSIGNIFICATIVO EN RADIXSORT
-int OrdenamientoInterno::maxm() {
-    int max = vector[0];
-    for (int i = 1; i < vector.size(); i++)
-    {
-        if (vector[i] > max)
-        {
-            max = vector[i];
-        }
-    }
-    return max;
-}
-//METODO COMPLEMENTARIO COUNTINSORT PARA EL RADIXSORT
-void OrdenamientoInterno::countingSort(int place) {
-    int output[vector.size()];
-    int count[N];
-
-    for (int i = 0; i < N; ++i)
-        count[i] = 0;
-
-    for (int i = 0; i < vector.size(); i++)
-        count[(vector[i] / place) % 10]++;
-
-    for (int i = 1; i < N; i++)
-        count[i] += count[i - 1];
-
-    for (int i = vector.size() - 1; i >= 0; i--) {
-        output[(count[(vector[i] / place) % 10] - 1)] = vector[i];
-        count[(vector[i] / place) % 10]--;
-    }
-    for (int i = 0; i < vector.size(); i++)
-        vector[i] = output[i];
-}
-//METODO INTERFAZ DEFINIDO RADIXSORT
 void OrdenamientoInterno::ordenarRadix(){
-    int max = maxm();
-    for (int place = 1; max / place > 0; place *= 10)
-    countingSort(place);
-   // return this->vector;
-}
-
+    auto maximo = [&] (){
+	int mx = *(arr.get(0)); 
+    	for (int i = 1; i < arr.size(); i++) 
+        if (*(arr.get(i)) > mx) 
+        mx = *(arr.get(i)); 
+    	return mx;
+	};
+	
+    int m = maximo(); 
+    auto Sort = [&] (int exp){	
+	    Vector salida,contador; 
+	    for (int i = 0; i < 10; i++){	        	
+	        contador.push_back(0);
+	    }
+	    for (int i = 0; i < arr.size(); i++){	        	
+	        salida.push_back(0);
+	    } 		  
+	    for (int i = 0; i < arr.size(); i++){		
+	        *(contador.get((*(arr.get(i)) / exp) % 10))=*(contador.get((*(arr.get(i)) / exp) % 10))+1;
+            }		  
+	    for (int i = 1; i < 10; i++) {		    	
+		*(contador.get(i)) += *(contador.get(i-1)); 
+	    }
+	    for (int i = arr.size()-1; i >= 0; i--) {
+		*(salida.get(*(contador.get((*(arr.get(i))/exp)%10))-1))=*(arr.get(i)) ;				
+		*(contador.get((*(arr.get(i)) / exp) % 10))=*(contador.get((*(arr.get(i)) / exp) % 10))-1;		
+            }   
+	    for (int i = 0; i < arr.size(); i++){
+		*(arr.get(i)) = *(salida.get(i)); 
+	    }	        
+    };
+    
+    for (int exp = 1; m / exp > 0; exp *= 10) 
+        Sort(exp); 
+} 
