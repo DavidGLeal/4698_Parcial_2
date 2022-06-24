@@ -11,8 +11,11 @@ Vector OrdenamientoInterno::getVector(){
 }
 
 void OrdenamientoInterno::setVector(Vector _vector){
+    if (!this->vector.empty()) {
+        this->vector.~Vector();
+    }
 
-    for (int i{}; i < _vector.size() - 1; i++) {
+    for (int i{}; i < _vector.size(); i++) {
         this->vector.push_back(_vector[i]);
     }
 } 
@@ -22,8 +25,8 @@ Vector &OrdenamientoInterno::ordenarIntercambio(){
         for (int j = i; j < this->vector.size(); j++) {
             if (this->vector[i] > this->vector[j]) {
                 auto aux = this->vector[i];
-                this->vector[i] = this->vector[j];
-                this->vector[j] = aux;
+                *(this->vector.get(i)) = this->vector[j];
+                *(this->vector.get(j)) = aux;
             }
         }
     }
