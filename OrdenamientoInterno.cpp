@@ -132,11 +132,6 @@ void OrdenamientoInterno::ordenarDistribucion(){
   	 }
 }
 
-void OrdenamientoInterno::ordenarRadix(){
-	
-}
-
-
 void OrdenamientoInterno::imprimirInterno() {
 		for (int i = 0; i < v.size(); i++)
 			//for (int i = 0; i < arreglo.size(); i++)
@@ -218,3 +213,46 @@ void OrdenamientoInterno::ordenarBucket(){
     }
     
 }
+
+/* a partir de aqui va todo el desarrollo del metodo Radixsort*/
+//METODO PARA OBTENER EL MAXIMOELEMENTOSIGNIFICATIVO EN RADIXSORT
+int OrdenamientoInterno::maxm() {
+    int max = vector[0];
+    for (int i = 1; i < vector.size(); i++)
+    {
+        if (vector[i] > max)
+        {
+            max = vector[i];
+        }
+    }
+    return max;
+}
+//METODO COMPLEMENTARIO COUNTINSORT PARA EL RADIXSORT
+void OrdenamientoInterno::countingSort(int place) {
+    int output[vector.size()];
+    int count[N];
+
+    for (int i = 0; i < N; ++i)
+        count[i] = 0;
+
+    for (int i = 0; i < vector.size(); i++)
+        count[(vector[i] / place) % 10]++;
+
+    for (int i = 1; i < N; i++)
+        count[i] += count[i - 1];
+
+    for (int i = vector.size() - 1; i >= 0; i--) {
+        output[(count[(vector[i] / place) % 10] - 1)] = vector[i];
+        count[(vector[i] / place) % 10]--;
+    }
+    for (int i = 0; i < vector.size(); i++)
+        vector[i] = output[i];
+}
+//METODO INTERFAZ DEFINIDO RADIXSORT
+void OrdenamientoInterno::ordenarRadix(){
+    int max = maxm();
+    for (int place = 1; max / place > 0; place *= 10)
+    countingSort(place);
+   // return this->vector;
+}
+
