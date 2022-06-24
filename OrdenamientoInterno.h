@@ -11,7 +11,7 @@ class OrdenamientoInterno{
 		
 		virtual void ordenarIntercambio();
 		virtual void ordenarBurbuja();
-		virtual void ordenarQuicksort();
+		virtual void ordenarQuicksort(Vector &v, int inicio, int fin);
 		virtual void ordenarShellSort();
 		virtual void ordenarDistribucion();
 		virtual void ordenarBucket();

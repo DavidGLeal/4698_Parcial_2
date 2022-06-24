@@ -43,19 +43,57 @@ void OrdenamientoInterno::ordenarBurbuja(){
     }
 }
 
-void OrdenamientoInterno::ordenarQuicksort() {
+void OrdenamientoInterno::ordenarQuicksort(Vector &v, int inicio, int fin){
+
+        int i=inicio;
+        int j=fin;
+        int pivote=*(v.get((inicio+fin)/2));
+        while(i<=j){
+            while(*(v.get(i))<pivote)
+                i++;
+            while(*(v.get(j))>pivote)
+                j--;
+            if(i<=j){
+                int aux=*(v.get(i));
+                *(v.get(i))=*(v.get(j));
+                *(v.get(j))=aux;
+                i++;
+                j--;
+            }
+        }
+        if(inicio<j)
+            ordenarQuicksort(v,inicio,j);
+        if(i<fin)
+            ordenarQuicksort(v,i,fin);
+
+        for (int i = 0; i < v.size(); i++) {
+            cout << *(v.get(i)) << " ";
+        }
+        cout << endl;
+    
+    
+}
+  
+/*void OrdenamientoInterno::ordenarQuicksort(Vector arreglo, int izq, int der) {
+       
         int pivot = arreglo[(izq + der) / 2]; //pivote 
         int i = izq;
         int j = der;
 
         while (izq <= der) {
 
-            while (arreglo[izq] < pivot) ++izq;
+            while (arreglo[izq] < pivot){
+                izq++;
+            }
 
-            while (arreglo[der] > pivot) --der;
+            while (arreglo[der] > pivot){
+                der--;
+            }
 
             if (izq <= der) {
-                std::swap(arreglo[izq], arreglo[der]);
+                int aux = arreglo[izq];
+                arreglo[izq] = arreglo[der];
+                arreglo[der] = aux;
                 ++izq;
                 --der;
             }
@@ -66,8 +104,17 @@ void OrdenamientoInterno::ordenarQuicksort() {
 
         if (i < der)
             ordenarQuicksort(arreglo, i, der);
-            
-}
+
+        //imprimir vector ordenado por quicksort 
+
+        for (int i = 0; i < arreglo.size(); i++) {
+            cout << arreglo[i] << " ";
+        }
+        cout << endl;
+
+        
+    }
+*/
 
 
 void OrdenamientoInterno::ordenarShellSort(){
@@ -99,7 +146,7 @@ void OrdenamientoInterno::ordenarShellSort(){
 
 void OrdenamientoInterno::ordenarDistribucion(){
 	//GRUPO 16 - ORDENAMIENTO COUNTING SORT
-	Vector arreglo;
+	/*Vector arreglo;
 	int max = arreglo[1];
 	int salida[arreglo.size()+1];  	
 	for(int i = 2; i<=arreglo.size(); i++) 
@@ -127,6 +174,7 @@ void OrdenamientoInterno::ordenarDistribucion(){
    	for(int i = 1; i<=arreglo.size(); i++) {
       	arreglo[i] = salida[i]; 
   	 }
+     */
 }
 
 void OrdenamientoInterno::ordenarRadix(){
