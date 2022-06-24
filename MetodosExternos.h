@@ -19,7 +19,6 @@ class MetodoExterno: public ImprimirExterno{
 
 
         void generarAleatorios(int min, int max);
-        void insertar(int d, string nom);
         void particionInicial();
         void particionFusion();
         void intercalacionDeArchivo(string nom1, string nom2, string nom3, string nom4);
@@ -36,8 +35,10 @@ class MetodoExterno: public ImprimirExterno{
         
         //!ORDENACION DIRECTA
         void ordenarPorDirecta();
+        void insertar(int d, string nom);
 
         //!ORDENACION NATURAL.
         void ordenarPorNatural();
+        bool hayDatos(string nom);
 
 };

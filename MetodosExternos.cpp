@@ -6,6 +6,10 @@ MetodoExterno::MetodoExterno(string str)
     this->nombreArchivo = str;
 }
 
+MetodoExterno::MetodoExterno()
+{
+}
+
 MetodoExterno::~MetodoExterno()
 {
     delete this;
@@ -51,6 +55,22 @@ void MetodoExterno::limpiar()
     cerrar(&F);
     cerrar(&F1);
     cerrar(&F2);
+}
+
+
+bool MetodoExterno::hayDatos(string nom){
+
+    fstream F;
+    F.open(nom, ios::in);
+    int x=-10001;
+    F>>x;
+    if(x!=-10001){
+        F.close();
+        return true;
+    }else{
+        F.close();
+        return false;
+    }
 }
 
 //! Metodo para ordenacion natural
