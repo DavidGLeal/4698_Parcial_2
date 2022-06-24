@@ -7,9 +7,13 @@ class OrdenamientoInterno{
 	
 	private:
 		Vector vector;
+		//exclusivos para el metodo Radixsort
+		int maxm();
+		void countingSort(int);
+		///
 	public:
 		
-		virtual void ordenarIntercambio();
+		virtual Vector &ordenarIntercambio();
 		virtual void ordenarBurbuja();
 		virtual void ordenarQuicksort(Vector &v, int inicio, int fin);
 		virtual void ordenarShellSort();

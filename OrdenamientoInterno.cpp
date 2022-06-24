@@ -11,21 +11,27 @@ Vector OrdenamientoInterno::getVector(){
 }
 
 void OrdenamientoInterno::setVector(Vector _vector){
-	this->vector = _vector;
+    if (!this->vector.empty()) {
+        this->vector.~Vector();
+    }
+
+    for (int i{}; i < _vector.size(); i++) {
+        this->vector.push_back(_vector[i]);
+    }
 } 
 
-void OrdenamientoInterno::ordenarIntercambio(){
-    int aux;
-    Vector arreglo;
-    for (int i{}; i < arreglo.size(); i++) {
-        for (int j = i; j < arreglo.size(); j++) {
-            if (arreglo[i] > arreglo[j]) {
-                auto aux = arreglo[i];
-                arreglo[i] = arreglo[j];
-                arreglo[j] = aux;
+Vector &OrdenamientoInterno::ordenarIntercambio(){
+    for (int i{}; i < this->vector.size(); i++) {
+        for (int j = i; j < this->vector.size(); j++) {
+            if (this->vector[i] > this->vector[j]) {
+                auto aux = this->vector[i];
+                *(this->vector.get(i)) = this->vector[j];
+                *(this->vector.get(j)) = aux;
             }
         }
     }
+
+    return this->vector;
 }
 
 void OrdenamientoInterno::ordenarBurbuja(){ 
@@ -73,7 +79,7 @@ void OrdenamientoInterno::ordenarQuicksort(Vector &v, int inicio, int fin){
     
     
 }
-  
+    
 /*void OrdenamientoInterno::ordenarQuicksort(Vector arreglo, int izq, int der) {
        
         int pivot = arreglo[(izq + der) / 2]; //pivote 
@@ -177,11 +183,6 @@ void OrdenamientoInterno::ordenarDistribucion(){
      */
 }
 
-void OrdenamientoInterno::ordenarRadix(){
-	
-}
-
-
 void OrdenamientoInterno::imprimirInterno() {
 		for (int i = 0; i < v.size(); i++)
 			//for (int i = 0; i < arreglo.size(); i++)
@@ -189,10 +190,120 @@ void OrdenamientoInterno::imprimirInterno() {
 			//cout << *(v + i) << " ";
 	}
 
-/*void OrdenamientoInterno::imprimirInterno (int* vector, int tam) {
+/* void OrdenamientoInterno::imprimirInterno (int* vector, int tam) {
 		for (int i = 0; i < tam; i++)
 			cout << *(vector + i) << " ";
-	}*/
+	} */
 void OrdenamientoInterno::ordenarBucket(){
+    	Vector arre = getVector();
+	int c = arre.size();
+	int col=10,cnt=0,k=0,d=1,l=0;
+	//int *ordenado = new int[c];
+	Vector ordenado;
+	int **matriz = new int*[c];
+	
+	for(int z =0;z<c;z++)
+	{
+		matriz[z] = new int[col];
+	}
+	
+	int max= *arre.get(0);
+	for(int a=1;a<c;a++)
+    {
+        if(*arre.get(a)>max)
+            max=*arre.get(a);
+    }
+    while(max>0)
+    {
+        cnt++;
+        max=max/10;
+    }
+	int *j = new int[c];
+	for(int m=0;m<cnt;m++)
+    {
+        for(int i=0;i<col;i++)
+        {    
+			j[i]=0;
+		}
+        for(int y=0;y<c;y++)
+        {
+            k=(arre[y]/d)%10;
+            matriz[k][j[k]]=*arre.get(y);
+            j[k]++;
+        }
+        
+        for(int a=0;a<c;a++)
+        {
+        	for(int r=0;r<j[a];r++)
+        	{
+        		
+        		for(int o=r;o<j[a];o++)
+        		{
+        		 if(matriz[a][r]>matriz[a][o])
+        			{
+        				int aux = matriz[a][r];
+        			 matriz[a][r] = matriz[a][o];
+        				matriz[a][o] = aux;					 					 				        				
+					}				        			
+				}        		
+			}
+		}
+        
+    	l=0;
+        for(int b=0;b<c;b++)
+        {
+            for(k=0;k<j[b];k++)
+            {
+            	int aux =matriz[b][k];
+                ordenado.push_back(matriz[b][k]);
+                l++;
+            }
+        }
+        
+        d*=10;
+    }
     
 }
+
+/* a partir de aqui va todo el desarrollo del metodo Radixsort*/
+//METODO PARA OBTENER EL MAXIMOELEMENTOSIGNIFICATIVO EN RADIXSORT
+int OrdenamientoInterno::maxm() {
+    int max = vector[0];
+    for (int i = 1; i < vector.size(); i++)
+    {
+        if (vector[i] > max)
+        {
+            max = vector[i];
+        }
+    }
+    return max;
+}
+//METODO COMPLEMENTARIO COUNTINSORT PARA EL RADIXSORT
+void OrdenamientoInterno::countingSort(int place) {
+    int output[vector.size()];
+    int count[N];
+
+    for (int i = 0; i < N; ++i)
+        count[i] = 0;
+
+    for (int i = 0; i < vector.size(); i++)
+        count[(vector[i] / place) % 10]++;
+
+    for (int i = 1; i < N; i++)
+        count[i] += count[i - 1];
+
+    for (int i = vector.size() - 1; i >= 0; i--) {
+        output[(count[(vector[i] / place) % 10] - 1)] = vector[i];
+        count[(vector[i] / place) % 10]--;
+    }
+    for (int i = 0; i < vector.size(); i++)
+        vector[i] = output[i];
+}
+//METODO INTERFAZ DEFINIDO RADIXSORT
+void OrdenamientoInterno::ordenarRadix(){
+    int max = maxm();
+    for (int place = 1; max / place > 0; place *= 10)
+    countingSort(place);
+   // return this->vector;
+}
+
