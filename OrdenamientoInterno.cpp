@@ -98,7 +98,35 @@ void OrdenamientoInterno::ordenarShellSort(){
 }
 
 void OrdenamientoInterno::ordenarDistribucion(){
-	
+	//GRUPO 16 - ORDENAMIENTO COUNTING SORT
+	Vector arreglo;
+	int max = arreglo[1];
+	int salida[arreglo.size()+1];  	
+	for(int i = 2; i<=arreglo.size(); i++) 
+	{
+      		if(arreglo[i] > max)
+        	max = arreglo[i];
+   	}
+   	int aux1[max+1];     
+   	for(int i = 0; i<=max; i++)
+   	{
+   	aux1[i] = 0;
+   	}
+  	 for(int i = 1; i <=arreglo.size(); i++)
+   	{
+   		aux1[arreglo[i]]++; 
+  	 }
+   	for(int i = 1; i<=max; i++)
+  	 {
+   		aux1[i] += aux1[i-1]; 
+   	} 
+  	 for(int i = arreglo.size(); i>=1; i--) {
+      	salida[aux1[arreglo[i]]] = arreglo[i];
+      	aux1[arreglo[i]] -= 1; 
+ 	  }
+   	for(int i = 1; i<=arreglo.size(); i++) {
+      	arreglo[i] = salida[i]; 
+  	 }
 }
 
 void OrdenamientoInterno::ordenarRadix(){
