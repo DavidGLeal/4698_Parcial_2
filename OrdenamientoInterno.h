@@ -7,10 +7,6 @@ class OrdenamientoInterno{
 	
 	private:
 		Vector vector;
-		//exclusivos para el metodo Radixsort
-		int maxm();
-		void countingSort(int);
-		///
 	public:
 		
 		virtual Vector &ordenarIntercambio();
@@ -20,8 +16,7 @@ class OrdenamientoInterno{
 		virtual void ordenarDistribucion();
 		virtual void ordenarBucket();
 		virtual void ordenarRadix();
-		virtual void imprimirInterno(); 
-	
+		virtual void imprimirInterno(); 	
 		Vector getVector();
 		void setVector(Vector vector);
 };
