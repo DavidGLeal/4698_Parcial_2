@@ -67,6 +67,18 @@ int TablaCerradaEnteros::hash(int valor){
     return valor % NCASILLAS;
 }
 
+//Sondeo Lineal 
+int TablaCerradaEnteros::hashlineal(int pos){
+	int i=1;
+	
+	while(tabla[pos]!=NULL){
+		pos=(pos+i)%NCASILLAS;
+		i++;
+	}
+	return pos;
+}
+
+//Doble hash
 int TablaCerradaEnteros::hash2(int valor)
 {
     int i = valor % NCASILLAS;
