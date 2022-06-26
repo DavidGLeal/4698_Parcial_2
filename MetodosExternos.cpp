@@ -8,7 +8,6 @@ MetodoExterno::MetodoExterno(string str)
 
 MetodoExterno::MetodoExterno()
 {
-
 }
 
 MetodoExterno::~MetodoExterno()

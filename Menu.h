@@ -18,6 +18,12 @@ int validar_arreglo(char arreglo[]);
 using namespace std;
 int menu(const char *titulo, const char *opciones[], int n);
 
+//!VIS DE EXTERNO
+
+	MetodoExterno *directa = new MetodoExterno("OrdenamientoDirecto.txt");
+	MetodoExterno *natural = new MetodoExterno("OrdenamientoNatural.txt");
+
+
 
 int ingresoD(){
 
@@ -62,17 +68,9 @@ int* ingresar(){
 }
 
 
-
-// void bucleValido(MetodoExterno* uso){
-
-	
-// }
-
 void ingresarExternos(string nom1, string nom2){
 
-	MetodoExterno *uso = new MetodoExterno();
-
-
+	directa->setN(0);
 	for (int i = 0; i< 10; i++){
 
 		int num{ingresoD()};
@@ -80,8 +78,9 @@ void ingresarExternos(string nom1, string nom2){
 		if(num == -10101010){
 			i = 10;
 		}else{
-			uso->insertar2(num, nom1);
-			uso->insertar(num, nom2);
+
+			natural->insertar2(num, nom1);
+			directa->insertar(num, nom2);
 		}
 	}
 
@@ -122,6 +121,8 @@ int validar_arreglo(char* arreglo)
     }
     return 1;
 }
+
+
 void MenuMetExt(){
 	//Operaciones op1;
 	bool repite = true;
@@ -132,12 +133,6 @@ void MenuMetExt(){
    const char *opciones[] = {"Ingresar  Datos","Ordenar por Directa","Ordenar por Natural", "Regresar al menu principal"};
    int n = 4;  
 
-	//!PARA NO SOBREESCRIBIR TXTS
-	MetodoExterno *a= new MetodoExterno();
-	MetodoExterno *b= new MetodoExterno();
-	a->limpiar("OrdenamientoNatural.txt");
-	b->limpiar("OrdenamientoDirecto.txt");
-
    do 
    {
       opcion = menu(titulo, opciones, n);
@@ -146,7 +141,9 @@ void MenuMetExt(){
 		{
 			case 1:{
 				system("cls");
-				ingresarExternos("OrdenamientoDirecto.txt", "OrdenamientoNatural.txt");
+				directa->limpiar("OrdenamientoDirecto.txt");
+				natural->limpiar("OrdenamientoNatural.txt");
+				ingresarExternos("OrdenamientoNatural.txt","OrdenamientoDirecto.txt");
 				cout<< "\n~~~ Datos ingresados con exito ~~~"<<endl;
 				system("pause");
 
@@ -154,8 +151,6 @@ void MenuMetExt(){
 			}
 			case 2:{
 				system("cls");
-
-				MetodoExterno *directa= new MetodoExterno("OrdenamientoDirecto.txt");
 
 				if(directa->hayDatos("OrdenamientoDirecto.txt")){
 					directa->ordenarPorDirecta();
@@ -173,8 +168,6 @@ void MenuMetExt(){
 			}
 			case 3:{
 				system("cls");
-
-				MetodoExterno *natural= new MetodoExterno("OrdenamientoNatural.txt");
 
 				if(natural->hayDatos("OrdenamientoNatural.txt")){
 					natural->ordenarPorNatural();
@@ -259,7 +252,7 @@ void SubmenuDistribucion(){
 			}		
 			case 2:{
 				system("cls");
-				int *arreglo = ingresar();
+				IngresarDatos();
 				break;
 			}					
 			case 3:{
@@ -291,22 +284,22 @@ void MenuOrdenamientos(){
 		{
 			case 1:{
 				system("cls");
-				int *arreglo = ingresar();
+				IngresarDatos();
 				break;
 			}		
 			case 2:{
 				system("cls");
-				int *arreglo = ingresar();
+				IngresarDatos();
 				break;
 			}				
 			case 3:{
 				system("cls");
-				int *arreglo = ingresar();
+				IngresarDatos();
 				break;
 			}
 			case 4:{
 				system("cls");
-				int *arreglo = ingresar();
+				IngresarDatos();
 				break;
 			}
 			case 5:{
@@ -316,7 +309,7 @@ void MenuOrdenamientos(){
 			}
 			case 6:{
 				system("cls");
-				int *arreglo = ingresar();
+				IngresarDatos();
 				break;
 			}	
 			case 7:{
