@@ -9,22 +9,20 @@
 using namespace std;
 
 TablaHashCerrada tabla;
-Nodo *nodo ;
-
+NodoCircular *aux;
 
 int main(){
+
+string cad,opcion;
 do{
-    cout << "Ingrese una cadena: ";
-    char cad[100];
+    cout << "Ingrese una letra"<< endl;
     cin >> cad;
     tabla.insertar(cad);
-    cout << "Desea ingresar otra cadena? (s/n): ";
-    char resp;
-    cin >> resp;
-    if(resp == 'n'){
-        break;
-    }
-}while(true);
-tabla.imprimir();
-}
+    cout << "Desea ingresar otra letra? (s/n)" << endl;
+    cin >> opcion;
+}while(opcion == "s");
+    cout <<"Tabla hash cerrada"<< endl;
+    tabla.imprimir();
 
+
+}

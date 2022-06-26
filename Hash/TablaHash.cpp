@@ -8,70 +8,68 @@
 
 using namespace std;
 
-TablaHashCerrada :: TablaHashCerrada(){
+TablaHashCerrada::TablaHashCerrada(){
+    tabla = new NodoCircular*[NCASILLAS];
     for(int i = 0; i < NCASILLAS; i++){
         tabla[i] = NULL;
     }
 }
-TablaHashCerrada :: ~TablaHashCerrada(){
+TablaHashCerrada::~TablaHashCerrada(){
     for(int i = 0; i < NCASILLAS; i++){
-        Nodo *aux = tabla[i];
+        NodoCircular *aux = tabla[i];
+        aux = tabla[i];
         while(aux != NULL){
-            Nodo *aux2 = aux;
-            aux = aux->getSig();
-            delete aux2;
+            tabla[i] = tabla[i]->getSig();
+            delete aux;
+            aux = tabla[i];
         }
     }
+    delete[] tabla;
 }
-void TablaHashCerrada :: insertar(char *cad){
+void TablaHashCerrada::insertar(string cad){
     int pos = hash(cad);
-    Nodo *aux = tabla[pos];
-    if(aux == NULL){
-        tabla[pos] = new Nodo(cad);
+    NodoCircular *aux = tabla[pos];
+    if(tabla[pos] == NULL){
+        tabla[pos] = new NodoCircular(cad);
     }
     else{
+        aux = tabla[pos];
         while(aux->getSig() != NULL){
             aux = aux->getSig();
         }
-        aux->setSig(new Nodo(cad));
+        aux->setSig(new NodoCircular(cad));
     }
 }
-void TablaHashCerrada :: eliminar(char *cad){
+void TablaHashCerrada::eliminar(string cad){
     int pos = hash(cad);
-    Nodo *aux = tabla[pos];
-    if(aux != NULL){
-        if(strcmp(aux->getCadena(), cad) == 0){
-            tabla[pos] = aux->getSig();
-            delete aux;
+    NodoCircular *aux = tabla[pos];
+    if(aux->getCadena() == cad){
+        tabla[pos] = tabla[pos]->getSig();
+        delete aux;
+    }
+    else{
+        while(aux->getSig()->getCadena() != cad){
+            aux = aux->getSig();
         }
-        else{
-            while(aux->getSig() != NULL){
-                if(strcmp(aux->getSig()->getCadena(), cad) == 0){
-                    Nodo *aux2 = aux->getSig();
-                    aux->setSig(aux->getSig()->getSig());
-                    delete aux2;
-                    break;
-                }
-                aux = aux->getSig();
-            }
-        }
+        aux->setSig(aux->getSig()->getSig());
+        delete aux->getSig();
     }
 }
-void TablaHashCerrada :: imprimir(){
+void TablaHashCerrada::imprimir(){
     for(int i = 0; i < NCASILLAS; i++){
-        Nodo *aux = tabla[i];
+        NodoCircular *aux = tabla[i];
+        aux = tabla[i];
         while(aux != NULL){
-            cout << aux->getCadena() << " ";
+            cout << aux->getCadena() <<" ";
             aux = aux->getSig();
         }
         cout << endl;
     }
 }
-int TablaHashCerrada :: hash(char *cad){
+int TablaHashCerrada::hash(string cad){
     int suma = 0;
-    for(int i = 0; i < strlen(cad); i++){
+    for(int i = 0; i < cad.length(); i++){
         suma += cad[i];
     }
     return suma % NCASILLAS;
 }
-

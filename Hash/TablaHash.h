@@ -1,17 +1,17 @@
 #pragma once 
 #include <iostream>
 #include "Nodo.h"
+#include "Nodo.cpp"
 #define NCASILLAS 29
 
 class TablaHashCerrada{
     private:
-        Nodo *tabla[NCASILLAS];
+        NodoCircular **tabla;
     public:
         TablaHashCerrada();
         ~TablaHashCerrada();
-        void insertar(char *cad);
-        void eliminar(char *cad);
+        void insertar(string cad);
+        void eliminar(string cad);
         void imprimir();
-        int hash(char *cad);
+        int hash(string cad);        
 };
-

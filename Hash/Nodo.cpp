@@ -6,20 +6,20 @@
 
 using namespace std;
 
-Nodo :: Nodo(char *cad){
-    cadena = new char[strlen(cad) + 1];
-    strcpy(cadena, cad);
+NodoCircular :: NodoCircular(string cad){
+    cadena = cad;
     sig = NULL;
 }
-Nodo :: ~Nodo(){
-    delete[] cadena;
+NodoCircular :: ~NodoCircular(){
+    delete sig;
 }
-char *Nodo :: getCadena(){
+string NodoCircular :: getCadena(){
     return cadena;
 }
-Nodo *Nodo :: getSig(){
+NodoCircular *NodoCircular :: getSig(){
     return sig;
 }
-void Nodo :: setSig(Nodo *sig){
+void NodoCircular :: setSig(NodoCircular *sig){
     this->sig = sig;
 }
+

@@ -3,14 +3,14 @@
 
 using namespace std;
 
-class Nodo{
+class NodoCircular{
     private:
-        char *cadena;
-        Nodo *sig;
+        string cadena;
+        NodoCircular *sig;
     public:
-        Nodo(char *cad);
-        ~Nodo();
-        char *getCadena();
-        Nodo *getSig();
-        void setSig(Nodo *sig);
+        NodoCircular(string cad);
+        ~NodoCircular();
+        string getCadena();
+        NodoCircular *getSig();
+        void setSig(NodoCircular *sig);
 };
