@@ -15,16 +15,22 @@ MetodoExterno::~MetodoExterno()
     delete this;
 }
 
+void MetodoExterno::setN(int n){
+    this->N = n;
+}
+
 void MetodoExterno::ordenarPorDirecta()
 {
     limpiar();
-    generarAleatorios(-100, 100);
+    //generarAleatorios(-100, 100);
+    //cout << N << " N "<<endl;
     int longitud = 1;
     while (longitud < N)
-    {
+    {   
         particiona(longitud);
         fusiona(longitud);
         longitud *= 2;
+
     }
 }
 
@@ -35,7 +41,7 @@ void MetodoExterno::ordenarPorNatural()
 {
 
     limpiar();
-    generarAleatorios(-1001, 1002);
+    //generarAleatorios(-1001, 1002);
     particionInicial();
     particionFusion();
 
@@ -48,13 +54,18 @@ void MetodoExterno::ordenarPorNatural()
  */
 void MetodoExterno::limpiar()
 {
-    fstream F, F1, F2;
-    abrir(&F, nombreArchivo, 3);
+    fstream F1, F2;
     abrir(&F1, "F1.txt", 3);
     abrir(&F2, "F2.txt", 3);
-    cerrar(&F);
     cerrar(&F1);
     cerrar(&F2);
+}
+
+void MetodoExterno::limpiar(string nombre)
+{
+    fstream F;
+    abrir(&F, nombre, 3);
+    cerrar(&F);
 }
 
 
@@ -149,6 +160,17 @@ void MetodoExterno::insertar(int d, string nom)
     F << d << " ";
     cerrar(&F);
     N++;
+    // cout<<"\n";
+    // cout << N << " N en insertar"<<endl;
+
+}
+
+void MetodoExterno::insertar2(int d, string nom)
+{
+    fstream F;
+    abrir(&F, nom, 2);
+    F << d << " ";
+    cerrar(&F);
 }
 
 //! Metodo para ordenacion natural
@@ -358,11 +380,12 @@ void MetodoExterno::particiona(int longitud)
 {
     fstream F, F1, F2;
     int con1, con2, dato;
-    abrir(&F, "datos.txt", 1);
+    abrir(&F, nombreArchivo, 1);
     abrir(&F1, "F1.txt", 3);
     abrir(&F2, "F2.txt", 3);
+    
     while (!F.eof())
-    {
+    {   
         con1 = 0;
         while (con1 < longitud && !F.eof())
         {
@@ -380,6 +403,7 @@ void MetodoExterno::particiona(int longitud)
             con2++;
         }
     }
+
     cerrar(&F);
     cerrar(&F1);
     cerrar(&F2);
@@ -390,7 +414,7 @@ void MetodoExterno::fusiona(int longitud)
     fstream F, F1, F2;
     int con1, con2, dato1, dato2;
     bool ban1, ban2;
-    abrir(&F, "datos.txt", 3);
+    abrir(&F, nombreArchivo, 3);
     abrir(&F1, "F1.txt", 1);
     abrir(&F2, "F2.txt", 1);
     ban1 = ban2 = true;
