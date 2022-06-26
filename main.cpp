@@ -1,8 +1,8 @@
 #include <iostream>
-#include "vector.h"
-#include "vector.cpp"
-#include "OrdenamientoInterno.h"
-#include "OrdenamientoInterno.cpp"
+#include "0Vector.h"
+#include "0Vector.cpp"
+#include "2OrdenamientoInterno.h"
+#include "2OrdenamientoInterno.cpp"
 
 using namespace std;
 

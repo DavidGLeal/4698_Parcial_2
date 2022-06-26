@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <conio.h>
 #include <stdio.h>
@@ -6,9 +5,8 @@
 #include <ctype.h> 
 #include <windows.h>
 #include <stdlib.h>
-#include "IngresoDatos.h"
-
-#include "MetodosExternos.cpp"
+#include "1IngresoDatos.h"
+#include "3OrdenamientoExterno.cpp"
 #include "Win.h"
 
 #define TECLA_ARRIBA 72

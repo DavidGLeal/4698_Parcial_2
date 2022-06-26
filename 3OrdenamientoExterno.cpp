@@ -1,5 +1,5 @@
 #pragma once
-#include "MetodosExternos.h"
+#include "3OrdenamientoExterno.h"
 
 MetodoExterno::MetodoExterno(string str)
 {

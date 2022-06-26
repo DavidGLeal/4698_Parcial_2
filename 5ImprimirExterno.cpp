@@ -1,4 +1,4 @@
-#include "ImprimirExterno.h"
+#include "5ImprimirExterno.h"
 
 //! FUNCION IMPRIMIR
 void ImprimirExterno::imprimir(string nombre)

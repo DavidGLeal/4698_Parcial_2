@@ -1,4 +1,4 @@
-#include "Busqueda.h"
+#include "4Busqueda.h"
 
 
 void Busqueda::busquedaBinaria(){

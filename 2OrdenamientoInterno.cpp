@@ -1,7 +1,6 @@
 #pragma once 
-#include "OrdenamientoInterno.h"
-#include "vector.h"
-#include "vector.cpp"
+#include "2OrdenamientoInterno.h"
+#include "0Vector.cpp"
 
 Vector v ;
 Vector vShell;

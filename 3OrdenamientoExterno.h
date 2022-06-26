@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "ImprimirExterno.cpp"
+#include "5ImprimirExterno.cpp"
 using namespace std;
    
 class MetodoExterno: public ImprimirExterno{
