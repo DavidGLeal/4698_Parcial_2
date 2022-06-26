@@ -9,15 +9,14 @@ class OrdenamientoInterno{
 		Vector vector;
 	public:
 		
-		virtual void ordenarIntercambio();
+		virtual Vector &ordenarIntercambio();
 		virtual void ordenarBurbuja();
-		virtual void ordenarQuicksort();
+		virtual void ordenarQuicksort(Vector &v, int inicio, int fin);
 		virtual void ordenarShellSort();
 		virtual void ordenarDistribucion();
 		virtual void ordenarBucket();
 		virtual void ordenarRadix();
-		virtual void imprimirInterno(); 
-	
+		virtual void imprimirInterno(); 	
 		Vector getVector();
 		void setVector(Vector vector);
 };
