@@ -66,3 +66,48 @@ void TablaCerradaEnteros::imprimir(){
 int TablaCerradaEnteros::hash(int valor){
     return valor % NCASILLAS;
 }
+
+int TablaCerradaEnteros::hash2(int valor)
+{
+    int i = valor % NCASILLAS;
+    int veces = 0;
+    
+    if(tabla[i]==NULL)
+    {
+    	return i;
+	}
+	else
+	{
+		function<int()> hash2 = [&]()->int
+		{
+			try
+			{
+				do{
+					int dob = 7 - valor%7;
+		
+					i+=dob;
+		
+					if(i>28)
+					{
+						i=NCASILLAS-i;
+					}
+					veces++;
+				}while(tabla[i]!=NULL & veces <NCASILLAS);
+			
+				if(veces==NCASILLAS)
+				{
+					throw (veces);
+				}
+			
+				return i;
+			}catch(int lleno)
+			{
+				cout<<"La lista esta llena."<<endl;
+				system("pause");
+				return -1;
+			}
+		};
+		
+		return hash2();
+	}
+}    
