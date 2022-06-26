@@ -68,12 +68,5 @@ int *Vector::get(int pos) {
     return 0;
 }
 
-void Vector::imprimir(){
-
-    for(int i = 0; i < elementos; i++){
-        cout << arrayInterno[i] <<endl;
-    }    
-
-}
 
 
