@@ -28,6 +28,8 @@ class Vector {
         size_t capacity();
         int& operator[](size_t pos);
         int *get(int);
+        size_t getElementos();
+        int *getArrayInterno();
 
 };
 

@@ -68,5 +68,10 @@ int *Vector::get(int pos) {
     return 0;
 }
 
+size_t Vector::getElementos(){
+    return this->elementos;
+}
 
-
+int *Vector::getArrayInterno(){
+    return this->arrayInterno;
+}
