@@ -29,6 +29,5 @@ class Vector {
         // int& operator[](size_t pos);
         int *get(int);
 
-        void imprimir();
 };
 
