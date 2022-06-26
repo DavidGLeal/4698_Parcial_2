@@ -1,55 +1,79 @@
 #pragma once
 #include "0Vector.h"
 
-Vector::~Vector() {
-    delete [] arr;
+/**
+ * El destructor de la clase Vector.
+ */
+Vector::~Vector(){
+    delete [] arrayInterno;
 }
 
+/**
+ * Si la matriz está llena, duplique el tamaño de la matriz y copie la matriz anterior en la nueva
+ * 
+ * @param data Los datos que se agregarán al vector.
+ */
 void Vector::push_back(const int &data) {
-    if (elems < cap) {
-        *(arr + elems) = data;
-        elems++;
-    } else {
-        auto tmp_arr = new int[cap * 2];
-        cap *= 2;
-        for (int i = 0; i < elems; i++) {
-            tmp_arr[i] = arr[i];
-        }
-        delete [] arr;
-        arr = tmp_arr;
 
-        *(arr + elems) = data;
-        elems++;
+    if (elementos < capacidad) {
+        *(arrayInterno + elementos) = data;
+        elementos++;
+    } else {
+        auto tmp_arr = new int[capacidad * 2];
+        capacidad *= 2;
+        for (int i = 0; i < elementos; i++) {
+            tmp_arr[i] = arrayInterno[i];
+        }
+        delete [] arrayInterno;
+        arrayInterno = tmp_arr;
+
+        *(arrayInterno + elementos) = data;
+        elementos++;
     }
 }
 
-int &Vector::operator[](size_t pos) {
-    if (pos >= 0 &&  pos <= elems)
-        return *(this->arr + pos);
-    throw std::out_of_range("Out of bounds element access");
+/**
+ * Si la posición es válida, devuelva el elemento en esa posición. De lo contrario, lanzar una
+ * excepción
+ * 
+ * @return Una referencia al elemento en la posición dada.
+ */
+int& Vector::operator[](size_t pos) {
+    if (pos >= 0 &&  pos <= elementos)
+        return *(this->arrayInterno + pos);
+    throw std::out_of_range("Elemento fuera de rango");
 }
 
-size_t Vector::size() const {
-    return elems;
+size_t Vector::size(){
+    return elementos;
 }
 
-size_t Vector::capacity() const {
-    return cap;
+size_t Vector::capacity(){
+    return capacidad;
 }
 
 void Vector::pop_back() {
     if (empty())
         return;
-    elems--;
+    elementos--;
 }
 
-bool Vector::empty() const {
-    return elems == 0;
+bool Vector::empty(){
+    return elementos == 0;
 }
 
 int *Vector::get(int pos) {
-    if (pos >= 0 && pos < elems)
-        return arr + pos;
+    if (pos >= 0 && pos < elementos)
+        return arrayInterno + pos;
+    return 0;
+}
+
+void Vector::imprimir(){
+
+    for(int i = 0; i < elementos; i++){
+        cout << arrayInterno[i] <<endl;
+    }    
+
 }
 
 

@@ -9,30 +9,26 @@ using std::string;
 
 class Vector {
 
+    //size_t es un tipo definido entero long long sin signo
     private:
         int *arrayInterno = new int[10];
-        size_t cap{0};
-        size_t elems{0};
+        size_t capacidad{10};
+        size_t elementos{0};
         string name{0};
         double num{0};
 
     public:
-        Vector() {
-            arr = new int[10];
-            cap = 10;
-            elems = 0;
-        };
+        Vector(){};
+        ~Vector();
 
         void push_back(const int &data);
         void pop_back();
-
-        bool empty() const;
-        size_t size() const;
-        size_t capacity() const;
-        int &operator[](size_t pos);
-
-        ~Vector();
+        bool empty();
+        size_t size();
+        size_t capacity();
+        int& operator[](size_t pos);
         int *get(int);
 
+        void imprimir();
 };
 
