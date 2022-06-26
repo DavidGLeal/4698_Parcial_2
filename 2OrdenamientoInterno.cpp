@@ -189,12 +189,9 @@ void OrdenamientoInterno::imprimirInterno() {
 			//cout << *(v + i) << " ";
 	}
 
-/* void OrdenamientoInterno::imprimirInterno (int* vector, int tam) {
-		for (int i = 0; i < tam; i++)
-			cout << *(vector + i) << " ";
-	} */
+
 void OrdenamientoInterno::ordenarBucket(){
-    	Vector arre = getVector();
+    Vector arre = getVector();
 	int c = arre.size();
 	int col=10,cnt=0,k=0,d=1,l=0;
 	//int *ordenado = new int[c];
@@ -266,10 +263,10 @@ void OrdenamientoInterno::ordenarBucket(){
 
 void OrdenamientoInterno::ordenarRadix(){
     auto maximo = [&] (){
-	int mx = *(arr.get(0)); 
-    	for (int i = 1; i < arr.size(); i++) 
-        if (*(arr.get(i)) > mx) 
-        mx = *(arr.get(i)); 
+	int mx = *(vector.get(0)); 
+    	for (int i = 1; i < vector.size(); i++) 
+        if (*(vector.get(i)) > mx) 
+        mx = *(vector.get(i)); 
     	return mx;
 	};
 	
@@ -279,21 +276,21 @@ void OrdenamientoInterno::ordenarRadix(){
 	    for (int i = 0; i < 10; i++){	        	
 	        contador.push_back(0);
 	    }
-	    for (int i = 0; i < arr.size(); i++){	        	
+	    for (int i = 0; i < vector.size(); i++){	        	
 	        salida.push_back(0);
 	    } 		  
-	    for (int i = 0; i < arr.size(); i++){		
-	        *(contador.get((*(arr.get(i)) / exp) % 10))=*(contador.get((*(arr.get(i)) / exp) % 10))+1;
+	    for (int i = 0; i < vector.size(); i++){		
+	        *(contador.get((*(vector.get(i)) / exp) % 10))=*(contador.get((*(vector.get(i)) / exp) % 10))+1;
             }		  
 	    for (int i = 1; i < 10; i++) {		    	
 		*(contador.get(i)) += *(contador.get(i-1)); 
 	    }
-	    for (int i = arr.size()-1; i >= 0; i--) {
-		*(salida.get(*(contador.get((*(arr.get(i))/exp)%10))-1))=*(arr.get(i)) ;				
-		*(contador.get((*(arr.get(i)) / exp) % 10))=*(contador.get((*(arr.get(i)) / exp) % 10))-1;		
+	    for (int i = vector.size()-1; i >= 0; i--) {
+		*(salida.get(*(contador.get((*(vector.get(i))/exp)%10))-1))=*(vector.get(i)) ;				
+		*(contador.get((*(vector.get(i)) / exp) % 10))=*(contador.get((*(vector.get(i)) / exp) % 10))-1;		
             }   
-	    for (int i = 0; i < arr.size(); i++){
-		*(arr.get(i)) = *(salida.get(i)); 
+	    for (int i = 0; i < vector.size(); i++){
+		*(vector.get(i)) = *(salida.get(i)); 
 	    }	        
     };
     

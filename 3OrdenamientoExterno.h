@@ -30,8 +30,10 @@ class MetodoExterno: public ImprimirExterno{
 
 
     public:
+    
         MetodoExterno(string);
         ~MetodoExterno();
+        MetodoExterno();
         
         //!ORDENACION DIRECTA
         void ordenarPorDirecta();
@@ -41,11 +43,7 @@ class MetodoExterno: public ImprimirExterno{
         void ordenarPorNatural();
         bool hayDatos();
         void limpiarArchivo();
-
-        MetodoExterno();
-
         void insertar2(int d, string nom);
-
         void setN(int n);
 
 };

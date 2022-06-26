@@ -1,6 +1,7 @@
 #pragma once
 #include "3OrdenamientoExterno.h"
 
+//Constructores
 MetodoExterno::MetodoExterno(string str)
 {
     this->nombreArchivo = str;
@@ -10,20 +11,23 @@ MetodoExterno::MetodoExterno()
 {
 }
 
+//Destructor
 MetodoExterno::~MetodoExterno()
 {
     delete this;
 }
 
+//Setter y getter necesario
 void MetodoExterno::setN(int n){
     this->N = n;
 }
 
+/**
+ * Toma una matriz de números enteros y los ordena usando el algoritmo de clasificación por combinación
+ */
 void MetodoExterno::ordenarPorDirecta()
 {
     limpiar();
-    //generarAleatorios(-100, 100);
-    //cout << N << " N "<<endl;
     int longitud = 1;
     while (longitud < N)
     {   
@@ -61,6 +65,10 @@ void MetodoExterno::limpiar()
     cerrar(&F2);
 }
 
+//! Metodo para ambos
+/**
+ * Abre un archivo y luego lo cierra.
+ */
 void MetodoExterno::limpiarArchivo()
 {
     fstream F;
@@ -68,7 +76,13 @@ void MetodoExterno::limpiarArchivo()
     cerrar(&F);
 }
 
-
+//! Metodo para ambos
+/**
+ * Abre un archivo, lee el primer entero, y si no es -10001, devuelve verdadero, de lo contrario,
+ * devuelve falso
+ * 
+ * @return un valor booleano.
+ */
 bool MetodoExterno::hayDatos(){
 
     fstream F;
@@ -165,6 +179,7 @@ void MetodoExterno::insertar(int d, string nom)
 
 }
 
+//! Metodo para ordenacion natural
 void MetodoExterno::insertar2(int d, string nom)
 {
     fstream F;
@@ -376,6 +391,12 @@ void MetodoExterno::intercalacionDeArchivo(string nom1, string nom2, string nom3
     cerrar(&F4);
 }
 
+/**
+ * Lee un archivo y escribe la primera mitad del archivo en un archivo y la segunda mitad en otro
+ * archivo
+ * 
+ * @param longitud la longitud de la matriz
+ */
 void MetodoExterno::particiona(int longitud)
 {
     fstream F, F1, F2;
@@ -409,6 +430,11 @@ void MetodoExterno::particiona(int longitud)
     cerrar(&F2);
 }
 
+/**
+ * Toma dos archivos, F1 y F2, y los fusiona en un tercer archivo, F
+ * 
+ * @param longitud La longitud de la matriz
+ */
 void MetodoExterno::fusiona(int longitud)
 {
     fstream F, F1, F2;
