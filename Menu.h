@@ -141,8 +141,8 @@ void MenuMetExt(){
 		{
 			case 1:{
 				system("cls");
-				directa->limpiar("OrdenamientoDirecto.txt");
-				natural->limpiar("OrdenamientoNatural.txt");
+				directa->limpiarArchivo();
+				natural->limpiarArchivo();
 				ingresarExternos("OrdenamientoNatural.txt","OrdenamientoDirecto.txt");
 				cout<< "\n~~~ Datos ingresados con exito ~~~"<<endl;
 				system("pause");
@@ -152,7 +152,7 @@ void MenuMetExt(){
 			case 2:{
 				system("cls");
 
-				if(directa->hayDatos("OrdenamientoDirecto.txt")){
+				if(directa->hayDatos()){
 					directa->ordenarPorDirecta();
 					cout<< "\n~~~ Datos ordenados con exito ~~~"<<endl;
 					cout<<"\n";
@@ -169,7 +169,7 @@ void MenuMetExt(){
 			case 3:{
 				system("cls");
 
-				if(natural->hayDatos("OrdenamientoNatural.txt")){
+				if(natural->hayDatos()){
 					natural->ordenarPorNatural();
 					cout<< "\n~~~ Datos ordenados con exito ~~~"<<endl;
 					cout<<"\n";

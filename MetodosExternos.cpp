@@ -61,18 +61,18 @@ void MetodoExterno::limpiar()
     cerrar(&F2);
 }
 
-void MetodoExterno::limpiar(string nombre)
+void MetodoExterno::limpiarArchivo()
 {
     fstream F;
-    abrir(&F, nombre, 3);
+    abrir(&F, nombreArchivo, 3);
     cerrar(&F);
 }
 
 
-bool MetodoExterno::hayDatos(string nom){
+bool MetodoExterno::hayDatos(){
 
     fstream F;
-    F.open(nom, ios::in);
+    F.open(nombreArchivo, ios::in);
     int x=-10001;
     F>>x;
     if(x!=-10001){

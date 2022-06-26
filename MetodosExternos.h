@@ -39,8 +39,8 @@ class MetodoExterno: public ImprimirExterno{
 
         //!ORDENACION NATURAL.
         void ordenarPorNatural();
-        bool hayDatos(string nom);
-        void limpiar(string nombre);
+        bool hayDatos();
+        void limpiarArchivo();
 
         MetodoExterno();
 

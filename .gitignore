@@ -1,3 +1,4 @@
 mainPruebaExterno.cpp
 *.exe
 /.vscode
+*.txt
