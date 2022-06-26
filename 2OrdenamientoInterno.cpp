@@ -2,12 +2,13 @@
 #include "2OrdenamientoInterno.h"
 #include "0Vector.cpp"
 
-Vector v ;
+Vector v;
 Vector vShell;
 
 Vector OrdenamientoInterno::getVector(){
 	return this->vector;
 }
+
 
 void OrdenamientoInterno::setVector(Vector _vector){
     if (!this->vector.empty()) {
