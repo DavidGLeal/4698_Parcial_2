@@ -1,14 +1,17 @@
 #pragma once
 #include <iostream>
+#include "0Vector.cpp"
 
 using namespace std;
 
 class OrdenamientoInterno{
 	
 	private:
-		Vector vector;
+		Vector *vector = new Vector();
+		
 	public:
 		
+		OrdenamientoInterno(){}
 		Vector &ordenarIntercambio();
 		void ordenarBurbuja();
 		void ordenarQuicksort(Vector &v, int inicio, int fin);

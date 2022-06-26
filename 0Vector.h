@@ -26,7 +26,7 @@ class Vector {
         bool empty();
         size_t size();
         size_t capacity();
-        int& operator[](size_t pos);
+        // int& operator[](size_t pos);
         int *get(int);
 
         void imprimir();
