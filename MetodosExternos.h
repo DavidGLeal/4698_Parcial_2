@@ -13,7 +13,6 @@ class MetodoExterno: public ImprimirExterno{
 
         void abrir(fstream *f, string nom, int tip);
         void cerrar(fstream *f);
-        void limpiar();
 
         //!ORDENACION NATURAL. METODOS INTERNOS
 
@@ -21,6 +20,7 @@ class MetodoExterno: public ImprimirExterno{
         void generarAleatorios(int min, int max);
         void particionInicial();
         void particionFusion();
+        void limpiar();
         void intercalacionDeArchivo(string nom1, string nom2, string nom3, string nom4);
 
         //!ORDENACION DIRECTA. METODOS INTERNOS
@@ -40,5 +40,12 @@ class MetodoExterno: public ImprimirExterno{
         //!ORDENACION NATURAL.
         void ordenarPorNatural();
         bool hayDatos(string nom);
+        void limpiar(string nombre);
+
+        MetodoExterno();
+
+        void insertar2(int d, string nom);
+
+        void setN(int n);
 
 };

@@ -1,3 +1,17 @@
+/*ESPE
+*Enunciado del problema:
+*   Realizar el codigo de la catedra en clases (POO)
+*Autor 
+* Camila Rivera
+* Christian Román
+*Fecha de creacion
+*   10-06-2022
+*Fecha de modificacion
+*   10 - 06 -2022
+*Grupo #2
+*Github del grupo:
+* https://github.com/Grupo8-4698-EstructuraDeDatos/4698-Grupo8-EstructuradeDatos
+*/
 
 #pragma once
 #include <conio.h>
@@ -78,7 +92,7 @@ using namespace std;
                 while(c != 13){ //Bucle hasta que se presion la tecla ENTER
                     c=getch(); //Recibo el dato por teclado
 
-                    if(c >= '0' && c <= '9' ){
+                    if(c >= '0' && c <= '9'){
                         printf("%c", c);
                         dato[i] = c;
                         ++i;
@@ -115,7 +129,7 @@ using namespace std;
                 while(c != 13){ //Bucle hasta que se presion la tecla ENTER
                     c=getch(); //Recibo el dato por teclado
 
-                    if(c >= '0' && c <= '9' || c == 45){
+                    if((c >= '0' && c <= '9') || c == 45){
                         printf("%c", c);
                         dato[i] = c;
                         i++;
@@ -275,7 +289,7 @@ using namespace std;
                 while(c != 13){ //Bucle hasta que se presion la tecla ENTER
                     c=getch(); //Recibo el dato por teclado
 
-                    if(c >= '0' && c <= '9' || c == 46){
+                    if((c >= '0' && c <= '9') || c == 46){
                         conversion.verificar(c); //Verifico por puntos ingresados
                     
                         unicoPunto( &j , &i, "Ingrese de nuevo ", &c); //Funcion de unico punto
@@ -305,7 +319,7 @@ using namespace std;
                 while(c != 13){ //Bucle hasta que se presion la tecla ENTER
                     c=getch(); //Recibo el dato por teclado
 
-                    if(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z'){
+                    if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')){
                         printf("%c", c); //Imprimo el valor
                         dato[i] = c;
                         i++;
@@ -522,7 +536,7 @@ using namespace std;
             */
             void backspace(int* i, char* c){
 
-                if(*c >= 'a' && *c <= 'z' || *c >= 'A' && *c <= 'Z'){
+                if((*c >= 'a' && *c <= 'z') || (*c >= 'A' && *c <= 'Z')){
                 if(*i != 0) --*i;
                 }else{ 
                     system("CLS"); //Limpio pantalla
@@ -608,7 +622,6 @@ using namespace std;
                 if(this -> conversion.getVerificador() == 1){
                     cout << "\nSu numero es "<< real << " y es un flotante" <<endl; //Imprimo flotante
                 }else{
-                    int entero = real;
                     cout << "\nSu numero es "<< real << " y es un entero" <<endl; //Imprimo entero
                 }
             }    
@@ -624,7 +637,6 @@ using namespace std;
                 if(this -> conversion.getVerificador() == 1){
                     cout << "\nSu numero es "<< real << " y es un flotante" <<endl; //Imprimo flotante
                 }else{
-                    int entero = real;
                     cout << "\nSu numero es "<< real<< " y es un entero" <<endl; //Imprimo entero
                 }
             }   
