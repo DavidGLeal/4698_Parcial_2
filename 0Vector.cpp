@@ -38,11 +38,11 @@ void Vector::push_back(const int &data) {
  * 
  * @return Una referencia al elemento en la posición dada.
  */
-// int& Vector::operator[](size_t pos) {
-//     if (pos >= 0 &&  pos <= elementos)
-//         return *(this->arrayInterno + pos);
-//     throw std::out_of_range("Elemento fuera de rango");
-// }
+int& Vector::operator[](size_t pos) {
+    if (pos >= 0 &&  pos <= elementos)
+        return *(this->arrayInterno + pos);
+    throw std::out_of_range("Elemento fuera de rango");
+}
 
 size_t Vector::size(){
     return elementos;

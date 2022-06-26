@@ -7,12 +7,14 @@ using namespace std;
 class OrdenamientoInterno{
 	
 	private:
-		Vector *vector = new Vector();
+		Vector vector;
 		
 	public:
 		
-		OrdenamientoInterno(){}
-		Vector &ordenarIntercambio();
+		OrdenamientoInterno(Vector v){
+			this->vector = v;
+		}
+		void ordenarIntercambio();
 		void ordenarBurbuja();
 		void ordenarQuicksort(Vector &v, int inicio, int fin);
 		void ordenarShellSort();
@@ -21,5 +23,6 @@ class OrdenamientoInterno{
 		void ordenarRadix();
 		void imprimirInterno(); 	
 		Vector getVector();
-		void setVector(Vector vector);
+		void setVector(Vector _vector);
+
 };
