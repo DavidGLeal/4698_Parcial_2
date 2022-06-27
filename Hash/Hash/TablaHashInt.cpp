@@ -3,6 +3,7 @@
 #include "TablaHashInt.h"
 #include "NodoEntero.h"
 #include "NodoEntero.cpp"
+#include <functional>
 
 using namespace std;
 
@@ -24,8 +25,38 @@ TablaCerradaEnteros :: ~TablaCerradaEnteros(){
     }
     delete[] tabla;
 }
-void TablaCerradaEnteros::insertar(int valor){
+void TablaCerradaEnteros::insertarCuadratico(int valor){
     int pos = hashCuadratico(valor);
+    NodoCircularEntero *aux = tabla[pos];
+    if(tabla[pos] == NULL){
+        tabla[pos] = new NodoCircularEntero(valor);
+    }
+    else{
+        aux = tabla[pos];
+        while(aux->getSig() != NULL){
+            aux = aux->getSig();
+        }
+        aux->setSig(new NodoCircularEntero(valor));
+    }
+}
+
+void TablaCerradaEnteros::insertarLineal(int valor){
+    int pos = hashlineal(valor);
+    NodoCircularEntero *aux = tabla[pos];
+    if(tabla[pos] == NULL){
+        tabla[pos] = new NodoCircularEntero(valor);
+    }
+    else{
+        aux = tabla[pos];
+        while(aux->getSig() != NULL){
+            aux = aux->getSig();
+        }
+        aux->setSig(new NodoCircularEntero(valor));
+    }
+}
+
+void TablaCerradaEnteros::insertarDoble(int valor){
+    int pos = hash2(valor);
     NodoCircularEntero *aux = tabla[pos];
     if(tabla[pos] == NULL){
         tabla[pos] = new NodoCircularEntero(valor);
@@ -62,16 +93,16 @@ void TablaCerradaEnteros::eliminar(int valor){
 		while(aux->getSig()->getValor() != valor){
 		    aux = aux->getSig();
 		}
-	else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
-        /*aux->setSig(aux->getSig()->getSig());
-        delete aux->getSig();*/
+        }else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
     }
 }
+
 void TablaCerradaEnteros::imprimir(){
     for(int i = 0; i < NCASILLAS; i++){
         NodoCircularEntero *aux = tabla[i];
+        cout <<" "<<"Posicion "<<i<<": ";
         while(aux != NULL){
-            cout << aux->getValor() << " ";
+        cout<< aux->getValor()<< " ";
             aux = aux->getSig();
         }
         cout << endl;

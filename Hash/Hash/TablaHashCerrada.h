@@ -5,20 +5,16 @@
 #define NCASILLAS 29
 
 class TablaHashCerrada{
-    private:
+    protected:
         NodoCircular **tabla;
         string dato;
     public:
         TablaHashCerrada();
         ~TablaHashCerrada();
-        void insertar(string cad,int opc);
+        void insertar(string cad);
         void eliminar(string cad);
         void imprimir();
-        int buscar(std::string valor);
+        void buscar(std::string valor);
         int hash(string cad); 
-        int quadraticProbing(string cad , int i);
-        int hashDoble(string cad); 
-        void insertarLineal(string cad);
-        int hashF(string cad, int i);
-        void insertarDoble(string cad);   
+        virtual int hash2(int pos)=0;
 };

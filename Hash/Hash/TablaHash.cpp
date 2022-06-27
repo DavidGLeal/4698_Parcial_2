@@ -53,20 +53,49 @@ void TablaHashCerrada::eliminar(string cad){
             }
         }
         else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
-        /*aux->setSig(aux->getSig()->getSig());
-        delete aux->getSig();*/
     }
 }
+
 void TablaHashCerrada::imprimir(){
     for(int i = 0; i < NCASILLAS; i++){
         NodoCircular *aux = tabla[i];
+        cout <<" "<<"Posicion "<<i<<": ";
         int pos = i;
         aux = tabla[i];
         while(aux != NULL){
-            cout << pos<<"<-"<<aux->getCadena() <<" ";
+            cout << aux->getCadena() <<" ";
             aux = aux->getSig();
         }
         cout << endl;
+    }
+}
+
+void TablaHashCerrada::buscar (string cad) {
+    int pos = hash(cad);
+    NodoCircular *aux = tabla[pos];
+    while (aux == nullptr)
+    {
+        pos++;
+        aux = tabla[pos % NCASILLAS];
+    }
+    if(aux->getCadena() == cad){
+        cout << "El elemento se encuentra en la posicion " << pos << endl;
+    }
+    else
+    {
+    while (aux == nullptr)
+        {
+            pos++;
+            aux = tabla[pos % NCASILLAS];
+        }	    
+        if (aux->getSig() != nullptr)
+        {
+            while (aux->getSig()->getCadena() != cad)
+            {
+                aux = aux->getSig();
+            }
+        }
+        else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
     }
 }
 int TablaHashCerrada::quadraticProbing(string cad, int i){
@@ -77,6 +106,8 @@ int TablaHashCerrada::quadraticProbing(string cad, int i){
     return indice;
 
 }
+
+
 void TablaHashCerrada::insertar(string cad, int opc)
 {
     int i = 0;
@@ -98,7 +129,7 @@ void TablaHashCerrada::insertar(string cad, int opc)
     }
 }
 
-int TablaHashCerrada::buscar(std::string valor) {
+/*int TablaHashCerrada::buscar(std::string valor) {
     const int ELEMENTO_NO_ENCONTRADO{-1};
     int clave{hash(valor)};
 
@@ -122,7 +153,7 @@ int TablaHashCerrada::buscar(std::string valor) {
     }
 
     return (haEncontradoValor) ? posiciones: ELEMENTO_NO_ENCONTRADO;
-}
+}*/
 
 int TablaHashCerrada::hash(string cad){
     int suma = 0;
@@ -155,9 +186,9 @@ int TablaHashCerrada::hashDoble(string cad){
         	indice = indice%NCASILLAS;
 		}
     }
-    	//cout<<indice<<endl;
     return indice;
 }
+
 void TablaHashCerrada::insertarDoble(string cad){
     int pos = hashDoble(cad);
     NodoCircular *aux = tabla[pos];

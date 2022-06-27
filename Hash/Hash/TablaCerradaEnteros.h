@@ -6,7 +6,7 @@
 #define NCASILLAS 29
 
 class TablaCerradaEnteros{
-    private:
+    protected:
         NodoCircularEntero **tabla;
     public:
         TablaCerradaEnteros();
@@ -14,9 +14,7 @@ class TablaCerradaEnteros{
         void insertar(int valor);
         void eliminar(int valor);
         void imprimir();
-        int buscarLineal(int valor);
+        void buscar(int valor);
         int hash(int valor);
-        int hashlineal(int indice);
-        int hashCuadratico(int indice);
-        int hash2(int);
+        virtual int hash2(int valor)=0;
 };
