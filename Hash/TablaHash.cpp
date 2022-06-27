@@ -130,3 +130,36 @@ void TablaHashCerrada::insertarDoble(string cad){
         aux->setSig(new NodoCircular(cad));
     }
 }
+
+//Sondeo Lineal
+void TablaHashCerrada::insertarLineal(string cad)
+{
+    int i = 0;
+    bool ocupado = false;
+    int indice = 0;
+    while (ocupado == false)
+    {
+         indice = hashF(cad, i);
+         NodoCircular *aux = tabla[indice];
+        if (tabla[indice] == NULL)
+        {
+            tabla[indice] = new NodoCircular(cad);
+            ocupado = true;
+        }
+        else
+        {
+            i++;
+        }
+    }
+}
+
+int TablaHashCerrada::hashF(string cad, int i)
+{
+    int suma = 0;
+    int indice = 0;
+    suma = hash(cad);
+    indice = (suma + i) % NCASILLAS; //Lineal
+    return indice;
+}
+
+
