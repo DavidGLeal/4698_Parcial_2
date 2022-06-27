@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "0Vector.cpp"
+#include <cmath>
 #include "6ImprimirInterno.cpp"
 
 using namespace std;
