@@ -311,11 +311,20 @@ void OrdenamientoInterno::ordenarBucket(){
         
         d*=10;
     }
-
-    cout<< ordenado.size() <<endl;
-    cout << ordenado[0] <<endl;
-    cout << ordenado[3] <<endl;
-    setVector(ordenado);
+	Vector ordenado2;
+	cout<<ordenado.size()<<endl;
+	
+	for(int m=0;m<ordenado.getElementos();m++){
+		if(m>=10){
+			cout<<"ordenado: "<<ordenado[m]<<endl;
+			int ele=ordenado[m];
+			ordenado2.push_back(ele);
+		}
+		
+	}
+	
+	
+    setVector(ordenado2);
 }
 
 /**
@@ -435,3 +444,8 @@ void OrdenamientoInterno::imprimirInterno(){
     imprimir(vector);
     cout<<"\n";
 }
+
+void OrdenamientoInterno::imprimirInternoB(){
+	imprimirB(vector);
+	cout<<"\n"; 
+} 

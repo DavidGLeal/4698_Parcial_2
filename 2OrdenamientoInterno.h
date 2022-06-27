@@ -28,12 +28,13 @@ class OrdenamientoInterno: public ImprimirInterno{
 		void ordenarIntercambio();
 		void ordenarBurbuja();
 		void ordenarQuicksort();
-		void ordenarShellSort();
+		void ordenarDistribucion();
 		void ordenarCountingSort();
 		void ordenarBucket();
 		void ordenarRadix();	
-		Vector getVector();
+		void ordenarShellSort();
+		Vector getVector();	
 		void setVector(Vector &_vector);
 		void imprimirInterno();
-
+		void imprimirInternoB();
 };
