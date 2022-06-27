@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include "1IngresoDatos.h"
 #include "3OrdenamientoExterno.cpp"
+#include "2OrdenamientoInterno.cpp"
+#include "0Vector.cpp"
 #include "Win.h"
 
 #define TECLA_ARRIBA 72
@@ -20,6 +22,20 @@ int menu(const char *titulo, const char *opciones[], int n);
 
 	MetodoExterno *directa = new MetodoExterno("OrdenamientoDirecto.txt");
 	MetodoExterno *natural = new MetodoExterno("OrdenamientoNatural.txt");
+	OrdenamientoInterno *intercambio = new OrdenamientoInterno();
+	OrdenamientoInterno *burbuja = new OrdenamientoInterno();
+	OrdenamientoInterno *quicksort = new OrdenamientoInterno();
+	OrdenamientoInterno *shell = new OrdenamientoInterno();
+	//OrdenamientoInterno *bucket = new OrdenamientoInterno();
+	//OrdenamientoInterno *counting = new OrdenamientoInterno();
+	OrdenamientoInterno *radix = new OrdenamientoInterno();
+	Vector vector1;
+	Vector vector2;
+	Vector vector3;
+	Vector vector4;
+	Vector vector5;
+	Vector vector6;
+	Vector vector7;
 
 
 
@@ -33,15 +49,11 @@ int ingresoD(){
 }
 
 
-int* ingresar(){
+void ingresarInternos(){
 
-	int *arreglo = new int[10];
-	
 	int cont{0};
 
 	cout<<"\n";
-	//cout << "contador " <<cont <<endl;
-
 	
 	for (int i = 0; i< 10; i++){
 
@@ -50,19 +62,22 @@ int* ingresar(){
 		if(num == -10101010){
 			i = 10;
 		}else{
-			arreglo[i] = num;
+			vector1.push_back(num);
+			vector2.push_back(num);
+			vector3.push_back(num);
+			vector4.push_back(num);
+			vector5.push_back(num);
+			vector6.push_back(num);
+			vector7.push_back(num);
 			++cont;
 		}
 	}
 
-	for (int i = 0; i< cont; i++){
-		cout<< arreglo[i] << " ";
-	}
+	intercambio->setVector(vector1);
+	burbuja->setVector(vector2);
+	//Los demas van aca, con 2,3,4 y asi sucesivamente
 
 	cout<<"\n";
-	system("pause");
-	
-	return arreglo;
 }
 
 
@@ -245,7 +260,6 @@ void SubmenuDistribucion(){
 		{
 			case 1:{
 				system("cls");
-				int *arreglo = ingresar();
 				break;
 			}		
 			case 2:{
@@ -282,7 +296,22 @@ void MenuOrdenamientos(){
 		{
 			case 1:{
 				system("cls");
-				IngresarDatos();
+
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+
+				//PARA INGRESAR DATOOS		
+				ingresarInternos();
+				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
+				//a
+
+				intercambio->imprimirInterno();
+				intercambio->ordenarIntercambio();
+				intercambio->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
 			}		
 			case 2:{

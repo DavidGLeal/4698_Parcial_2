@@ -19,52 +19,12 @@ int main(){
     v.push_back(74);
     v.push_back(123);
 
-<<<<<<< HEAD
-	/*
-    OrdenamientoInterno *intercambio = new OrdenamientoInterno(v);
-    OrdenamientoInterno *burbuja = new OrdenamientoInterno(v);
-	OrdenamientoInterno *shellsort = new OrdenamientoInterno(v);
-	*/OrdenamientoInterno *distribucion = new OrdenamientoInterno(v);
-	//OrdenamientoInterno *bucket = new OrdenamientoInterno(v);
-	//OrdenamientoInterno *radix = new OrdenamientoInterno(v);
-	
-	/*
-    intercambio->imprimirInterno();
-    intercambio->ordenarIntercambio();
-    intercambio->imprimirInterno();
-	
-    burbuja->imprimirInterno();
-    burbuja->ordenarBurbuja();
-	burbuja->imprimirInterno(); 
-	
-	shellsort->imprimirInterno();
-    shellsort->ordenarShellSort(); 
-	shellsort->imprimirInterno(); 
-	
-	distribucion->imprimirInterno();
-    distribucion->ordenarDistribucion();
-	distribucion->imprimirInterno(); 
-	
-	bucket->imprimirInterno();
-    bucket->ordenarBucket();
-	bucket->imprimirInterno(); 
-=======
 
     OrdenamientoInterno *a = new OrdenamientoInterno(v);
 
     a->imprimirInterno();
     a->ordenarCountingSort();
     a->imprimirInterno();
->>>>>>> 75531d9be243a3f8b16078e2c3f0ba449988d961
-	
-    radix->imprimirInterno();
-    radix->ordenarRadix();
-	radix->imprimirInterno();
-    */
-	 
-	distribucion->imprimirInterno();
-    distribucion->ordenarDistribucion();
-	distribucion->imprimirInterno(); 
-    
+
     return 0;
 }
