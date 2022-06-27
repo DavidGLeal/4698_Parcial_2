@@ -138,8 +138,7 @@ void ingresarBusqueda(){
 }
 
 bool ingresarNumeroBuscadoBin(){
-
-	int cont{0};
+;
 	cout<<"\n";
 	
 		int num{ingresoD()};
@@ -156,7 +155,6 @@ bool ingresarNumeroBuscadoBin(){
 
 bool ingresarNumeroBuscadoSec(){
 
-	int cont{0};
 	cout<<"\n";
 	
 		int num{ingresoD()};

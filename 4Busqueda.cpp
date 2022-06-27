@@ -15,7 +15,7 @@ void  Busqueda::setDato(int a){
 
 void Busqueda::busquedaBinaria(){
 
-    int inf,sup,mitad,dato,i;
+    int inf,sup,mitad,i;
     char band='F';//bandera sirve para comprobar si existe o no el elemento
 
 
