@@ -9,6 +9,7 @@
 #include "3OrdenamientoExterno.cpp"
 #include "2OrdenamientoInterno.cpp"
 #include "0Vector.cpp"
+#include "4Busqueda.cpp"
 #include "Win.h"
 
 #define TECLA_ARRIBA 72
@@ -36,6 +37,11 @@ int menu(const char *titulo, const char *opciones[], int n);
 	Vector vector5;
 	Vector vector6;
 	Vector vector7;
+
+	Busqueda *binaria = new Busqueda();
+	Busqueda *secuencial = new Busqueda();
+	Vector bvector1;
+	Vector bvector2;
 
 
 
@@ -97,6 +103,72 @@ void ingresarInternos(){
 	radix->setVector(vector7);
 
 	cout<<"\n";
+}
+
+void ingresarBusqueda(){
+
+	int cont{0};
+	cout<<"\n";
+	
+	bvector1.vaciar();
+	bvector2.vaciar();
+
+
+	binaria->vaciarVector();
+	secuencial->vaciarVector();
+	
+	for (int i = 0; i< 10; i++){
+
+		int num{ingresoD()};
+
+		if(num == -10101010){
+			i = 10;
+		}else{
+			bvector1.push_back(num);
+			bvector2.push_back(num);
+			++cont;
+		}
+	}
+
+	binaria->setVector(bvector1);
+	secuencial->setVector(bvector2);
+
+
+	cout<<"\n";
+}
+
+bool ingresarNumeroBuscadoBin(){
+
+	int cont{0};
+	cout<<"\n";
+	
+		int num{ingresoD()};
+
+		if(num == -10101010){
+			cout << "Vacio"<<endl;
+			return false;
+		}else{
+			binaria->setDato(num);
+			cout<<"\n";
+			return true;
+		}
+}
+
+bool ingresarNumeroBuscadoSec(){
+
+	int cont{0};
+	cout<<"\n";
+	
+		int num{ingresoD()};
+
+		if(num == -10101010){
+			cout << "Vacio"<<endl;
+			return false;
+		}else{
+			secuencial->setDato(num);
+			cout<<"\n";
+			return true;
+		}
 }
 
 
@@ -233,7 +305,7 @@ void MenuBusquedas(){
  
    
    const char *titulo = "Busquedas";
-   const char *opciones[] = {"Busqueda Binaria", "Busqueda Secuencial", "Regresar al menu principal"};
+   const char *opciones[] = {"Ingreso Datos","Busqueda Binaria", "Busqueda Secuencial", "Regresar al menu principal"};
    int n = 3;  
  
    do 
@@ -244,13 +316,23 @@ void MenuBusquedas(){
 		{
 			case 1:
 				system("cls");
-
+				ingresarBusqueda();
+				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
+				system("pause");
 				break;
 			case 2:
 				system("cls");
-
+				if(ingresarNumeroBuscadoBin()){
+					binaria->busquedaBinaria();
+				}
 				break;	
 			case 3:{
+				system("cls");
+				if(ingresarNumeroBuscadoSec()){
+					secuencial->busquedaBinaria();
+				}
+				break;
+			}case 4:{
 				system("cls");
 				cout<<endl;
 				cout<<"Regresando..."<<endl;
@@ -343,7 +425,7 @@ void MenuOrdenamientos(){
 				//PARA INGRESAR DATOOS		
 				ingresarInternos();
 				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
-				//a
+				
 				
 				break;
 			}	
