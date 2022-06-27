@@ -41,16 +41,30 @@ void TablaCerradaEnteros::insertar(int valor){
 void TablaCerradaEnteros::eliminar(int valor){
     int pos = hash(valor);
     NodoCircularEntero *aux = tabla[pos];
+    while (aux == nullptr)
+    {
+        pos++;
+        aux = tabla[pos % NCASILLAS];
+    }
     if(aux->getValor() == valor){
         tabla[pos] = tabla[pos]->getSig();
         delete aux;
     }
-    else{
-        while(aux->getSig()->getValor() != valor){
-            aux = aux->getSig();
+    else
+    {
+        while (aux == nullptr)
+        {
+            pos++;
+            aux = tabla[pos % NCASILLAS];
         }
-        aux->setSig(aux->getSig()->getSig());
-        delete aux->getSig();
+        if (aux->getSig() != nullptr)
+        {
+		while(aux->getSig()->getValor() != valor){
+		    aux = aux->getSig();
+		}
+	else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
+        /*aux->setSig(aux->getSig()->getSig());
+        delete aux->getSig();*/
     }
 }
 void TablaCerradaEnteros::imprimir(){
