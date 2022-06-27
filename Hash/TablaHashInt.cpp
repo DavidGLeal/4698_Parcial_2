@@ -68,9 +68,6 @@ int TablaCerradaEnteros::buscarLineal(int valor) {
     const int ELEMENTO_NO_ENCONTRADO{-1};
     int clave{hashlineal(valor)};
 
-    if (this->tabla[clave] == nullptr)
-        return ELEMENTO_NO_ENCONTRADO;
-
     if (this->tabla[clave]->getValor() == valor)
         return clave;
 
@@ -79,13 +76,18 @@ int TablaCerradaEnteros::buscarLineal(int valor) {
         posiciones -= NCASILLAS;
 
     bool haEncontradoValor{false};
-    while (posiciones != clave && !(this->tabla[posiciones]->getValor() == valor)) {
-        posiciones++;
+    while (posiciones != clave && !haEncontradoValor) {
+        if (this->tabla[posiciones] != nullptr)
+            haEncontradoValor = this->tabla[posiciones]->getValor() == valor;
+
+        if (!haEncontradoValor)
+            posiciones++;
+
         if (posiciones >= NCASILLAS)
-        posiciones -= NCASILLAS;
+            posiciones -= NCASILLAS;
     }
 
-    return (haEncontradoValor) ? posiciones - 1 : ELEMENTO_NO_ENCONTRADO;
+    return (haEncontradoValor) ? posiciones: ELEMENTO_NO_ENCONTRADO;
 }
 
 int TablaCerradaEnteros::hash(int valor){
