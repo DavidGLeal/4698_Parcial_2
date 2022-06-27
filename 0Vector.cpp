@@ -16,7 +16,7 @@ Vector::~Vector(){
 void Vector::push_back(const int &data) {
 
     if (elementos < capacidad) {
-        *(arrayInterno + elementos) = data;
+        arrayInterno[elementos] = data;
         elementos++;
     } else {
         auto tmp_arr = new int[capacidad * 2];
@@ -27,7 +27,7 @@ void Vector::push_back(const int &data) {
         delete [] arrayInterno;
         arrayInterno = tmp_arr;
 
-        *(arrayInterno + elementos) = data;
+        arrayInterno[elementos] = data;
         elementos++;
     }
 }
@@ -38,17 +38,17 @@ void Vector::push_back(const int &data) {
  * 
  * @return Una referencia al elemento en la posición dada.
  */
-int& Vector::operator[](size_t pos) {
-    if (pos >= 0 &&  pos <= elementos)
-        return *(this->arrayInterno + pos);
+int& Vector::operator[](int pos) {
+    if (pos >= 0 &&  pos < elementos)
+        return arrayInterno[pos];
     throw std::out_of_range("Elemento fuera de rango");
 }
 
-size_t Vector::size(){
+int Vector::size(){
     return elementos;
 }
 
-size_t Vector::capacity(){
+int Vector::capacity(){
     return capacidad;
 }
 
@@ -68,7 +68,7 @@ int *Vector::get(int pos) {
     return 0;
 }
 
-size_t Vector::getElementos(){
+int Vector::getElementos(){
     return this->elementos;
 }
 

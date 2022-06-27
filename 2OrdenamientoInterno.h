@@ -1,17 +1,18 @@
 #pragma once
 #include <iostream>
 #include "0Vector.cpp"
+#include "6ImprimirInterno.cpp"
 
 using namespace std;
 
-class OrdenamientoInterno{
+class OrdenamientoInterno: public ImprimirInterno{
 	
 	private:
 		Vector vector;
 		
 	public:
 		
-		OrdenamientoInterno(Vector v){
+		OrdenamientoInterno(Vector &v){
 			this->vector = v;
 		}
 		void ordenarIntercambio();

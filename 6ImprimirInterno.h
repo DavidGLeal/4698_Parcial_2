@@ -9,6 +9,6 @@ using namespace std;
 class ImprimirInterno{
     
     public:
-     	void imprimir(Vector vector);
+     	void imprimir(Vector &vector);
        	 
 };

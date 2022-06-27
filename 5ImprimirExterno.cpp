@@ -1,3 +1,4 @@
+#pragma once
 #include "5ImprimirExterno.h"
 
 //! FUNCION IMPRIMIR

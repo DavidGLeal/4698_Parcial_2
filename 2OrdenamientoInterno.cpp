@@ -45,8 +45,8 @@ void OrdenamientoInterno::ordenarIntercambio(){
 }
 
 /**
- * Es una función que ordena un vector de números enteros usando el algoritmo de burbuja
- */
+* Es una función que ordena un vector de números enteros usando el algoritmo de burbuja
+*/
 void OrdenamientoInterno::ordenarBurbuja(){ 
     //GRUPO 2 - ORDENAMIENTO BURBUJA
     int aux;
@@ -95,8 +95,8 @@ void OrdenamientoInterno::ordenarBurbuja(){
     
 
 /**
- * Es una función que ordena un vector de enteros usando el algoritmo Shell Sort
- */
+* Es una función que ordena un vector de enteros usando el algoritmo Shell Sort
+*/
 void OrdenamientoInterno::ordenarShellSort(){
    int j, incremento, aux; // incremento: Tamaño del bloque de separación de los elementos dentro del método Shell.
     incremento = vector.size() / 2; // De acuerdo al algoritmo original, el incremento se divide en 2 en cada iteración.
@@ -124,6 +124,9 @@ void OrdenamientoInterno::ordenarShellSort(){
     }
 }
 
+/**
+* Toma una matriz de números enteros y los ordena en orden ascendente con el algoritmo de distribucion
+*/
 void OrdenamientoInterno::ordenarDistribucion(){
 
 	//GRUPO 16 - ORDENAMIENTO COUNTING SORT
@@ -134,43 +137,42 @@ void OrdenamientoInterno::ordenarDistribucion(){
       		if(vector[i] > max)
         	max = vector[i];
    	}
+
    	int aux1[max+1];     
    	for(int i = 0; i<=max; i++)
    	{
-   	aux1[i] = 0;
+   	    aux1[i] = 0;
    	}
+
   	 for(int i = 1; i <=vector.size(); i++)
    	{
    		aux1[vector[i]]++; 
-  	 }
+  	}
+
    	for(int i = 1; i<=max; i++)
-  	 {
+    {
    		aux1[i] += aux1[i-1]; 
    	} 
-  	 for(int i = vector.size(); i>=1; i--) {
+
+  	for(int i = vector.size(); i>=1; i--) {
+
       	salida[aux1[vector[i]]] = vector[i];
       	aux1[vector[i]] -= 1; 
- 	  }
+ 	}
+
    	for(int i = 1; i<=vector.size(); i++) {
       	vector[i] = salida[i]; 
-  	 }
+  	}
     
 }
 
-// void OrdenamientoInterno::imprimirInterno() {
-// 		for (int i = 0; i < v.size(); i++)
-// 			//for (int i = 0; i < vector.size(); i++)
-// 			cout << *(v.get(i)) << " ";
-// 			//cout << *(v + i) << " ";
-// }
-
-
+/**
+ * Toma un vector de números enteros y los ordena usando el algoritmo bucket
+*/
 void OrdenamientoInterno::ordenarBucket(){
     
-    Vector arre = getVector();
-	int c = arre.size();
+	int c = vector.size();
 	int col=10,cnt=0,k=0,d=1,l=0;
-	//int *ordenado = new int[c];
 	Vector ordenado;
 	int **matriz = new int*[c];
 	
@@ -179,11 +181,11 @@ void OrdenamientoInterno::ordenarBucket(){
 		matriz[z] = new int[col];
 	}
 	
-	int max= *arre.get(0);
+	int max= *vector.get(0);
 	for(int a=1;a<c;a++)
     {
-        if(*arre.get(a)>max)
-            max=*arre.get(a);
+        if(*vector.get(a)>max)
+            max=*vector.get(a);
     }
     while(max>0)
     {
@@ -199,8 +201,8 @@ void OrdenamientoInterno::ordenarBucket(){
 		}
         for(int y=0;y<c;y++)
         {
-            k=(arre[y]/d)%10;
-            matriz[k][j[k]]=*arre.get(y);
+            k=(vector[y]/d)%10;
+            matriz[k][j[k]]=*vector.get(y);
             j[k]++;
         }
         
@@ -234,9 +236,14 @@ void OrdenamientoInterno::ordenarBucket(){
         
         d*=10;
     }
-    
+
+    setVector(ordenado);
 }
 
+/**
+ * La función toma un vector de números enteros y los ordena usando el algoritmo de clasificación radix
+ * 
+ */
 void OrdenamientoInterno::ordenarRadix(){
 
     auto maximo = [&] (){
