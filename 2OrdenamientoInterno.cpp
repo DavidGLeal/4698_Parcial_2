@@ -288,7 +288,7 @@ void OrdenamientoInterno::ordenarBucket(){
 		}
         for(int y=0;y<c;y++)
         {
-            k=(vector[y]/d)%10;
+            k=(abs(vector[y])/d)%10;
             matriz[k][j[k]]=*vector.get(y);
             j[k]++;
         }
