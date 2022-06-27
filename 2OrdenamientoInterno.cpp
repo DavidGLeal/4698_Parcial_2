@@ -161,34 +161,76 @@ void OrdenamientoInterno::ordenarShellSort(){
 void OrdenamientoInterno::ordenarCountingSort(){
 
     int tam{vector.size()};
-    int *aux = new int[tam];
-    encerar(aux,tam);
-
-    int max = getMax(vector);
-    int *count = new int[max+1];
-    encerar(count,max+1);
-
-    for(int i=0; i<tam; i++){
-        count[vector[i]]++;
-    }
-
-    for(int i=1; i<=max; i++){
-        count[i]+=count[i-1];
-    }
-
-    for(int i=tam-1; i>=0; i--){
-        aux[count[vector[i]]-1]= vector[i];
-        count[vector[i]]--;
-    }
-    for(int i=0; i<tam; i++){
-        vector[i]=aux[i];
-    }
+    Vector vN,vP;
     
-    delete[] aux;
-    delete[] count;
+    for(int i=0; i<tam; i++){
+        if(vector[i]<0)
+        {
+        	vN.push_back(abs(vector[i]));
+		}else{
+			vP.push_back(vector[i]);
+		}
+    }
+    int auxNCount=0;
+    int tamN{vN.size()},tamP{vP.size()};
+    if(tamN!=0)
+    {
+    	
+    	int *auxN = new int[tamN];
+    	encerar(auxN,tamN);
+    	
+    	int maxN = getMax(vN);
+	    int *countN = new int[maxN+1];
+	    encerar(countN,maxN+1);
+	    
+	    for(int i=0; i<tamN; i++){
+	        countN[vN[i]]++;
+	    }
+	
+	    for(int i=1; i<=maxN; i++){
+	        countN[i]+=countN[i-1];
+	    }
+	
+	    for(int i=tamN-1; i>=0; i--){
+	        auxN[countN[vN[i]]-1]= vN[i];
+	        countN[vN[i]]--;
+	    }
+	    for(int i=tamN-1; i>=0; i--){
+	        vector[auxNCount]=-1*(auxN[i]);
+	        auxNCount++;
+	    }
+	    delete[] auxN;
+   		delete[] countN;
+	}
+	if(tamP!=0)
+	{
+		int *auxP = new int[tamP];
+	    encerar(auxP,tamP);
+	    
+	    int maxP = getMax(vP);
+	    int *countP = new int[maxP+1];
+	    encerar(countP,maxP+1);
+	
+	    for(int i=0; i<tamP; i++){
+	        countP[vP[i]]++;
+	    }
+	
+	    for(int i=1; i<=maxP; i++){
+	        countP[i]+=countP[i-1];
+	    }
+	
+	    for(int i=tamP-1; i>=0; i--){
+	        auxP[countP[vP[i]]-1]= vP[i];
+	        countP[vP[i]]--;
+	    }
+	    for(int i=0; i<tamP; i++){
+	        vector[auxNCount]=auxP[i];
+	        auxNCount++;
+	    }
+	    delete[] auxP;
+   		delete[] countP;
+	}
 }
-
-
 void OrdenamientoInterno::encerar(int *vec, int tam){
    for(int i=0; i<tam; i++){
       *(vec+i)=0;
