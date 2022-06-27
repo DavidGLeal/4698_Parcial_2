@@ -32,6 +32,10 @@ void OrdenamientoInterno::copiarVector(Vector &_vector){
     }
 } 
 
+void  OrdenamientoInterno::vaciarVector(){
+    vector.vaciar();
+}
+
 /**
  * Es una función que ordena un vector de números enteros usando el algoritmo de intercambio
  */

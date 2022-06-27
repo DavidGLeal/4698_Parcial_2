@@ -52,9 +52,24 @@ int ingresoD(){
 void ingresarInternos(){
 
 	int cont{0};
-
 	cout<<"\n";
 	
+	vector1.vaciar();
+	vector2.vaciar();
+	vector3.vaciar();
+	vector4.vaciar();
+	vector5.vaciar();
+	vector6.vaciar();
+	vector7.vaciar();
+
+	intercambio->vaciarVector();
+	burbuja->vaciarVector();
+	quicksort->vaciarVector();
+	shell->vaciarVector();
+	counting->vaciarVector();
+	bucket ->vaciarVector();
+	radix->vaciarVector();
+
 	for (int i = 0; i< 10; i++){
 
 		int num{ingresoD()};
@@ -78,9 +93,8 @@ void ingresarInternos(){
 	quicksort->setVector(vector3);
 	shell->setVector(vector4);
 	counting->setVector(vector5);
-	//falta uno bb
+	bucket ->setVector(vector6);
 	radix->setVector(vector7);
-	//Los demas van aca, con 2,3,4 y asi sucesivamente
 
 	cout<<"\n";
 }
@@ -265,7 +279,7 @@ void SubmenuDistribucion(){
 		{
 			case 1:{
 				system("cls");
-				cout<<"\t\tCOUNTING"<<endl;
+				cout<<"\t\tCounting"<<endl;
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
@@ -282,7 +296,19 @@ void SubmenuDistribucion(){
 			}		
 			case 2:{
 				system("cls");
-				IngresarDatos();
+				cout<<"\t\tBucket"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+				cout<<"\n Arreglo sin ordenar"<<endl;
+				bucket->imprimirInterno();
+				bucket->ordenarCountingSort();							
+				cout<<"\n Arreglo ordenado"<<endl;
+				bucket->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
 			}					
 			case 3:{
