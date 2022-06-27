@@ -14,8 +14,8 @@ int main(){
     v.push_back(47);
     v.push_back(2);
     v.push_back(3);
-    v.push_back(98);
-    v.push_back(7);
+    v.push_back(-98);
+    v.push_back(-28378);
     v.push_back(74);
     v.push_back(123);
 
@@ -23,7 +23,7 @@ int main(){
     OrdenamientoInterno *a = new OrdenamientoInterno(v);
 
     a->imprimirInterno();
-    a->ordenarCountingSort();
+    a->ordenarRadix();
     a->imprimirInterno();
 
     return 0;
