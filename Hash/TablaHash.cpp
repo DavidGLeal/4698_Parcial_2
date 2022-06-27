@@ -53,16 +53,6 @@ void TablaHashCerrada::imprimir(){
         cout << endl;
     }
 }
-int TablaHashCerrada::hash(string cad){
-    int suma = 0;
-    for(int i = 0; i < cad.length(); i++){
-        suma += cad[i];
-    }
-    return suma % NCASILLAS;
-}
-
-<<<<<<< HEAD
-
 int TablaHashCerrada::quadraticProbing(int pos){
     int i = 1;
     if (tabla[pos] == NULL){
@@ -76,8 +66,6 @@ int TablaHashCerrada::quadraticProbing(int pos){
     return pos;
     }
 }
-
-
 void TablaHashCerrada::insertar(string cad){
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
@@ -89,7 +77,14 @@ void TablaHashCerrada::insertar(string cad){
         tabla[pos] = new NodoCircular(cad);
     }
 }
-=======
+int TablaHashCerrada::hash(string cad){
+    int suma = 0;
+    for(int i = 0; i < cad.length(); i++){
+        suma += cad[i];
+    }
+    return suma % NCASILLAS;
+}
+
 int TablaHashCerrada::hashDoble(string cad){
 
     int p = [](string cad){
@@ -130,4 +125,3 @@ void TablaHashCerrada::insertarDoble(string cad){
         aux->setSig(new NodoCircular(cad));
     }
 }
->>>>>>> 6fabb043d6bbb28e1d7c8a09caf2878eadd4579d
