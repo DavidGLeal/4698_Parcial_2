@@ -169,7 +169,7 @@ void OrdenamientoInterno::ordenarCountingSort(){
     for(int i=0; i<tam; i++){
         vector[i]=aux[i];
     }
-
+    
     delete[] aux;
     delete[] count;
 }
