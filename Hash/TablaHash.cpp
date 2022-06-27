@@ -26,20 +26,6 @@ TablaHashCerrada::~TablaHashCerrada(){
     }
     delete[] tabla;
 }
-void TablaHashCerrada::insertar(string cad){
-    int pos = hash(cad);
-    NodoCircular *aux = tabla[pos];
-    if(tabla[pos] == NULL){
-        tabla[pos] = new NodoCircular(cad);
-    }
-    else{
-        aux = tabla[pos];
-        while(aux->getSig() != NULL){
-            aux = aux->getSig();
-        }
-        aux->setSig(new NodoCircular(cad));
-    }
-}
 void TablaHashCerrada::eliminar(string cad){
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
@@ -58,9 +44,10 @@ void TablaHashCerrada::eliminar(string cad){
 void TablaHashCerrada::imprimir(){
     for(int i = 0; i < NCASILLAS; i++){
         NodoCircular *aux = tabla[i];
+        int pos = i;
         aux = tabla[i];
         while(aux != NULL){
-            cout << aux->getCadena() <<" ";
+            cout << pos<<"<-"<<aux->getCadena() <<" ";
             aux = aux->getSig();
         }
         cout << endl;
@@ -72,4 +59,32 @@ int TablaHashCerrada::hash(string cad){
         suma += cad[i];
     }
     return suma % NCASILLAS;
+}
+
+
+int TablaHashCerrada::quadraticProbing(int pos){
+    int i = 1;
+    if (tabla[pos] == NULL){
+        return pos;
+    }
+    else{
+        while(tabla[pos] != NULL){
+            pos=(pos+(i*i)%NCASILLAS);
+            i++;
+        }
+    return pos;
+    }
+}
+
+
+void TablaHashCerrada::insertar(string cad){
+    int pos = hash(cad);
+    NodoCircular *aux = tabla[pos];
+
+    if(tabla[pos] == NULL){
+        tabla[pos] = new NodoCircular(cad);
+    }else{
+        pos = quadraticProbing(pos);
+        tabla[pos] = new NodoCircular(cad);
+    }
 }
