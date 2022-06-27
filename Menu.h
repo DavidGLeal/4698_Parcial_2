@@ -304,7 +304,7 @@ void MenuBusquedas(){
    
    const char *titulo = "Busquedas";
    const char *opciones[] = {"Ingreso Datos","Busqueda Binaria", "Busqueda Secuencial", "Regresar al menu principal"};
-   int n = 3;  
+   int n = 4;  
  
    do 
    {
