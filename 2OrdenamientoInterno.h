@@ -20,6 +20,8 @@ class OrdenamientoInterno: public ImprimirInterno{
 		OrdenamientoInterno(Vector &v){
 			this->vector = v;
 		}
+		OrdenamientoInterno(){
+		}
 		void ordenarIntercambio();
 		void ordenarBurbuja();
 		void ordenarQuicksort();
@@ -33,5 +35,7 @@ class OrdenamientoInterno: public ImprimirInterno{
 		void imprimirInterno();
 
 		void copiarVector(Vector &_vector);
+
+		void  vaciarVector();
 		
 };

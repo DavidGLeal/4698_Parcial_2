@@ -9,6 +9,7 @@
 #include "3OrdenamientoExterno.cpp"
 #include "2OrdenamientoInterno.cpp"
 #include "0Vector.cpp"
+#include "4Busqueda.cpp"
 #include "Win.h"
 
 #define TECLA_ARRIBA 72
@@ -26,7 +27,7 @@ int menu(const char *titulo, const char *opciones[], int n);
 	OrdenamientoInterno *burbuja = new OrdenamientoInterno();
 	OrdenamientoInterno *quicksort = new OrdenamientoInterno();
 	OrdenamientoInterno *shell = new OrdenamientoInterno();
-	//OrdenamientoInterno *bucket = new OrdenamientoInterno();
+	OrdenamientoInterno *bucket = new OrdenamientoInterno();
 	OrdenamientoInterno *counting = new OrdenamientoInterno();
 	OrdenamientoInterno *radix = new OrdenamientoInterno();
 	Vector vector1;
@@ -37,13 +38,18 @@ int menu(const char *titulo, const char *opciones[], int n);
 	Vector vector6;
 	Vector vector7;
 
+	Busqueda *binaria = new Busqueda();
+	Busqueda *secuencial = new Busqueda();
+	Vector bvector1;
+	Vector bvector2;
+
 
 
 int ingresoD(){
 
 	IngresoDatos *i = new IngresoDatos();
 	cout << "\n";
-	int num = i->funcionPrincipalEnteros("Ingrese sus numeros: ");
+	int num = i->funcionPrincipalEnteros("Ingrese el numero: ");
 
 	return num;
 }
@@ -52,9 +58,24 @@ int ingresoD(){
 void ingresarInternos(){
 
 	int cont{0};
-
 	cout<<"\n";
 	
+	vector1.vaciar();
+	vector2.vaciar();
+	vector3.vaciar();
+	vector4.vaciar();
+	vector5.vaciar();
+	vector6.vaciar();
+	vector7.vaciar();
+
+	intercambio->vaciarVector();
+	burbuja->vaciarVector();
+	quicksort->vaciarVector();
+	shell->vaciarVector();
+	counting->vaciarVector();
+	bucket ->vaciarVector();
+	radix->vaciarVector();
+
 	for (int i = 0; i< 10; i++){
 
 		int num{ingresoD()};
@@ -78,11 +99,74 @@ void ingresarInternos(){
 	quicksort->setVector(vector3);
 	shell->setVector(vector4);
 	counting->setVector(vector5);
-	//falta uno bb
+	bucket ->setVector(vector6);
 	radix->setVector(vector7);
-	//Los demas van aca, con 2,3,4 y asi sucesivamente
 
 	cout<<"\n";
+}
+
+void ingresarBusqueda(){
+
+	int cont{0};
+	cout<<"\n";
+	
+	bvector1.vaciar();
+	bvector2.vaciar();
+
+
+	binaria->vaciarVector();
+	secuencial->vaciarVector();
+	
+	for (int i = 0; i< 10; i++){
+
+		int num{ingresoD()};
+
+		if(num == -10101010){
+			i = 10;
+		}else{
+			bvector1.push_back(num);
+			bvector2.push_back(num);
+			++cont;
+		}
+	}
+
+	binaria->setVector(bvector1);
+	secuencial->setVector(bvector2);
+
+
+	cout<<"\n";
+}
+
+bool ingresarNumeroBuscadoBin(){
+;
+	cout<<"\n";
+	
+		int num{ingresoD()};
+
+		if(num == -10101010){
+			cout << "Vacio" <<endl;
+			return false;
+		}else{
+			binaria->setDato(num);
+			cout<<"\n";
+			return true;
+		}
+}
+
+bool ingresarNumeroBuscadoSec(){
+
+	cout<<"\n";
+	
+		int num{ingresoD()};
+
+		if(num == -10101010){
+			cout << "Vacio"<<endl;
+			return false;
+		}else{
+			secuencial->setDato(num);
+			cout<<"\n";
+			return true;
+		}
 }
 
 
@@ -127,7 +211,7 @@ int IngresarDatos(){
 
 int validar_arreglo(char* arreglo)
 {
-    int i;
+    unsigned long long i;
     for(i=0; i<strlen(arreglo); i++)
     {
         if(!(isdigit(arreglo[i])))
@@ -219,8 +303,8 @@ void MenuBusquedas(){
  
    
    const char *titulo = "Busquedas";
-   const char *opciones[] = {"Busqueda Binaria", "Busqueda Secuencial", "Regresar al menu principal"};
-   int n = 3;  
+   const char *opciones[] = {"Ingreso Datos","Busqueda Binaria", "Busqueda Secuencial", "Regresar al menu principal"};
+   int n = 4;  
  
    do 
    {
@@ -230,13 +314,25 @@ void MenuBusquedas(){
 		{
 			case 1:
 				system("cls");
-
+				ingresarBusqueda();
+				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
+				system("pause");
 				break;
 			case 2:
 				system("cls");
-
+				if(ingresarNumeroBuscadoBin()){
+					binaria->busquedaBinaria();
+					system("pause");
+				}
 				break;	
 			case 3:{
+				system("cls");
+				if(ingresarNumeroBuscadoSec()){
+					secuencial->busquedaSecuencial();
+					system("pause");
+				}
+				break;
+			}case 4:{
 				system("cls");
 				cout<<endl;
 				cout<<"Regresando..."<<endl;
@@ -265,7 +361,7 @@ void SubmenuDistribucion(){
 		{
 			case 1:{
 				system("cls");
-				cout<<"\t\tCOUNTING"<<endl;
+				cout<<"\t\tCounting"<<endl;
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
@@ -282,7 +378,19 @@ void SubmenuDistribucion(){
 			}		
 			case 2:{
 				system("cls");
-				IngresarDatos();
+				cout<<"\t\tBucket"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+				cout<<"\n Arreglo sin ordenar"<<endl;
+				bucket->imprimirInterno();
+				bucket->ordenarBucket();							
+				cout<<"\n Arreglo ordenado"<<endl;
+				bucket->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
 			}					
 			case 3:{
@@ -317,7 +425,7 @@ void MenuOrdenamientos(){
 				//PARA INGRESAR DATOOS		
 				ingresarInternos();
 				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
-				//a
+				
 				
 				break;
 			}	
