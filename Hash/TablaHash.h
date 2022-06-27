@@ -14,6 +14,12 @@ class TablaHashCerrada{
         void insertar(string cad);
         void eliminar(string cad);
         void imprimir();
+<<<<<<< HEAD
         int hash(string cad);
         int quadraticProbing(int pos);        
+=======
+        int hash(string cad);  
+        int hashDoble(string cad); 
+         void insertarDoble(string cad);     
+>>>>>>> 6fabb043d6bbb28e1d7c8a09caf2878eadd4579d
 };

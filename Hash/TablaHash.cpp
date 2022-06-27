@@ -61,6 +61,7 @@ int TablaHashCerrada::hash(string cad){
     return suma % NCASILLAS;
 }
 
+<<<<<<< HEAD
 
 int TablaHashCerrada::quadraticProbing(int pos){
     int i = 1;
@@ -88,3 +89,45 @@ void TablaHashCerrada::insertar(string cad){
         tabla[pos] = new NodoCircular(cad);
     }
 }
+=======
+int TablaHashCerrada::hashDoble(string cad){
+
+    int p = [](string cad){
+    	int suma = 0;
+    	for(int i = 0; i < cad.length(); i++){
+        suma += cad[i];
+	    }
+	    return suma % NCASILLAS;
+	}(cad);
+    int indice = p;
+    int t = [](string cad, int p){
+    	int suma = 0;
+	    int indice = 0;
+	    suma = p;
+	    indice = 7 -( suma % 7);
+	    return indice;
+	}(cad,p);
+    while(tabla[indice] != NULL){
+        indice = indice + t;
+        if(indice>NCASILLAS){
+        	indice = indice%NCASILLAS;
+		}
+    }
+    	//cout<<indice<<endl;
+    return indice;
+}
+void TablaHashCerrada::insertarDoble(string cad){
+    int pos = hashDoble(cad);
+    NodoCircular *aux = tabla[pos];
+    if(tabla[pos] == NULL){
+        tabla[pos] = new NodoCircular(cad);
+    }
+    else{
+        aux = tabla[pos];
+        while(aux->getSig() != NULL){
+            aux = aux->getSig();
+        }
+        aux->setSig(new NodoCircular(cad));
+    }
+}
+>>>>>>> 6fabb043d6bbb28e1d7c8a09caf2878eadd4579d
