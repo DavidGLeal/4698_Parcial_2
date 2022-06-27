@@ -63,6 +63,31 @@ void TablaCerradaEnteros::imprimir(){
         cout << endl;
     }
 }
+
+int TablaCerradaEnteros::buscarLineal(int valor) {
+    const int ELEMENTO_NO_ENCONTRADO{-1};
+    int clave{hashlineal(valor)};
+
+    if (this->tabla[clave] == nullptr)
+        return ELEMENTO_NO_ENCONTRADO;
+
+    if (this->tabla[clave]->getValor() == valor)
+        return clave;
+
+    int posiciones = clave + 1;
+    if (posiciones >= NCASILLAS)
+        posiciones -= NCASILLAS;
+
+    bool haEncontradoValor{false};
+    while (posiciones != clave && !(this->tabla[posiciones]->getValor() == valor)) {
+        posiciones++;
+        if (posiciones >= NCASILLAS)
+        posiciones -= NCASILLAS;
+    }
+
+    return (haEncontradoValor) ? posiciones - 1 : ELEMENTO_NO_ENCONTRADO;
+}
+
 int TablaCerradaEnteros::hash(int valor){
     return valor % NCASILLAS;
 }
@@ -78,7 +103,7 @@ int TablaCerradaEnteros::hashlineal(int pos){
 	return pos;
 }
 
-//Cuadr·tico
+//Cuadr√°tico
 int TablaCerradaEnteros::hashCuadratico(int pos){
 	int i=1;
 	while(tabla[pos]!=NULL){
@@ -89,7 +114,7 @@ int TablaCerradaEnteros::hashCuadratico(int pos){
 } 
 
 //Doble hash
-/*
+
 int TablaCerradaEnteros::hash2(int valor)
 {
     int i = valor % NCASILLAS;
@@ -134,4 +159,4 @@ int TablaCerradaEnteros::hash2(int valor)
 		return hash2();
 	}
 }   
-*/
+

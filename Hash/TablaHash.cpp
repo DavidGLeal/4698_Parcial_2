@@ -26,20 +26,6 @@ TablaHashCerrada::~TablaHashCerrada(){
     }
     delete[] tabla;
 }
-void TablaHashCerrada::insertar(string cad){
-    int pos = hash(cad);
-    NodoCircular *aux = tabla[pos];
-    if(tabla[pos] == NULL){
-        tabla[pos] = new NodoCircular(cad);
-    }
-    else{
-        aux = tabla[pos];
-        while(aux->getSig() != NULL){
-            aux = aux->getSig();
-        }
-        aux->setSig(new NodoCircular(cad));
-    }
-}
 void TablaHashCerrada::eliminar(string cad){
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
@@ -58,14 +44,44 @@ void TablaHashCerrada::eliminar(string cad){
 void TablaHashCerrada::imprimir(){
     for(int i = 0; i < NCASILLAS; i++){
         NodoCircular *aux = tabla[i];
+        int pos = i;
         aux = tabla[i];
         while(aux != NULL){
-            cout << aux->getCadena() <<" ";
+            cout << pos<<"<-"<<aux->getCadena() <<" ";
             aux = aux->getSig();
         }
         cout << endl;
     }
 }
+int TablaHashCerrada::quadraticProbing(string cad, int i){
+    int suma =0;
+    int indice =0;
+    suma = hash(cad);
+    indice = (suma + i*i) % NCASILLAS;
+    return indice;
+
+}
+void TablaHashCerrada::insertar(string cad, int opc)
+{
+    int i = 0;
+    bool ocupado = false;
+    int indice = 0;
+    while (ocupado == false)
+    {
+         indice = quadraticProbing(cad, i);
+         NodoCircular *aux = tabla[indice];
+        if (tabla[indice] == NULL)
+        {
+            tabla[indice] = new NodoCircular(cad);
+            ocupado = true;
+        }
+        else
+        {
+            i++;
+        }
+    }
+}
+
 int TablaHashCerrada::hash(string cad){
     int suma = 0;
     for(int i = 0; i < cad.length(); i++){
@@ -73,3 +89,77 @@ int TablaHashCerrada::hash(string cad){
     }
     return suma % NCASILLAS;
 }
+
+int TablaHashCerrada::hashDoble(string cad){
+
+    int p = [](string cad){
+    	int suma = 0;
+    	for(int i = 0; i < cad.length(); i++){
+        suma += cad[i];
+	    }
+	    return suma % NCASILLAS;
+	}(cad);
+    int indice = p;
+    int t = [](string cad, int p){
+    	int suma = 0;
+	    int indice = 0;
+	    suma = p;
+	    indice = 7 -( suma % 7);
+	    return indice;
+	}(cad,p);
+    while(tabla[indice] != NULL){
+        indice = indice + t;
+        if(indice>NCASILLAS){
+        	indice = indice%NCASILLAS;
+		}
+    }
+    	//cout<<indice<<endl;
+    return indice;
+}
+void TablaHashCerrada::insertarDoble(string cad){
+    int pos = hashDoble(cad);
+    NodoCircular *aux = tabla[pos];
+    if(tabla[pos] == NULL){
+        tabla[pos] = new NodoCircular(cad);
+    }
+    else{
+        aux = tabla[pos];
+        while(aux->getSig() != NULL){
+            aux = aux->getSig();
+        }
+        aux->setSig(new NodoCircular(cad));
+    }
+}
+
+//Sondeo Lineal
+void TablaHashCerrada::insertarLineal(string cad)
+{
+    int i = 0;
+    bool ocupado = false;
+    int indice = 0;
+    while (ocupado == false)
+    {
+         indice = hashF(cad, i);
+         NodoCircular *aux = tabla[indice];
+        if (tabla[indice] == NULL)
+        {
+            tabla[indice] = new NodoCircular(cad);
+            ocupado = true;
+        }
+        else
+        {
+            i++;
+        }
+    }
+}
+
+int TablaHashCerrada::hashF(string cad, int i)
+{
+    int suma = 0;
+    int indice = 0;
+    suma = hash(cad);
+    indice = (suma + i) % NCASILLAS; //Lineal
+    return indice;
+}
+
+

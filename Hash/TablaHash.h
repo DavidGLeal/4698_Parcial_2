@@ -7,11 +7,17 @@
 class TablaHashCerrada{
     private:
         NodoCircular **tabla;
+        string dato;
     public:
         TablaHashCerrada();
         ~TablaHashCerrada();
-        void insertar(string cad);
+        void insertar(string cad,int opc);
         void eliminar(string cad);
         void imprimir();
-        int hash(string cad);        
+        int hash(string cad); 
+        int quadraticProbing(string cad , int i);
+        int hashDoble(string cad); 
+        void insertarLineal(string cad);
+        int hashF(string cad, int i);
+        void insertarDoble(string cad);   
 };
