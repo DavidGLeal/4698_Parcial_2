@@ -45,7 +45,6 @@ void MetodoExterno::ordenarPorNatural()
 {
 
     limpiar();
-    //generarAleatorios(-1001, 1002);
     particionInicial();
     particionFusion();
 
