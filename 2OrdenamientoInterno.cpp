@@ -65,11 +65,19 @@ void OrdenamientoInterno::ordenarBurbuja(){
 /**
 * Es una función que ordena un vector de enteros usando el algoritmo Quicksort
 */
-
 void OrdenamientoInterno::ordenarQuicksort() {
 	ordenarQuick(vector,0,vector.size() - 1); 
 }
 
+/**
+ * Si el vector está vacío o solo tiene un elemento, regresa. De lo contrario, divida el vector en dos
+ * partes, ordene la primera parte, ordene la segunda parte y regrese
+ * 
+ * @param vector El vector a ordenar.
+ * @param inicio el primer índice del vector
+ * @param fin el último índice del vector
+ * 
+ */
 void OrdenamientoInterno::ordenarQuick(Vector &vector, size_t inicio, size_t fin) { 
     if (inicio >= fin)
         return;
@@ -78,6 +86,15 @@ void OrdenamientoInterno::ordenarQuick(Vector &vector, size_t inicio, size_t fin
     ordenarQuick(vector, lim + 1, fin);
 }
 
+/**
+ * Toma un vector, un índice de inicio y un índice final, y devuelve el índice del elemento pivote
+ * 
+ * @param vector El vector a ordenar.
+ * @param inicio el comienzo del vector
+ * @param fin el último índice del vector
+ * 
+ * @return El índice del pivote.
+ */
 int OrdenamientoInterno::dividir(Vector &vector, size_t inicio,size_t fin) {
     int pivote = *(vector.get(inicio));
     auto i = inicio + 1; //i=izquierda

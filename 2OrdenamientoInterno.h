@@ -8,8 +8,7 @@ using namespace std;
 class OrdenamientoInterno: public ImprimirInterno{
 	
 	private:
-		Vector vector;
-		
+		Vector vector;	
 		int dividir(Vector&, size_t, size_t); //Metodo para que funcione el Quicksort
 		void ordenarQuick(Vector&, size_t, size_t); //Metodo para que funcione el Quicksort
 		
