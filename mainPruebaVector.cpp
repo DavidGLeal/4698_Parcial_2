@@ -20,14 +20,11 @@ int main(){
     v.push_back(123);
 
 
-    OrdenamientoInterno *intercambio = new OrdenamientoInterno(v);
-    OrdenamientoInterno *burbuja = new OrdenamientoInterno(v);
+    OrdenamientoInterno *a = new OrdenamientoInterno(v);
 
-    intercambio->imprimirInterno();
-    intercambio->ordenarIntercambio();
-    intercambio->imprimirInterno();
-
-    burbuja->imprimirInterno();
+    a->imprimirInterno();
+    a->ordenarCountingSort();
+    a->imprimirInterno();
 
     return 0;
 }

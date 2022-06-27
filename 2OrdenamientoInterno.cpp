@@ -18,15 +18,8 @@ Vector OrdenamientoInterno::getVector(){
  * 
  * @param _vector
  */
-void OrdenamientoInterno::setVector(Vector _vector){
-
-    if (!this->vector.empty()) {
-        this->vector.~Vector();
-    }
-
-    for (int i{}; i < _vector.size(); i++) {
-        this->vector.push_back(_vector[i]);
-    }
+void OrdenamientoInterno::setVector(Vector &_vector){
+    this->vector = _vector;
 } 
 
 /**
@@ -151,43 +144,57 @@ void OrdenamientoInterno::ordenarShellSort(){
 /**
 * Toma una matriz de números enteros y los ordena en orden ascendente con el algoritmo de distribucion
 */
-void OrdenamientoInterno::ordenarDistribucion(){
+void OrdenamientoInterno::ordenarCountingSort(){
 
-	//GRUPO 16 - ORDENAMIENTO COUNTING SORT
-	int max = vector[1];
-	int salida[vector.size()+1];  	
-	for(int i = 2; i<=vector.size(); i++) 
-	{
-      		if(vector[i] > max)
-        	max = vector[i];
-   	}
+    int tam{vector.size()};
+    int *aux = new int[tam];
+    encerar(aux,tam);
 
-   	int aux1[max+1];     
-   	for(int i = 0; i<=max; i++)
-   	{
-   	    aux1[i] = 0;
-   	}
+    int max = getMax(vector);
+    int *count = new int[max+1];
+    encerar(count,max+1);
 
-  	 for(int i = 1; i <=vector.size(); i++)
-   	{
-   		aux1[vector[i]]++; 
-  	}
+    for(int i=0; i<tam; i++){
+        count[vector[i]]++;
+    }
 
-   	for(int i = 1; i<=max; i++)
-    {
-   		aux1[i] += aux1[i-1]; 
-   	} 
+    for(int i=1; i<=max; i++){
+        count[i]+=count[i-1];
+    }
 
-  	for(int i = vector.size(); i>=1; i--) {
+    for(int i=tam-1; i>=0; i--){
+        aux[count[vector[i]]-1]= vector[i];
+        count[vector[i]]--;
+    }
+    for(int i=0; i<tam; i++){
+        vector[i]=aux[i];
+    }
 
-      	salida[aux1[vector[i]]] = vector[i];
-      	aux1[vector[i]] -= 1; 
- 	}
+    delete[] aux;
+    delete[] count;
+}
 
-   	for(int i = 1; i<=vector.size(); i++) {
-      	vector[i] = salida[i]; 
-  	}
-    
+
+void OrdenamientoInterno::encerar(int *vec, int tam){
+   for(int i=0; i<tam; i++){
+      *(vec+i)=0;
+   }
+}
+
+void OrdenamientoInterno::encerar(Vector &v){
+   for(int i=0; i<v.size(); i++){
+      v[i] = 0;
+   }
+}
+
+int OrdenamientoInterno::getMax(Vector &v){
+   int max{v[0]};
+   for(int i=1; i<v.size(); i++){
+      if(v[i] > max){
+         max= v[i];
+      }
+   }
+   return max;
 }
 
 /**
@@ -253,7 +260,7 @@ void OrdenamientoInterno::ordenarBucket(){
             for(k=0;k<j[b];k++)
             {
             	int aux =matriz[b][k];
-                ordenado.push_back(matriz[b][k]);
+                ordenado.push_back(aux);
                 l++;
             }
         }
@@ -261,6 +268,9 @@ void OrdenamientoInterno::ordenarBucket(){
         d*=10;
     }
 
+    cout<< ordenado.size() <<endl;
+    cout << ordenado[0] <<endl;
+    cout << ordenado[3] <<endl;
     setVector(ordenado);
 }
 
