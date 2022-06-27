@@ -10,5 +10,5 @@ class ImprimirInterno{
     
     public:
      	void imprimir(Vector &vector);
-       	 
+       	void imprimirB(Vector &vector); 
 };

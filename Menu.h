@@ -27,7 +27,7 @@ int menu(const char *titulo, const char *opciones[], int n);
 	OrdenamientoInterno *quicksort = new OrdenamientoInterno();
 	OrdenamientoInterno *shell = new OrdenamientoInterno();
 	//OrdenamientoInterno *bucket = new OrdenamientoInterno();
-	//OrdenamientoInterno *counting = new OrdenamientoInterno();
+	OrdenamientoInterno *counting = new OrdenamientoInterno();
 	OrdenamientoInterno *radix = new OrdenamientoInterno();
 	Vector vector1;
 	Vector vector2;
@@ -75,6 +75,11 @@ void ingresarInternos(){
 
 	intercambio->setVector(vector1);
 	burbuja->setVector(vector2);
+	quicksort->setVector(vector3);
+	shell->setVector(vector4);
+	counting->setVector(vector5);
+	//falta uno bb
+	radix->setVector(vector7);
 	//Los demas van aca, con 2,3,4 y asi sucesivamente
 
 	cout<<"\n";
@@ -260,6 +265,19 @@ void SubmenuDistribucion(){
 		{
 			case 1:{
 				system("cls");
+				cout<<"\t\tCOUNTING"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+				cout<<"\n Arreglo sin ordenar"<<endl;
+				counting->imprimirInterno();
+				counting->ordenarCountingSort();							
+				cout<<"\n Arreglo ordenado"<<endl;
+				counting->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
 			}		
 			case 2:{
@@ -285,8 +303,8 @@ void MenuOrdenamientos(){
  
    
    const char *titulo = "Ordenamientos";
-   const char *opciones[] = {"Ordenar por Intercambio", "Ordenar por Burbuja", "Ordenar por Quicksort", "Ordenar por ShellSort","Ordenar por Distribucion","Ordenar por Radix","Regresar al menu principal"};
-   int n = 7;  
+   const char *opciones[] = {"Ingresar Datos", "Ordenar por Intercambio", "Ordenar por Burbuja", "Ordenar por Quicksort", "Ordenar por ShellSort","Ordenar por Distribucion","Ordenar por Radix","Regresar al menu principal"};
+   int n = 8;  
  
    do 
    {
@@ -296,50 +314,104 @@ void MenuOrdenamientos(){
 		{
 			case 1:{
 				system("cls");
-
-				if(vector1.empty()){
-					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
-				}else{	
-
 				//PARA INGRESAR DATOOS		
 				ingresarInternos();
 				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
 				//a
-
+				
+				break;
+			}	
+			case 2:{
+				system("cls");
+				cout<<"\t\tINTERCAMBIO"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+				cout<<"\n Arreglo sin ordenar"<<endl;
 				intercambio->imprimirInterno();
 				intercambio->ordenarIntercambio();
+				cout<<"\n Arreglo ordenado"<<endl;
 				intercambio->imprimirInterno();
 				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
 				system("pause");
 				}
 				break;
 			}		
-			case 2:{
-				system("cls");
-				IngresarDatos();
-				break;
-			}				
 			case 3:{
 				system("cls");
-				IngresarDatos();
+				cout<<"\t\tBURBUJA"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{
+				cout<<"\n Arreglo sin ordenar"<<endl;	
+				burbuja->imprimirInterno();
+				burbuja->ordenarBurbuja();
+				cout<<"\n Arreglo ordenado"<<endl;
+				burbuja->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
-			}
+			}				
 			case 4:{
 				system("cls");
-				IngresarDatos();
+				cout<<"\t\tQUICKSORT"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+				cout<<"\n Arreglo sin ordenar"<<endl;
+				quicksort->imprimirInterno();
+				quicksort->ordenarQuicksort();
+				cout<<"\n Arreglo ordenado"<<endl;
+				quicksort->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
 			}
 			case 5:{
 				system("cls");
-				SubmenuDistribucion();
+				cout<<"\t\tSHELL"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+				cout<<"\n Arreglo sin ordenar"<<endl;
+				shell->imprimirInterno();
+				shell->ordenarShellSort();				
+				cout<<"\n Arreglo ordenado"<<endl;
+				shell->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
 			}
 			case 6:{
 				system("cls");
-				IngresarDatos();
+				SubmenuDistribucion();
+				break;
+			}
+			case 7:{
+				system("cls");
+				cout<<"\t\tRADIX"<<endl;
+				printf("\n\n");
+				if(vector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+				}else{	
+				cout<<"\n Arreglo sin ordenar"<<endl;
+				radix->imprimirInterno();
+				radix->ordenarRadix();							
+				cout<<"\n Arreglo ordenado"<<endl;
+				radix->imprimirInterno();
+				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;
+				system("pause");
+				}
 				break;
 			}	
-			case 7:{
+			case 8:{
 				system("cls");
 				cout<<endl;
 				cout<<"Regresando..."<<endl;

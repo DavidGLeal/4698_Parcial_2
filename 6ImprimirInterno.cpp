@@ -7,3 +7,12 @@ void ImprimirInterno::imprimir(Vector &vector){
         cout << vector[i] << " ";
     }    
 }
+
+void ImprimirInterno::imprimirB(Vector &vector){
+    	for(int i = vector.getElementos()-10; i < vector.getElementos(); i++){
+        cout << vector[i] << " ";
+    	}    
+	
+	
+	
+}
