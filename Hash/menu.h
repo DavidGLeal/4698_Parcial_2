@@ -5,105 +5,82 @@
 #include <ctype.h> 
 #include <windows.h>
 #include <stdlib.h>
-#include "ingresoDatos.h"
-#include "windows.h"
+#include "TablaHashCerrada.cpp"
+#include "TablaCerradaEnteros.cpp"
+#include "TablaSondeoCuadraticoInt.cpp"
+#include "TablaSondeoLinealInt.cpp"
+#include "TablaHashDobleInt.cpp"
+#include "TablaHashDobleText.cpp"
+#include "TablaSondeoCuadraticoText.cpp"
+#include "TablaSondeoLinealText.cpp"
 
 #define TECLA_ARRIBA 72
 #define TECLA_ABAJO 80
 #define TECLA_ENTER 13
-int validar_arreglo(char arreglo[]);
 using namespace std;
+TablaSondeoCuadraticoInt  TablaSC;
+TablaSondeoLinealInt TablaSL;
+TablaHashDobleInt TablaHD;
+TablaSondeoCuadraticoText TablaCT;
+TablaHashDobleText TablaDT;
+TablaSondeoLinealText TablaLT;
+
 int menu(const char *titulo, const char *opciones[], int n);
 
-
-int ingresoD(){
-
-	IngresoDatos *i = new IngresoDatos();
-	cout << "\n";
-	int num = i->funcionPrincipalEnteros("Ingrese sus numeros: ");
-
-	return num;
+void gotoxy(int x, int y) {
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-
-int* ingresar(){
-
-	int *arreglo = new int[10];
+string IngresoString()
+{
 	
-	int cont{0};
-
-	cout<<"\n";
-	//cout << "contador " <<cont <<endl;
-
-	
-	for (int i = 0; i< 10; i++){
-
-		int num{ingresoD()};
-
-		if(num == -10101010){
-			i = 10;
-		}else{
-			arreglo[i] = num;
-			++cont;
+	char *dato=new char[30],c;
+	int i=0;
+	while((c=_getch())!=13){
+		if((c>=65&& c<=90)||(c>=97&&c<=122)){
+			printf("%c",c);
+			dato[i++]=c;}
+		else if(c==8||c==127){
+			printf("\b \b");
+			dato[i--]=0;
+			i--;
 		}
 	}
-
-	for (int i = 0; i< cont; i++){
-		cout<< arreglo[i] << " ";
-	}
-
-	cout<<"\n";
-	system("pause");
-	
-	return arreglo;
+	dato[i]='\0';
+	return dato;
 }
 
-
-
-int IngresarDatos(){
-	//char arreglo[10]={};
-	char *arreglo=new char[10];
-	int N{0};
-	int arreglovalido{0};
-
-	do
-   	{
-       printf("INGRESA UN arreglo ENTERO: ");
-       scanf("%s",arreglo);
-       N=validar_arreglo(arreglo);
-
-   	}while(N==0);
-
-   	arreglovalido=atoi(arreglo);
-   	printf("\nEL arreglo ES: %i",arreglovalido);
-
-   	getch();
-   	return 1;
-}
-
-int validar_arreglo(char* arreglo)
+int ingresar_Datosenteros()
 {
-    int i;
-    for(i=0; i<strlen(arreglo); i++)
-    {
-        if(!(isdigit(arreglo[i])))
-        {
-            printf("\nINGRESA SOLO arregloS\n");
-            getch();
-            return 0;
-        }
-    }
-    return 1;
+	char* dato = new char[10], c;
+	int i = 0;
+	printf("Seleccione una opcion: ");
+	while ((c = _getch()) != 13) {
+		if (c >= '0' && c <= '9') {
+			printf("%c", c);
+			dato[i++] = c;
+		}
+		else if (c == 8 || c == 127) {
+			printf("\b \b");
+			dato[i--] = 0;
+		}
+	}
+	dato[i] = '\0';
+	return atoi(dato);
 }
 
-
-void MenuIngreso(){
+void MenuIngresoLineal(){
    bool repite = true;
-   int opcion;   
-  
+   int opcion, longitud;   
+   string op;
+   string cadena;
+   char *cad;
    const char *titulo = "Escoja un ingreso";
-   const char *opciones[] = {"Ingreso con numeros", "Ingreso con texto","Retornar"};
-   int n = 3;  
+   const char *opciones[] = {"Insertar lineal (numeros)", "Insertar lineal(texto)","Eliminar (numeros)","Eliminar (texto)","Buscar (numero)","Buscar (texto)","Retornar"};
+   int n = 7;  
    do 
    {
       opcion = menu(titulo, opciones, n);
@@ -112,15 +89,256 @@ void MenuIngreso(){
 		{
 			case 1:{
 				system("cls");
-				int *arreglo = ingresar();
+				do{
+					int valor = ingresar_Datosenteros();
+					TablaSL.insertar(valor);
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+				TablaSL.imprimir();
+				system ("pause");
 				break;
 			}		
 			case 2:{
 				system("cls");
-				int *arreglo = ingresar();
+				do{
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaLT.insertar(cadena);
+					cout << "\n¿Desea ingresar otra? (s/n)"<<endl;
+					cin >> op;
+				}while(op == "s");
+					cout <<"\nTabla hash cerrada"<< endl;
+					TablaLT.imprimir();
+				system ("pause");
 				break;
-			}					
+			}		
 			case 3:{
+				system("cls");
+				do{
+				int valor = ingresar_Datosenteros();
+				TablaSL.eliminar(valor);
+				cout << "\n¿Desea eliminar otra? (s/n)" << endl;
+				cin >> op;
+				}while(op == "s");
+				TablaSL.imprimir();
+				system ("pause");
+				break;
+			}
+			case 4:{
+				system("cls");
+				do{
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaLT.eliminar(cadena);
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+					cout <<"\nTabla hash cerrada"<< endl;
+					TablaLT.imprimir();
+				system ("pause");
+				break;
+			}		
+			case 5:{
+				system("cls");
+					int valor = ingresar_Datosenteros();
+					TablaSL.buscar(valor);
+				system ("pause");
+				break;
+			}	
+			case 6:{
+				system("cls");
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaLT.buscar(cadena);
+				system ("pause");
+				break;
+			}							
+			case 7:{
+				system("cls");
+				cout<<endl;
+				cout<<"Regresando..."<<endl;
+				repite=false;
+				break;
+			}											
+		}
+	}while(repite);
+}
+
+void MenuIngresoCuadratico(){
+   bool repite = true;
+   int opcion, longitud;   
+   string op;
+   string cadena;
+   const char *titulo = "Escoja un ingreso";
+   const char *opciones[] = {"Insertar Cuadratico (numeros)", "Insertar Cuadratico(texto)","Eliminar (numeros)","Eliminar (texto)","Buscar (numero)","Buscar (texto)","Retornar"};
+   int n = 7;  
+   do 
+   {
+      opcion = menu(titulo, opciones, n);
+		
+		switch(opcion)
+		{
+			case 1:{
+				system("cls");
+				do{
+					int valor = ingresar_Datosenteros();
+					TablaSC.insertar(valor);
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+				TablaSC.imprimir();
+				system ("pause");
+				break;
+			}		
+			case 2:{
+				system("cls");
+				do{
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaCT.insertar(cadena); //METODO INSERTAR CUADRATICO
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+					cout <<"\nTabla hash cerrada"<< endl;
+					TablaCT.imprimir();
+				system ("pause");
+				break;
+			}		
+			case 3:{
+				system("cls");
+				do{
+				int valor = ingresar_Datosenteros();
+				TablaSC.eliminar(valor);
+				cout << "\n¿Desea eliminar otra? (s/n)" << endl;
+				cin >> op;
+				}while(op == "s");
+				TablaSC.imprimir();
+				system ("pause");
+				break;
+			}
+			case 4:{
+				system("cls");
+				do{
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaCT.eliminar(cadena);
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+					cout <<"\nTabla hash cerrada"<< endl;
+					TablaCT.imprimir();
+				system ("pause");
+				break;
+			}	
+			case 5:{
+				system("cls");
+					int valor = ingresar_Datosenteros();
+					TablaSC.buscar(valor);
+				system ("pause");
+				break;
+			}	
+			case 6:{
+				system("cls");
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaCT.buscar(cadena);
+				system ("pause");
+				break;
+			}				
+			case 7:{
+				system("cls");
+				cout<<endl;
+				cout<<"Regresando..."<<endl;
+				repite=false;
+				break;
+			}											
+		}
+	}while(repite);
+}
+
+void MenuIngresoDoble(){
+   bool repite = true;
+   int opcion, longitud;   
+   string op;
+   string cadena;
+   const char *titulo = "Escoja un ingreso";
+   const char *opciones[] = {"Insertar Doble (numeros)", "Insertar Doble (texto)","Eliminar (numeros)","Eliminar (texto)","Buscar (numero)","Buscar (texto)","Retornar"};
+   int n = 7;  
+   do 
+   {
+      opcion = menu(titulo, opciones, n);
+		
+		switch(opcion)
+		{
+			case 1:{
+				system("cls");
+				do{
+					int valor = ingresar_Datosenteros();
+					TablaHD.insertar(valor);
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+				TablaHD.imprimir();
+				system ("pause");
+				break;
+			}		
+			case 2:{
+				system("cls");
+				do{
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaDT.insertar(cadena);
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+					cout <<"\nTabla hash cerrada"<< endl;
+					TablaDT.imprimir();
+				system ("pause");
+				break;
+			}		
+			case 3:{
+				system("cls");
+				do{
+				int valor = ingresar_Datosenteros();
+				TablaHD.eliminar(valor);
+				cout << "\n¿Desea eliminar otra? (s/n)" << endl;
+				cin >> op;
+				}while(op == "s");
+				TablaHD.imprimir();
+				system ("pause");
+				break;
+			}
+			case 4:{
+				system("cls");
+				do{
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaDT.eliminar(cadena);
+					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
+					cin >> op;
+				}while(op == "s");
+					cout <<"\nTabla hash cerrada"<< endl;
+					TablaDT.imprimir();
+				system ("pause");
+				break;
+			}						
+			case 5:{
+				system("cls");
+					int valor = ingresar_Datosenteros();
+					TablaHD.buscar(valor);
+				system ("pause");
+				break;
+			}	
+			case 6:{
+				system("cls");
+					cout << "> Ingrese la letra o palabra: ";
+					cadena=IngresoString();
+					TablaDT.buscar(cadena);
+				system ("pause");
+				break;
+			}			
+			case 7:{
 				system("cls");
 				cout<<endl;
 				cout<<"Regresando..."<<endl;
@@ -133,32 +351,29 @@ void MenuIngreso(){
 
 void MenuPrincipal(){
 
-	system("mode con: cols=50 lines=23");
 	bool repite = true;
 	int opcion;   
- 
    
-   const char *titulo = "HASH CERRADO";
-   const char *opciones[] = {"Sondeo Lineal", "Sondeo Cuadratico","Doble Hash","Salir del programa"};
-   int n =4;  
+    const char *titulo = "HASH CERRADO";
+    const char *opciones[] = {"Sondeo Lineal", "Sondeo Cuadratico","Doble Hash","Salir del programa"};
+    int n =4;  
  
-   do {
-      opcion = menu(titulo, opciones, n);
-		
+    do {
+        opcion = menu(titulo, opciones, n); 	
 		switch(opcion){
 			case 1:{
 				system("cls");
-				MenuIngreso();
+				MenuIngresoLineal();
 				break;
 			}
 			case 2:{
 				system("cls");
-				MenuIngreso();
+				MenuIngresoCuadratico();
 				break;
 			}		
 			case 3:{
 				system("cls");
-				MenuIngreso();
+				MenuIngresoDoble();
 				break;
 			}		
 			case 4:{
