@@ -10,6 +10,9 @@ class OrdenamientoInterno: public ImprimirInterno{
 	private:
 		Vector vector;
 		
+		int dividir(Vector&, size_t, size_t); //Metodo para que funcione el Quicksort
+		void ordenarQuick(Vector&, size_t, size_t); //Metodo para que funcione el Quicksort
+		
 	public:
 		
 		OrdenamientoInterno(Vector &v){
@@ -17,7 +20,7 @@ class OrdenamientoInterno: public ImprimirInterno{
 		}
 		void ordenarIntercambio();
 		void ordenarBurbuja();
-		void ordenarQuicksort(Vector &v, int inicio, int fin);
+		void ordenarQuicksort();
 		void ordenarShellSort();
 		void ordenarDistribucion();
 		void ordenarBucket();
