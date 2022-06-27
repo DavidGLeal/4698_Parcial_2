@@ -19,9 +19,6 @@ int main(){
     v.push_back(74);
     v.push_back(1);
 
-<<<<<<< Updated upstream
-=======
-//<<<<<<< HEAD
 	/*
     OrdenamientoInterno *intercambio = new OrdenamientoInterno(v);
     OrdenamientoInterno *burbuja = new OrdenamientoInterno(v);
@@ -52,16 +49,12 @@ int main(){
     bucket->ordenarBucket();
 	bucket->imprimirInterno(); 
 =======
->>>>>>> Stashed changes
 
     OrdenamientoInterno *a = new OrdenamientoInterno(v);
 
     a->imprimirInterno();
     a->ordenarCountingSort();
     a->imprimirInterno();
-<<<<<<< Updated upstream
-
-=======
 >>>>>>> 75531d9be243a3f8b16078e2c3f0ba449988d961
 	
     radix->imprimirInterno();
@@ -73,6 +66,5 @@ int main(){
     bucket->ordenarBucket();
 	bucket->imprimirInterno(); 
     
->>>>>>> Stashed changes
     return 0;
 }
