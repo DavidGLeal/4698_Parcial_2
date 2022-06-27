@@ -26,7 +26,7 @@ int menu(const char *titulo, const char *opciones[], int n);
 	OrdenamientoInterno *burbuja = new OrdenamientoInterno();
 	OrdenamientoInterno *quicksort = new OrdenamientoInterno();
 	OrdenamientoInterno *shell = new OrdenamientoInterno();
-	//OrdenamientoInterno *bucket = new OrdenamientoInterno();
+	OrdenamientoInterno *bucket = new OrdenamientoInterno();
 	OrdenamientoInterno *counting = new OrdenamientoInterno();
 	OrdenamientoInterno *radix = new OrdenamientoInterno();
 	Vector vector1;
@@ -127,7 +127,7 @@ int IngresarDatos(){
 
 int validar_arreglo(char* arreglo)
 {
-    int i;
+    unsigned long long i;
     for(i=0; i<strlen(arreglo); i++)
     {
         if(!(isdigit(arreglo[i])))

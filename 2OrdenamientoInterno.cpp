@@ -25,7 +25,6 @@ void OrdenamientoInterno::setVector(Vector &_vector){
 void OrdenamientoInterno::copiarVector(Vector &_vector){
     
     vector.vaciar();
-    int num{0};
 
     for(int i = 0; i < _vector.size(); i++){
         int num{_vector[i]};
@@ -279,11 +278,11 @@ void OrdenamientoInterno::ordenarBucket(){
         d*=10;
     }
 	Vector ordenado2;
-	cout<<ordenado.size()<<endl;
+	//cout<<ordenado.size()<<endl;
 	
 	for(int m=0;m<ordenado.getElementos();m++){
 		if(m>=10){
-			cout<<"ordenado: "<<ordenado[m]<<endl;
+			//cout<<"ordenado: "<<ordenado[m]<<endl;
 			int ele=ordenado[m];
 			ordenado2.push_back(ele);
 		}
