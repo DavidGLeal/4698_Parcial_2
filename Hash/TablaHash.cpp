@@ -82,6 +82,30 @@ void TablaHashCerrada::insertar(string cad, int opc)
     }
 }
 
+int TablaHashCerrada::buscar(std::string valor) {
+    const int ELEMENTO_NO_ENCONTRADO{-1};
+    int clave{hash(valor)};
+
+    if (this->tabla[clave] == nullptr)
+        return ELEMENTO_NO_ENCONTRADO;
+
+    if (this->tabla[clave]->getCadena().compare(valor) == 0)
+        return clave;
+
+    int posiciones = clave + 1;
+    if (posiciones >= NCASILLAS)
+        posiciones -= NCASILLAS;
+
+    bool haEncontradoValor{false};
+    while (posiciones != clave && !(this->tabla[posiciones]->getCadena().compare(valor) == 0)) {
+        posiciones++;
+        if (posiciones >= NCASILLAS)
+        posiciones -= NCASILLAS;
+    }
+
+    return (haEncontradoValor) ? posiciones - 1 : ELEMENTO_NO_ENCONTRADO;
+}
+
 int TablaHashCerrada::hash(string cad){
     int suma = 0;
     for(int i = 0; i < cad.length(); i++){
