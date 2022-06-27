@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "0Vector.cpp"
-#include <cmath>
 #include "6ImprimirInterno.cpp"
 
 using namespace std;
@@ -21,10 +20,6 @@ class OrdenamientoInterno: public ImprimirInterno{
 		OrdenamientoInterno(Vector &v){
 			this->vector = v;
 		}
-
-		OrdenamientoInterno(){
-		}
-		
 		void ordenarIntercambio();
 		void ordenarBurbuja();
 		void ordenarQuicksort();
@@ -36,5 +31,5 @@ class OrdenamientoInterno: public ImprimirInterno{
 		Vector getVector();	
 		void setVector(Vector &_vector);
 		void imprimirInterno();
-		void imprimirInternoB();
+		
 };
