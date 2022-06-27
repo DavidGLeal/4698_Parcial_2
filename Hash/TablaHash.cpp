@@ -29,16 +29,32 @@ TablaHashCerrada::~TablaHashCerrada(){
 void TablaHashCerrada::eliminar(string cad){
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
+    while (aux == nullptr)
+    {
+        pos++;
+        aux = tabla[pos % NCASILLAS];
+    }
     if(aux->getCadena() == cad){
         tabla[pos] = tabla[pos]->getSig();
         delete aux;
     }
-    else{
-        while(aux->getSig()->getCadena() != cad){
-            aux = aux->getSig();
+    else
+    {
+	while (aux == nullptr)
+        {
+            pos++;
+            aux = tabla[pos % NCASILLAS];
+        }	    
+        if (aux->getSig() != nullptr)
+        {
+            while (aux->getSig()->getCadena() != cad)
+            {
+                aux = aux->getSig();
+            }
         }
-        aux->setSig(aux->getSig()->getSig());
-        delete aux->getSig();
+        else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
+        /*aux->setSig(aux->getSig()->getSig());
+        delete aux->getSig();*/
     }
 }
 void TablaHashCerrada::imprimir(){
@@ -80,6 +96,32 @@ void TablaHashCerrada::insertar(string cad, int opc)
             i++;
         }
     }
+}
+
+int TablaHashCerrada::buscar(std::string valor) {
+    const int ELEMENTO_NO_ENCONTRADO{-1};
+    int clave{hash(valor)};
+
+    if (this->tabla[clave]->getCadena().compare(valor) == 0)
+        return clave;
+
+    int posiciones = clave + 1;
+    if (posiciones >= NCASILLAS)
+        posiciones -= NCASILLAS;
+
+    bool haEncontradoValor{false};
+    while (posiciones != clave && !haEncontradoValor) {
+        if (this->tabla[posiciones] != nullptr)
+            haEncontradoValor = this->tabla[posiciones]->getCadena().compare(valor) == 0;
+
+        if (!haEncontradoValor)
+            posiciones++;
+
+        if (posiciones >= NCASILLAS)
+            posiciones -= NCASILLAS;
+    }
+
+    return (haEncontradoValor) ? posiciones: ELEMENTO_NO_ENCONTRADO;
 }
 
 int TablaHashCerrada::hash(string cad){

@@ -14,6 +14,7 @@ class TablaHashCerrada{
         void insertar(string cad,int opc);
         void eliminar(string cad);
         void imprimir();
+        int buscar(std::string valor);
         int hash(string cad); 
         int quadraticProbing(string cad , int i);
         int hashDoble(string cad); 

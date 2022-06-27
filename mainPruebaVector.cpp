@@ -25,6 +25,6 @@ int main(){
     a->imprimirInterno();
     a->ordenarCountingSort();
     a->imprimirInterno();
-
+	
     return 0;
 }

@@ -41,16 +41,30 @@ void TablaCerradaEnteros::insertar(int valor){
 void TablaCerradaEnteros::eliminar(int valor){
     int pos = hash(valor);
     NodoCircularEntero *aux = tabla[pos];
+    while (aux == nullptr)
+    {
+        pos++;
+        aux = tabla[pos % NCASILLAS];
+    }
     if(aux->getValor() == valor){
         tabla[pos] = tabla[pos]->getSig();
         delete aux;
     }
-    else{
-        while(aux->getSig()->getValor() != valor){
-            aux = aux->getSig();
+    else
+    {
+        while (aux == nullptr)
+        {
+            pos++;
+            aux = tabla[pos % NCASILLAS];
         }
-        aux->setSig(aux->getSig()->getSig());
-        delete aux->getSig();
+        if (aux->getSig() != nullptr)
+        {
+		while(aux->getSig()->getValor() != valor){
+		    aux = aux->getSig();
+		}
+	else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
+        /*aux->setSig(aux->getSig()->getSig());
+        delete aux->getSig();*/
     }
 }
 void TablaCerradaEnteros::imprimir(){
@@ -63,6 +77,33 @@ void TablaCerradaEnteros::imprimir(){
         cout << endl;
     }
 }
+
+int TablaCerradaEnteros::buscarLineal(int valor) {
+    const int ELEMENTO_NO_ENCONTRADO{-1};
+    int clave{hashlineal(valor)};
+
+    if (this->tabla[clave]->getValor() == valor)
+        return clave;
+
+    int posiciones = clave + 1;
+    if (posiciones >= NCASILLAS)
+        posiciones -= NCASILLAS;
+
+    bool haEncontradoValor{false};
+    while (posiciones != clave && !haEncontradoValor) {
+        if (this->tabla[posiciones] != nullptr)
+            haEncontradoValor = this->tabla[posiciones]->getValor() == valor;
+
+        if (!haEncontradoValor)
+            posiciones++;
+
+        if (posiciones >= NCASILLAS)
+            posiciones -= NCASILLAS;
+    }
+
+    return (haEncontradoValor) ? posiciones: ELEMENTO_NO_ENCONTRADO;
+}
+
 int TablaCerradaEnteros::hash(int valor){
     return valor % NCASILLAS;
 }
@@ -78,7 +119,7 @@ int TablaCerradaEnteros::hashlineal(int pos){
 	return pos;
 }
 
-//Cuadr�tico
+//Cuadrático
 int TablaCerradaEnteros::hashCuadratico(int pos){
 	int i=1;
 	while(tabla[pos]!=NULL){
@@ -89,7 +130,7 @@ int TablaCerradaEnteros::hashCuadratico(int pos){
 } 
 
 //Doble hash
-/*
+
 int TablaCerradaEnteros::hash2(int valor)
 {
     int i = valor % NCASILLAS;
@@ -134,4 +175,4 @@ int TablaCerradaEnteros::hash2(int valor)
 		return hash2();
 	}
 }   
-*/
+
