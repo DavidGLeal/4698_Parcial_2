@@ -293,7 +293,6 @@ void OrdenamientoInterno::ordenarBucket(){
 		
 	}
 	
-	
     copiarVector(ordenado2);
 }
 
