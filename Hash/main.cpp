@@ -21,7 +21,7 @@ do{
 cout <<"Sondeo cuadratico"<<endl;
 cout <<"Ingrese una cadena: ";
 cin >> cad;
-tabla.insertar(cad);
+tabla.insertar(cad,2);
 tabla.imprimir();
 cout <<"Desea continuar? (s/n): ";
 cin >> opcion;

@@ -53,30 +53,35 @@ void TablaHashCerrada::imprimir(){
         cout << endl;
     }
 }
-int TablaHashCerrada::quadraticProbing(int pos){
-    int i = 1;
-    if (tabla[pos] == NULL){
-        return pos;
-    }
-    else{
-        while(tabla[pos] != NULL){
-            pos=(pos+(i*i)%NCASILLAS);
+int TablaHashCerrada::quadraticProbing(string cad, int i){
+    int suma =0;
+    int indice =0;
+    suma = hash(cad);
+    indice = (suma + i*i) % NCASILLAS;
+    return indice;
+
+}
+void TablaHashCerrada::insertar(string cad, int opc)
+{
+    int i = 0;
+    bool ocupado = false;
+    int indice = 0;
+    while (ocupado == false)
+    {
+         indice = quadraticProbing(cad, i);
+         NodoCircular *aux = tabla[indice];
+        if (tabla[indice] == NULL)
+        {
+            tabla[indice] = new NodoCircular(cad);
+            ocupado = true;
+        }
+        else
+        {
             i++;
         }
-    return pos;
     }
 }
-void TablaHashCerrada::insertar(string cad){
-    int pos = hash(cad);
-    NodoCircular *aux = tabla[pos];
 
-    if(tabla[pos] == NULL){
-        tabla[pos] = new NodoCircular(cad);
-    }else{
-        pos = quadraticProbing(pos);
-        tabla[pos] = new NodoCircular(cad);
-    }
-}
 int TablaHashCerrada::hash(string cad){
     int suma = 0;
     for(int i = 0; i < cad.length(); i++){
