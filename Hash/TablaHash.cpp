@@ -29,16 +29,32 @@ TablaHashCerrada::~TablaHashCerrada(){
 void TablaHashCerrada::eliminar(string cad){
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
+    while (aux == nullptr)
+    {
+        pos++;
+        aux = tabla[pos % NCASILLAS];
+    }
     if(aux->getCadena() == cad){
         tabla[pos] = tabla[pos]->getSig();
         delete aux;
     }
-    else{
-        while(aux->getSig()->getCadena() != cad){
-            aux = aux->getSig();
+    else
+    {
+	while (aux == nullptr)
+        {
+            pos++;
+            aux = tabla[pos % NCASILLAS];
+        }	    
+        if (aux->getSig() != nullptr)
+        {
+            while (aux->getSig()->getCadena() != cad)
+            {
+                aux = aux->getSig();
+            }
         }
-        aux->setSig(aux->getSig()->getSig());
-        delete aux->getSig();
+        else cout << "No existe ese elemento. Verifique que está en la lista."<<endl;
+        /*aux->setSig(aux->getSig()->getSig());
+        delete aux->getSig();*/
     }
 }
 void TablaHashCerrada::imprimir(){
