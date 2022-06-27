@@ -17,7 +17,7 @@ class TablaHashCerrada{
         int hash(string cad); 
         int quadraticProbing(string cad , int i);
         int hashDoble(string cad); 
-        void sondeoLineal(int pos);
+        void insertarLineal(string cad);
         int hashF(string cad, int i);
         void insertarDoble(string cad);   
 };
