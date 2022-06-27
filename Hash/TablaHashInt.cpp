@@ -25,7 +25,7 @@ TablaCerradaEnteros :: ~TablaCerradaEnteros(){
     delete[] tabla;
 }
 void TablaCerradaEnteros::insertar(int valor){
-    int pos = hash(valor);
+    int pos = hashCuadratico(valor);
     NodoCircularEntero *aux = tabla[pos];
     if(tabla[pos] == NULL){
         tabla[pos] = new NodoCircularEntero(valor);
@@ -78,7 +78,18 @@ int TablaCerradaEnteros::hashlineal(int pos){
 	return pos;
 }
 
+//Cuadrático
+int TablaCerradaEnteros::hashCuadratico(int pos){
+	int i=1;
+	while(tabla[pos]!=NULL){
+		pos=pos+(i*i%NCASILLAS);
+		i++;
+	}
+	return pos;
+} 
+
 //Doble hash
+/*
 int TablaCerradaEnteros::hash2(int valor)
 {
     int i = valor % NCASILLAS;
@@ -122,4 +133,5 @@ int TablaCerradaEnteros::hash2(int valor)
 		
 		return hash2();
 	}
-}    
+}   
+*/
