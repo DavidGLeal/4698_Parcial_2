@@ -14,7 +14,7 @@ class TablaCerradaEnteros{
         void insertar(int valor);
         void eliminar(int valor);
         void imprimir();
-        int buscar(int valor);
+        int buscarLineal(int valor);
         int hash(int valor);
         int hashlineal(int indice);
         int hashCuadratico(int indice);
