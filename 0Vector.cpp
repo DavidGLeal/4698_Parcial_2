@@ -58,6 +58,11 @@ void Vector::pop_back() {
     elementos--;
 }
 
+void Vector::vaciar(){
+    elementos = 0;
+}
+
+
 bool Vector::empty(){
     return elementos == 0;
 }

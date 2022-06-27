@@ -21,6 +21,7 @@ class Vector {
 
         void push_back(const int &data);
         void pop_back();
+        void vaciar();
         bool empty();
         int size();
         int capacity();

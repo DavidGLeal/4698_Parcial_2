@@ -31,5 +31,7 @@ class OrdenamientoInterno: public ImprimirInterno{
 		Vector getVector();	
 		void setVector(Vector &_vector);
 		void imprimirInterno();
+
+		void copiarVector(Vector &_vector);
 		
 };

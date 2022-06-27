@@ -22,6 +22,17 @@ void OrdenamientoInterno::setVector(Vector &_vector){
     this->vector = _vector;
 } 
 
+void OrdenamientoInterno::copiarVector(Vector &_vector){
+    
+    vector.vaciar();
+    int num{0};
+
+    for(int i = 0; i < _vector.size(); i++){
+        int num{_vector[i]};
+        vector.push_back(num);
+    }
+} 
+
 /**
  * Es una función que ordena un vector de números enteros usando el algoritmo de intercambio
  */
@@ -280,7 +291,7 @@ void OrdenamientoInterno::ordenarBucket(){
 	}
 	
 	
-    setVector(ordenado2);
+    copiarVector(ordenado2);
 }
 
 /**

@@ -19,7 +19,10 @@ int main(){
     v.push_back(74);
     v.push_back(1);
 
+<<<<<<< HEAD
 //<<<<<<< HEAD
+=======
+>>>>>>> d9edc777ee1b893840e91e301e17803e15e20de1
 	/*
     OrdenamientoInterno *intercambio = new OrdenamientoInterno(v);
     OrdenamientoInterno *burbuja = new OrdenamientoInterno(v);
@@ -55,6 +58,7 @@ int main(){
     a->imprimirInterno();
     a->ordenarRadix();
     a->imprimirInterno();
+>>>>>>> d9edc777ee1b893840e91e301e17803e15e20de1
 	
     radix->imprimirInterno();
     radix->ordenarRadix();
