@@ -62,38 +62,45 @@ void OrdenamientoInterno::ordenarBurbuja(){
     }
 }
 
-// void OrdenamientoInterno::ordenarQuicksort(Vector &v, int inicio, int fin){
+/**
+* Es una función que ordena un vector de enteros usando el algoritmo Quicksort
+*/
 
-//         int i=inicio;
-//         int j=fin;
-//         int pivote=*(v.get((inicio+fin)/2));
-//         while(i<=j){
-//             while(*(v.get(i))<pivote)
-//                 i++;
-//             while(*(v.get(j))>pivote)
-//                 j--;
-//             if(i<=j){
-//                 int aux=*(v.get(i));
-//                 *(v.get(i))=*(v.get(j));
-//                 *(v.get(j))=aux;
-//                 i++;
-//                 j--;
-//             }
-//         }
-//         if(inicio<j)
-//             ordenarQuicksort(v,inicio,j);
-//         if(i<fin)
-//             ordenarQuicksort(v,i,fin);
+void OrdenamientoInterno::ordenarQuicksort() {
+	ordenarQuick(vector,0,vector.size() - 1); 
+}
 
-//         for (int i = 0; i < v.size(); i++) {
-//             cout << *(v.get(i)) << " ";
-//         }
-//         cout << endl;
-    
-    
-// }
-    
+void OrdenamientoInterno::ordenarQuick(Vector &vector, size_t inicio, size_t fin) { 
+    if (inicio >= fin)
+        return;
+    auto lim = dividir(vector, inicio, fin);
+    ordenarQuick(vector, inicio, lim);
+    ordenarQuick(vector, lim + 1, fin);
+}
 
+int OrdenamientoInterno::dividir(Vector &vector, size_t inicio,size_t fin) {
+    int pivote = *(vector.get(inicio));
+    auto i = inicio + 1; //i=izquierda
+    auto j = fin; //j=derecha
+
+    while (true) {
+        while (i< j && *(vector.get(j)) >= pivote) j--;
+        while (i < j && *(vector.get(i)) < pivote) i++;
+
+        if (i == j) break;
+
+        int tmp = *(vector.get(i));
+        *(vector.get(i)) = *(vector.get(j));
+        *(vector.get(j)) = tmp;
+    }
+
+    if (*(vector.get(i)) >= pivote) return inicio;
+    *(vector.get(inicio)) = *(vector.get(i));
+    *(vector.get(i)) = pivote;
+    return i;
+}
+
+    
 /**
 * Es una función que ordena un vector de enteros usando el algoritmo Shell Sort
 */
