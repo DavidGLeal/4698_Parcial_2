@@ -10,7 +10,6 @@ class Busqueda{
 	public:
 
 		Busqueda(){
-
 		}
 
 		virtual void busquedaBinaria();
@@ -20,5 +19,5 @@ class Busqueda{
 
 		void  vaciarVector();
 
-		void  setDato(int a);
+		void  setDato(int &a);
 };

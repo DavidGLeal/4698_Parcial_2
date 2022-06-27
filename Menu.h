@@ -49,7 +49,7 @@ int ingresoD(){
 
 	IngresoDatos *i = new IngresoDatos();
 	cout << "\n";
-	int num = i->funcionPrincipalEnteros("Ingrese sus numeros: ");
+	int num = i->funcionPrincipalEnteros("Ingrese el numero: ");
 
 	return num;
 }
@@ -144,7 +144,7 @@ bool ingresarNumeroBuscadoBin(){
 		int num{ingresoD()};
 
 		if(num == -10101010){
-			cout << "Vacio"<<endl;
+			cout << "Vacio" <<endl;
 			return false;
 		}else{
 			binaria->setDato(num);
@@ -322,12 +322,14 @@ void MenuBusquedas(){
 				system("cls");
 				if(ingresarNumeroBuscadoBin()){
 					binaria->busquedaBinaria();
+					system("pause");
 				}
 				break;	
 			case 3:{
 				system("cls");
 				if(ingresarNumeroBuscadoSec()){
-					secuencial->busquedaBinaria();
+					secuencial->busquedaSecuencial();
+					system("pause");
 				}
 				break;
 			}case 4:{
