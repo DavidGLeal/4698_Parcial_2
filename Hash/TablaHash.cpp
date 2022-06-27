@@ -102,7 +102,7 @@ int TablaHashCerrada::buscar(std::string valor) {
     const int ELEMENTO_NO_ENCONTRADO{-1};
     int clave{hash(valor)};
 
-    if (this->tabla[clave]->getCadena() == valor)
+    if (this->tabla[clave]->getCadena().compare(valor))
         return clave;
 
     int posiciones = clave + 1;
@@ -112,7 +112,7 @@ int TablaHashCerrada::buscar(std::string valor) {
     bool haEncontradoValor{false};
     while (posiciones != clave && !haEncontradoValor) {
         if (this->tabla[posiciones] != nullptr)
-            haEncontradoValor = this->tabla[posiciones]->getCadena() == valor;
+            haEncontradoValor = this->tabla[posiciones]->getCadena().compare(valor);
 
         if (!haEncontradoValor)
             posiciones++;
