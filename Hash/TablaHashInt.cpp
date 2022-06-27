@@ -78,7 +78,7 @@ int TablaCerradaEnteros::hashlineal(int pos){
 	return pos;
 }
 
-//Cuadr·tico
+//Cuadr√°tico
 int TablaCerradaEnteros::hashCuadratico(int pos){
 	int i=1;
 	while(tabla[pos]!=NULL){
@@ -89,7 +89,7 @@ int TablaCerradaEnteros::hashCuadratico(int pos){
 } 
 
 //Doble hash
-/*
+
 int TablaCerradaEnteros::hash2(int valor)
 {
     int i = valor % NCASILLAS;
@@ -134,4 +134,4 @@ int TablaCerradaEnteros::hash2(int valor)
 		return hash2();
 	}
 }   
-*/
+
