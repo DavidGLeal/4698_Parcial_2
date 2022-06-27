@@ -16,5 +16,6 @@ class TablaCerradaEnteros{
         void imprimir();
         int hash(int valor);
         int hashlineal(int indice);
-        int hashDoble(int);
+        int hashCuadratico(int indice);
+        int hash2(int);
 };
