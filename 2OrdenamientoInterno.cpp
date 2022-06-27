@@ -282,3 +282,8 @@ void OrdenamientoInterno::ordenarRadix(){
     for (int exp = 1; m / exp > 0; exp *= 10) 
         Sort(exp); 
 } 
+
+void OrdenamientoInterno::imprimirInterno(){
+    imprimir(vector);
+    cout<<"\n";
+}

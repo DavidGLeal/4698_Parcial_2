@@ -21,9 +21,9 @@ class OrdenamientoInterno: public ImprimirInterno{
 		void ordenarShellSort();
 		void ordenarDistribucion();
 		void ordenarBucket();
-		void ordenarRadix();
-		void imprimirInterno(); 	
+		void ordenarRadix();	
 		Vector getVector();
 		void setVector(Vector _vector);
+		void imprimirInterno();
 
 };
