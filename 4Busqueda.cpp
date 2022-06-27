@@ -1,7 +1,7 @@
 #include "4Busqueda.h"
 
 
-void busquedaBinaria(){
+void Busqueda::busquedaBinaria(){
     int numeros[10];//arreglo a usar
     int inf,sup,mitad,dato,i;
     char band='F';//bandera sirve para comprobar si existe o no el elemento
