@@ -23,10 +23,9 @@ int main(){
     OrdenamientoInterno *intercambio = new OrdenamientoInterno(v);
     OrdenamientoInterno *burbuja = new OrdenamientoInterno(v);
 	OrdenamientoInterno *shellsort = new OrdenamientoInterno(v);
-	OrdenamientoInterno *distribucion = new OrdenamientoInterno(v);
-	OrdenamientoInterno *bucket = new OrdenamientoInterno(v);
-	*/
-	OrdenamientoInterno *radix = new OrdenamientoInterno(v);
+	*/OrdenamientoInterno *distribucion = new OrdenamientoInterno(v);
+	//OrdenamientoInterno *bucket = new OrdenamientoInterno(v);
+	//OrdenamientoInterno *radix = new OrdenamientoInterno(v);
 	
 	/*
     intercambio->imprimirInterno();
@@ -48,10 +47,15 @@ int main(){
 	bucket->imprimirInterno();
     bucket->ordenarBucket();
 	bucket->imprimirInterno(); 
-	*/
-	radix->imprimirInterno();
-    radix->ordenarRadix();
-	radix->imprimirInterno(); 
 	
+    radix->imprimirInterno();
+    radix->ordenarRadix();
+	radix->imprimirInterno();
+    */
+	 
+	distribucion->imprimirInterno();
+    distribucion->ordenarDistribucion();
+	distribucion->imprimirInterno(); 
+    
     return 0;
 }
