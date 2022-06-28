@@ -82,6 +82,9 @@ void ingresarInternos(){
 
 		if(num == -10101010){
 			i = 10;
+		}else if(num == -10101011){
+			system("pause");
+			i--;
 		}else{
 			vector1.push_back(num);
 			vector2.push_back(num);
@@ -123,6 +126,9 @@ void ingresarBusqueda(){
 
 		if(num == -10101010){
 			i = 10;
+		}else if(num == -10101011){
+			system("pause");
+			i--;
 		}else{
 			bvector1.push_back(num);
 			bvector2.push_back(num);
@@ -146,6 +152,9 @@ bool ingresarNumeroBuscadoBin(){
 		if(num == -10101010){
 			cout << "Vacio" <<endl;
 			return false;
+		}else if(num == -10101011){
+			cout << "Invalido" <<endl;
+			return false;
 		}else{
 			binaria->setDato(num);
 			cout<<"\n";
@@ -161,6 +170,9 @@ bool ingresarNumeroBuscadoSec(){
 
 		if(num == -10101010){
 			cout << "Vacio"<<endl;
+			return false;
+		}else if(num == -10101011){
+			cout << "Invalido" <<endl;
 			return false;
 		}else{
 			secuencial->setDato(num);
@@ -179,8 +191,10 @@ void ingresarExternos(string nom1, string nom2){
 
 		if(num == -10101010){
 			i = 10;
+		}else if(num == -10101011){
+			system("pause");
+			i--;
 		}else{
-
 			natural->insertar2(num, nom1);
 			directa->insertar(num, nom2);
 		}
@@ -425,7 +439,7 @@ void MenuOrdenamientos(){
 				//PARA INGRESAR DATOOS		
 				ingresarInternos();
 				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
-				
+				system("pause");
 				
 				break;
 			}	

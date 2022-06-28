@@ -47,7 +47,7 @@ using namespace std;
 
                     }else if(c == 8){ //Si el input es un back space
 
-                        backspaceEnteros(&i, &j,  &c, mensaje); //Funcion para la tecla backspace
+                        backspaceEnteros(&i, &j,  &c, mensaje, 0); //Funcion para la tecla backspace
                     }       			     
                 }
 
@@ -83,7 +83,7 @@ using namespace std;
                         ++i;
 
                     }else if(c == 8){ //Si el input es un back space
-                        backspaceEnteros(&i, &j,  &c); //Funcion para la tecla backspace
+                        backspaceEnteros(&i, &j,  &c, 0); //Funcion para la tecla backspace
 
                     }   			     
                 }
@@ -110,18 +110,33 @@ using namespace std;
                 char c;  //Creo un caracter, con el que voy a recibir el cada input
                 int j = 0; //Iterador para la verifiacion del unico punto
                 int i = 0; //Iterador para terminar el bucle, y asignar el valor final como nulo
+                int contSigno{0};
 
                 while(c != 13){ //Bucle hasta que se presion la tecla ENTER
                     c=getch(); //Recibo el dato por teclado
 
                     if((c >= '0' && c <= '9') || c == 45){
-                        printf("%c", c);
-                        dato[i] = c;
-                        i++;
+
+                        if(c == 45){
+
+                            if(contSigno == 0){
+                                printf("%c", c);
+                                dato[i] = c;
+                                i++;
+                                contSigno++;
+                            }else{
+                                cout<< "\n~~~ Solo puede ingresar un solo signo negativo ~~~" <<endl;
+                            }
+
+                        }else{
+                            printf("%c", c);
+                            dato[i] = c;
+                            i++;
+                        }
 
                     }else if(c == 8){ //Si el input es un back space
 
-                        backspaceEnteros(&i, &j,  &c, mensaje); //Funcion para la tecla backspace
+                        backspaceEnteros(&i, &j,  &c, mensaje, &contSigno); //Funcion para la tecla backspace
                     }       			     
                 }
 
@@ -144,13 +159,13 @@ using namespace std;
                 while(c != 13){ //Bucle hasta que se presion la tecla ENTER
                     c=getch(); //Recibo el dato por teclado
 
-                    if(c >= '0' && c <= '9' ){
+                    if((c >= '0' && c <= '9') || c == 45){
                         printf("%c", c);
                         dato[i] = c;
                         ++i;
 
                     }else if(c == 8){ //Si el input es un back space
-                        backspaceEnteros(&i, &j,  &c); //Funcion para la tecla backspace
+                        backspaceEnteros(&i, &j,  &c, 0); //Funcion para la tecla backspace
 
                     }   			     
                 }
@@ -173,7 +188,7 @@ using namespace std;
              * mensaje : string
              * 	El mensaje a mostrar
              */
-            void backspaceEnteros(int* i, int* j, char* c, string mensaje){
+            void backspaceEnteros(int* i, int* j, char* c, string mensaje, int* cont){
                 if(*c >= '0' && *c <= '9'){
                         if(*i != 0) --*i;
                     }else{
@@ -181,6 +196,10 @@ using namespace std;
                         imprimirMensaje(mensaje);
                         for(int p = 0; p < *i-1; p++){
                             printf("%c", dato[p]); //Imprimo de nuevo hasta el penultimo
+                        }
+
+                        if(dato[*i-1] == 45){ //Verifico si hubo un menos, para reiniciarlo en la cuenta
+                            *cont = 0;
                         }
 
                         if(*i != 0){ //Verifico que hay valores
@@ -201,7 +220,7 @@ using namespace std;
              * c : char
              * 	El personaje que fue presionado
              */
-            void backspaceEnteros(int* i, int* j, char* c){
+            void backspaceEnteros(int* i, int* j, char* c, int* cont){
 
                 if(*c >= '0' && *c <= '9'){
                         if(*i != 0) --*i;
@@ -209,6 +228,10 @@ using namespace std;
                     system("CLS"); //Limpio pantalla
                     for(int p = 0; p < *i-1; p++){
                         printf("%c", dato[p]); //Imprimo de nuevo hasta el penultimo
+                    }
+
+                    if(dato[*i-1] == 45){ //Verifico si hubo un menos, para reiniciarlo en la cuenta
+                        *cont = 0;
                     }
 
                     if(*i != 0){ //Verifico que hay valores
@@ -738,9 +761,12 @@ using namespace std;
                 char *aux = leerSoloEnteros();
                 if(aux[0] != '\0'){
                     return this -> conversion.numInt(aux);
+                }else if(aux[0] == 45 && aux[1] == '\0'){
+                    cout<<"\n~~ Input invalido ~~\n"<<endl;
+                    return -10101011;
                 }else{
                     cout<<"\n~~ Datos vacios ~~\n"<<endl;
-                    return -1;
+                    return -10101010;
                 }
             }
 
@@ -759,7 +785,12 @@ using namespace std;
             int funcionPrincipalEnteros(string mensaje){
 
                 char *aux = leerSoloEnteros(mensaje);
-                if(aux[0] != '\0'){
+                if(aux[0] == 45 && aux[1] == '\0'){
+                    cout << aux[0] <<endl;
+                    cout << aux[1] <<endl;
+                    cout<<"\n~~ Input invalido ~~\n"<<endl;
+                    return -10101011;
+                }if(aux[0] != '\0'){
                     return this -> conversion.numInt(aux);
                 }else{
                     cout<<"\n~~ Se ha detenido la lectura de datos ~~\n"<<endl;
