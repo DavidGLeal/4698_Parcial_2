@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <string>
 #include "1Conversion.h"
+#include <regex>
 #include <iostream>
 using namespace std;
 
@@ -110,33 +111,21 @@ using namespace std;
                 char c;  //Creo un caracter, con el que voy a recibir el cada input
                 int j = 0; //Iterador para la verifiacion del unico punto
                 int i = 0; //Iterador para terminar el bucle, y asignar el valor final como nulo
-                int contSigno{0};
+
 
                 while(c != 13){ //Bucle hasta que se presion la tecla ENTER
                     c=getch(); //Recibo el dato por teclado
 
                     if((c >= '0' && c <= '9') || c == 45){
-
-                        if(c == 45){
-
-                            if(contSigno == 0){
-                                printf("%c", c);
-                                dato[i] = c;
-                                i++;
-                                contSigno++;
-                            }else{
-                                cout<< "\n~~~ Solo puede ingresar un solo signo negativo ~~~" <<endl;
-                            }
-
-                        }else{
-                            printf("%c", c);
-                            dato[i] = c;
-                            i++;
-                        }
+ 
+                        printf("%c", c);
+                        dato[i] = c;
+                        i++;
+                        
 
                     }else if(c == 8){ //Si el input es un back space
 
-                        backspaceEnteros(&i, &j,  &c, mensaje, &contSigno); //Funcion para la tecla backspace
+                        backspaceEnteros(&i, &j,  &c, mensaje, 0); //Funcion para la tecla backspace
                     }       			     
                 }
 
@@ -759,14 +748,14 @@ using namespace std;
             int funcionPrincipalEnteros(){
 
                 char *aux = leerSoloEnteros();
-                if(aux[0] != '\0'){
+                if(aux[0] == '\0'){
+                    cout<<"\n~~ Se ha detenido la lectura de datos ~~\n"<<endl;
+                    return -10101010;
+                }else if(esValido(aux)){
                     return this -> conversion.numInt(aux);
-                }else if(aux[0] == 45 && aux[1] == '\0'){
+                }else{
                     cout<<"\n~~ Input invalido ~~\n"<<endl;
                     return -10101011;
-                }else{
-                    cout<<"\n~~ Datos vacios ~~\n"<<endl;
-                    return -10101010;
                 }
             }
 
@@ -785,18 +774,22 @@ using namespace std;
             int funcionPrincipalEnteros(string mensaje){
 
                 char *aux = leerSoloEnteros(mensaje);
-                if(aux[0] == 45 && aux[1] == '\0'){
-                    cout << aux[0] <<endl;
-                    cout << aux[1] <<endl;
-                    cout<<"\n~~ Input invalido ~~\n"<<endl;
-                    return -10101011;
-                }if(aux[0] != '\0'){
-                    return this -> conversion.numInt(aux);
-                }else{
+
+                if(aux[0] == '\0'){
                     cout<<"\n~~ Se ha detenido la lectura de datos ~~\n"<<endl;
                     return -10101010;
+                }else if(esValido(aux)){
+                    return this -> conversion.numInt(aux);
+                }else{
+                    cout<<"\n~~ Input invalido ~~\n"<<endl;
+                    return -10101011;
                 }
                 
+            }
+
+            bool esValido(char* dato){
+                const regex r("^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$");
+                return regex_match(dato,r);
             }
 
             char* lecturaNumerosChar(){
