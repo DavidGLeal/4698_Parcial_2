@@ -25,7 +25,6 @@ int menu(const char *titulo, const char *opciones[], int n);
 	MetodoExterno *natural = new MetodoExterno("OrdenamientoNatural.txt");
 	OrdenamientoInterno *intercambio = new OrdenamientoInterno();
 	OrdenamientoInterno *burbuja = new OrdenamientoInterno();
-	OrdenamientoInterno *burbujaBin = new OrdenamientoInterno();
 	OrdenamientoInterno *quicksort = new OrdenamientoInterno();
 	OrdenamientoInterno *shell = new OrdenamientoInterno();
 	OrdenamientoInterno *bucket = new OrdenamientoInterno();
@@ -44,7 +43,6 @@ int menu(const char *titulo, const char *opciones[], int n);
 	Vector bvector1;
 	Vector bvector2;
 	Vector bvector3;
-	Vector bvector4;
 
 
 
@@ -122,7 +120,6 @@ void ingresarBusqueda(){
 
 	binaria->vaciarVector();
 	secuencial->vaciarVector();
-	burbujaBin->vaciarVector();
 	
 	for (int i = 0; i< 10; i++){
 
@@ -136,14 +133,12 @@ void ingresarBusqueda(){
 		}else{
 			bvector1.push_back(num);
 			bvector2.push_back(num);
-			bvector3.push_back(num);
 			++cont;
 		}
 	}
 
 	binaria->setVector(bvector1);
 	secuencial->setVector(bvector2);
-	burbujaBin->setVector(bvector3);
 
 	cout<<"\n";
 }
@@ -339,14 +334,10 @@ void MenuBusquedas(){
 				break;
 			case 2:
 				system("cls");
-				if(ingresarNumeroBuscadoBin()) {
-					burbujaBin->ordenarBurbuja();
-                    			burbujaBin->imprimirInterno();
-                    			bvector4 = burbujaBin->getVector();
-                    			binaria->setVector(bvector4);
-                    			binaria->busquedaBinaria();
-                    			system("pause");
-                		}
+				if(ingresarNumeroBuscadoBin()){
+					binaria->busquedaBinaria();
+					system("pause");
+                }
 				break;	
 			case 3:{
 				system("cls");

@@ -13,8 +13,25 @@ void  Busqueda::setDato(int &a){
 }
 
 
+void Busqueda::copiarVector(Vector &_vector){
+    
+    vector.vaciar();
+
+    for(int i = 0; i < _vector.size(); i++){
+        int num{_vector[i]};
+        vector.push_back(num);
+    }
+}
+
 void Busqueda::busquedaBinaria(){
 
+    ordenado.setVector(vector);
+    ordenado.ordenarBurbuja();
+    copiarVector(ordenado.getVector());
+
+    // for(int u = 0; u < vector.size(); u++){
+    //     cout << vector[u] << " " <<endl;
+    // }    
     //cout<< "1Entro"<<endl;
     int inf,sup,mitad,i;
     char band='F';//bandera sirve para comprobar si existe o no el elemento

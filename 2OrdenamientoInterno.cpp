@@ -8,7 +8,7 @@
  * 
  * @return el vector
  */
-Vector OrdenamientoInterno::getVector(){
+Vector& OrdenamientoInterno::getVector(){
 	return this->vector;
 }
 

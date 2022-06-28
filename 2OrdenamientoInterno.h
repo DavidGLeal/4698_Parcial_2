@@ -30,7 +30,7 @@ class OrdenamientoInterno: public ImprimirInterno{
 		void ordenarBucket();
 		void ordenarRadix();	
 		void ordenarShellSort();
-		Vector getVector();	
+		Vector& getVector();	
 		void setVector(Vector &_vector);
 		void imprimirInterno();
 
