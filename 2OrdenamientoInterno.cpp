@@ -273,13 +273,23 @@ int OrdenamientoInterno::getMax(Vector &v){
 void OrdenamientoInterno::ordenarBucket(){
     
 	int c = vector.size();
-	int col=10,cnt=0,k=0,d=1,l=0;
+	
 	Vector ordenado;
 	int **matriz = new int*[c];
-	
 	for(int z =0;z<c;z++)
 	{
-		matriz[z] = new int[col];
+		matriz[z] = new int[10];
+	}
+	
+	int col=10,cnt=0,k=0,d=1,l=0;
+	int *j = new int[c];
+	
+	for(int x=0;x<c;x++)
+	{
+		for(int w =0;w<10;w++)
+		{
+			matriz[x][w]=0;
+		}
 	}
 	
 	cout << "Despues primer for"<<endl;
@@ -295,12 +305,11 @@ void OrdenamientoInterno::ordenarBucket(){
         cnt++;
         max=max/10;
     }
-
-	cout << "Despues while1 for"<<endl;
-	int *j = new int[c];
+	
+	int ap = c;
 	for(int m=0;m<cnt;m++)
     {
-        for(int i=0;i<col;i++)
+        for(int i=0;i<c;i++)
         {    
 			j[i]=0;
 		}
@@ -308,13 +317,21 @@ void OrdenamientoInterno::ordenarBucket(){
         for(int y=0;y<c;y++)
         {
             k=(abs(vector[y])/d)%10;
-			cout << k<<endl;
+            if(k>=c)
+            {        	
+            	for(int d = c; d<=k;d++)
+            	{
+            		matriz[d] = new int[10];
+            		j[d] =0;
+				}
+				ap=k+1;
+			}
             matriz[k][j[k]]=*vector.get(y);
 			cout << matriz[k][j[k]] <<endl;
             j[k]++;
         }
-        cout << "for2"<<endl;
-        for(int a=0;a<c;a++)
+        
+         for(int a=0;a<c;a++)
         {
         	for(int r=0;r<j[a];r++)
         	{
@@ -348,16 +365,15 @@ void OrdenamientoInterno::ordenarBucket(){
         }
 		cout << "for4"<<endl;
         
-        d*=10;
+       d*=10;
     }
 
 	cout << "Despues primer for grande"<<endl;
 	Vector ordenado2;
-	cout<<ordenado.size()<<endl;
 	
 	for(int m=0;m<ordenado.getElementos();m++){
-		if(m>=10){
-			cout<<"ordenado: "<<ordenado[m]<<endl;
+		if(m>=ordenado.getElementos()-10){
+			
 			int ele=ordenado[m];
 			ordenado2.push_back(ele);
 		}
@@ -366,6 +382,7 @@ void OrdenamientoInterno::ordenarBucket(){
 	cout << "Al menos llego al final"<<endl;
 	imprimir(ordenado2);
     copiarVector(ordenado2);
+
 }
 
 /**
