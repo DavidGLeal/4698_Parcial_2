@@ -44,5 +44,7 @@ class Vector {
         int getElementos();
         int *getArrayInterno();
 
+        void imprimir(Vector &vector);
+
 };
 

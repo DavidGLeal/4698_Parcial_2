@@ -94,3 +94,9 @@ int Vector::getElementos(){
 int *Vector::getArrayInterno(){
     return this->arrayInterno;
 }
+
+void Vector::imprimir(Vector &vector){
+    for(int i = 0; i < vector.getElementos(); i++){
+        cout << vector[i] << " ";
+    }    
+}
