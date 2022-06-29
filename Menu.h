@@ -30,6 +30,8 @@ int menu(const char *titulo, const char *opciones[], int n);
 	OrdenamientoInterno *bucket = new OrdenamientoInterno();
 	OrdenamientoInterno *counting = new OrdenamientoInterno();
 	OrdenamientoInterno *radix = new OrdenamientoInterno();
+
+	OrdenamientoInterno *binario = new OrdenamientoInterno();
 	Vector vector1;
 	Vector vector2;
 	Vector vector3;
@@ -116,7 +118,7 @@ void ingresarBusqueda(){
 	
 	bvector1.vaciar();
 	bvector2.vaciar();
-
+	bvector3.vaciar();
 
 	binaria->vaciarVector();
 	secuencial->vaciarVector();
@@ -133,6 +135,7 @@ void ingresarBusqueda(){
 		}else{
 			bvector1.push_back(num);
 			bvector2.push_back(num);
+			bvector3.push_back(num);
 			++cont;
 		}
 	}
@@ -329,28 +332,45 @@ void MenuBusquedas(){
 		{
 			case 1:
 				system("cls");
-				ingresarBusqueda();
-				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
-				binaria->imprimirInterno();
-				cout<< "\n";
-				system("pause");
+
+					ingresarBusqueda();
+					cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
+					binaria->imprimirInterno();
+					cout<< "\n";
+					system("pause");
+				
 				break;
 			case 2:
 				system("cls");
-				if(ingresarNumeroBuscadoBin()){
-					binaria->imprimirInterno();
-					binaria->busquedaBinaria();
-					cout<< "\n";
+				if(bvector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
 					system("pause");
-                }
+				}else{
+
+					binario->setVector(bvector3);
+					binario->ordenarBurbuja();
+					binario->imprimirInterno();
+
+					if(ingresarNumeroBuscadoBin()){
+						binaria->busquedaBinaria();
+						cout<< "\n";
+						system("pause");
+					}
+				}
 				break;	
 			case 3:{
 				system("cls");
-				if(ingresarNumeroBuscadoSec()){
-					secuencial->imprimirInterno();
-					secuencial->busquedaSecuencial();
-					cout<< "\n";
+
+				if(bvector1.empty()){
+					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
 					system("pause");
+				}else{
+					secuencial->imprimirInterno();
+					if(ingresarNumeroBuscadoSec()){
+						secuencial->busquedaSecuencial();
+						cout<< "\n";
+						system("pause");
+					}
 				}
 				break;
 			}case 4:{
@@ -386,6 +406,7 @@ void SubmenuDistribucion(){
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+					system("pause");
 				}else{	
 				cout<<"\n Arreglo sin ordenar"<<endl;
 				counting->imprimirInterno();
@@ -403,6 +424,7 @@ void SubmenuDistribucion(){
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+					system("pause");
 				}else{	
 				cout<<"\n Arreglo sin ordenar"<<endl;
 				bucket->imprimirInterno();
@@ -456,6 +478,7 @@ void MenuOrdenamientos(){
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+					system("pause");
 				}else{	
 				cout<<"\n Arreglo sin ordenar"<<endl;
 				intercambio->imprimirInterno();
@@ -473,6 +496,7 @@ void MenuOrdenamientos(){
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+					system("pause");
 				}else{
 				cout<<"\n Arreglo sin ordenar"<<endl;	
 				burbuja->imprimirInterno();
@@ -490,6 +514,7 @@ void MenuOrdenamientos(){
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+					system("pause");
 				}else{	
 				cout<<"\n Arreglo sin ordenar"<<endl;
 				quicksort->imprimirInterno();
@@ -507,6 +532,7 @@ void MenuOrdenamientos(){
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+					system("pause");
 				}else{	
 				cout<<"\n Arreglo sin ordenar"<<endl;
 				shell->imprimirInterno();
@@ -529,6 +555,7 @@ void MenuOrdenamientos(){
 				printf("\n\n");
 				if(vector1.empty()){
 					cout << "\nNo ha ingresado datos. Vector vacio" <<endl;
+					system("pause");
 				}else{	
 				cout<<"\n Arreglo sin ordenar"<<endl;
 				radix->imprimirInterno();
