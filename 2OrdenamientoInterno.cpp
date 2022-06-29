@@ -282,17 +282,21 @@ void OrdenamientoInterno::ordenarBucket(){
 		matriz[z] = new int[col];
 	}
 	
+	cout << "Despues primer for"<<endl;
 	int max= *vector.get(0);
 	for(int a=1;a<c;a++)
     {
         if(*vector.get(a)>max)
             max=*vector.get(a);
     }
+	cout << "Despues 2 for"<<endl;
     while(max>0)
     {
         cnt++;
         max=max/10;
     }
+
+	cout << "Despues while1 for"<<endl;
 	int *j = new int[c];
 	for(int m=0;m<cnt;m++)
     {
@@ -300,13 +304,16 @@ void OrdenamientoInterno::ordenarBucket(){
         {    
 			j[i]=0;
 		}
+		cout << "for1"<<endl;
         for(int y=0;y<c;y++)
         {
             k=(abs(vector[y])/d)%10;
+			cout << k<<endl;
             matriz[k][j[k]]=*vector.get(y);
+			cout << matriz[k][j[k]] <<endl;
             j[k]++;
         }
-        
+        cout << "for2"<<endl;
         for(int a=0;a<c;a++)
         {
         	for(int r=0;r<j[a];r++)
@@ -320,9 +327,13 @@ void OrdenamientoInterno::ordenarBucket(){
         			 matriz[a][r] = matriz[a][o];
         				matriz[a][o] = aux;					 					 				        				
 					}				        			
-				}        		
+				}
+				cout << "for3.2"<<endl;        		
 			}
+			cout << "for3.1"<<endl;
+
 		}
+		cout << "for3"<<endl;
         
     	l=0;
         for(int b=0;b<c;b++)
@@ -333,22 +344,27 @@ void OrdenamientoInterno::ordenarBucket(){
                 ordenado.push_back(aux);
                 l++;
             }
+			cout << "for4.1"<<endl;
         }
+		cout << "for4"<<endl;
         
         d*=10;
     }
+
+	cout << "Despues primer for grande"<<endl;
 	Vector ordenado2;
-	//cout<<ordenado.size()<<endl;
+	cout<<ordenado.size()<<endl;
 	
 	for(int m=0;m<ordenado.getElementos();m++){
 		if(m>=10){
-			//cout<<"ordenado: "<<ordenado[m]<<endl;
+			cout<<"ordenado: "<<ordenado[m]<<endl;
 			int ele=ordenado[m];
 			ordenado2.push_back(ele);
 		}
 		
 	}
-	
+	cout << "Al menos llego al final"<<endl;
+	imprimir(ordenado2);
     copiarVector(ordenado2);
 }
 
