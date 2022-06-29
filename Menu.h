@@ -443,7 +443,7 @@ void SubmenuDistribucion(){
 				}else{	
 				cout<<"\n Arreglo sin ordenar"<<endl;
 				bucket->imprimirInterno();
-				bucket->ordenarBucket();							
+				bucket->ordenarRadix();							
 				cout<<"\n Arreglo ordenado"<<endl;
 				bucket->imprimirInterno();
 				cout<< "\n~~~ Datos ordenados con exito ~~~\n"<<endl;

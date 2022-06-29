@@ -101,8 +101,14 @@ void Vector::imprimir(Vector &vect){
     }    
 }
 
-void Vector::unirVectores(Vector &vect){
-    for(int i = 0; i < vect.size(); i++){
-        push_back(vect[0]);
+void Vector::imprimir(Vector *vect){
+    for(int i = 0; i < vect->getElementos(); i++){
+        cout << (*vect)[i] << " ";
+    }    
+}
+
+void Vector::unirVectores(Vector *vect){
+    for(int i = 0; i < vect->getElementos(); i++){
+        push_back((*vect)[0]);
     }
 }

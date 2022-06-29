@@ -44,9 +44,10 @@ class Vector {
         int getElementos();
         int *getArrayInterno();
 
-        void imprimir(Vector &vector);
+        void imprimir(Vector *vect);
+        void imprimir(Vector &vect);
 
-        void unirVectores(Vector &vect);
+        void unirVectores(Vector *vect);
 
 };
 
