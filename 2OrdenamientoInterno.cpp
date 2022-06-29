@@ -271,15 +271,26 @@ int OrdenamientoInterno::getMax(Vector &v){
  * Toma un vector de números enteros y los ordena usando el algoritmo bucket
 */
 void OrdenamientoInterno::ordenarBucket(){
+void OrdenamientoInterno::ordenarBucket(){
     
 	int c = vector.size();
-	int col=10,cnt=0,k=0,d=1,l=0;
+	
 	Vector ordenado;
 	int **matriz = new int*[c];
-	
 	for(int z =0;z<c;z++)
 	{
-		matriz[z] = new int[col];
+		matriz[z] = new int[10];
+	}
+	
+	int col=10,cnt=0,k=0,d=1,l=0;
+	int *j = new int[c];
+	
+	for(int x=0;x<c;x++)
+	{
+		for(int w =0;w<10;w++)
+		{
+			matriz[x][w]=0;
+		}
 	}
 	
 	int max= *vector.get(0);
@@ -293,21 +304,31 @@ void OrdenamientoInterno::ordenarBucket(){
         cnt++;
         max=max/10;
     }
-	int *j = new int[c];
+	
+	int ap = c;
 	for(int m=0;m<cnt;m++)
     {
-        for(int i=0;i<col;i++)
+        for(int i=0;i<c;i++)
         {    
 			j[i]=0;
 		}
         for(int y=0;y<c;y++)
         {
             k=(abs(vector[y])/d)%10;
+            if(k>=c)
+            {        	
+            	for(int d = c; d<=k;d++)
+            	{
+            		matriz[d] = new int[10];
+            		j[d] =0;
+				}
+				ap=k+1;
+			}
             matriz[k][j[k]]=*vector.get(y);
             j[k]++;
         }
         
-        for(int a=0;a<c;a++)
+         for(int a=0;a<c;a++)
         {
         	for(int r=0;r<j[a];r++)
         	{
@@ -335,14 +356,13 @@ void OrdenamientoInterno::ordenarBucket(){
             }
         }
         
-        d*=10;
+       d*=10;
     }
 	Vector ordenado2;
-	//cout<<ordenado.size()<<endl;
 	
 	for(int m=0;m<ordenado.getElementos();m++){
-		if(m>=10){
-			//cout<<"ordenado: "<<ordenado[m]<<endl;
+		if(m>=ordenado.getElementos()-10){
+			
 			int ele=ordenado[m];
 			ordenado2.push_back(ele);
 		}
@@ -350,6 +370,7 @@ void OrdenamientoInterno::ordenarBucket(){
 	}
 	
     copiarVector(ordenado2);
+}
 }
 
 /**
