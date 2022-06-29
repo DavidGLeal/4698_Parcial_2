@@ -1,3 +1,16 @@
+/*
+	*Universidad de las Fuerzas Armadas "ESPE"
+    *Enunciado del problema:
+	    *Programa que realize hash cerrado de enteros y strings .
+     *Autores:
+        *Curso de Estructura de Datos NRC: 4698
+	*Fecha de creacion: 
+        * 24-06-2022
+	*Fecha de modificacion:
+        * 29-06-2022
+    *GitHub del grupo:	
+        *https://github.com/DavidGLeal/4698_Ordenamientos
+*/
 #pragma once 
 #include <iostream>
 #include "Nodo.h"
@@ -31,7 +44,7 @@ void TablaHashCerrada::eliminar(string cad)
     int buscar = 0;
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
-    while (aux == nullptr && buscar < 30)
+    while (aux == NULL && buscar < 30)
     {
         pos++;
         aux = tabla[pos % NCASILLAS];
@@ -42,7 +55,7 @@ void TablaHashCerrada::eliminar(string cad)
             break;
         }
     }
-    if (aux != nullptr)
+    if (aux != NULL)
     {
        if (aux->getCadena() == cad && buscar < 30)
         {
@@ -55,12 +68,12 @@ void TablaHashCerrada::eliminar(string cad)
         }
         else
         {
-            while (aux == nullptr)
+            while (aux == NULL)
             {
                 pos++;
                 aux = tabla[pos % NCASILLAS];
             }	    
-            if (aux->getSig() != nullptr)
+            if (aux->getSig() != NULL)
             {
                 while (aux->getSig()->getCadena() != cad)
                 {
@@ -68,15 +81,7 @@ void TablaHashCerrada::eliminar(string cad)
                 }
             }
             else cout << "\nNo existe ese elemento. Verifique que está en la lista."<<endl;
-            /*while(tabla[pos]->getCadena()!=cad)
-            {
-                pos = hash2(pos);
-            }
-            aux = tabla[pos];
-            tabla[pos] = tabla[pos]->getSig();*/
-            //delete aux;
-            /*aux->setSig(aux->getSig()->getSig());
-            delete aux->getSig();*/
+            
         }
     }
 }
@@ -156,5 +161,7 @@ int TablaHashCerrada::hash(string cad){
     }
     return suma % NCASILLAS;
 }
+
+
 
 

@@ -1,3 +1,16 @@
+/*
+	*Universidad de las Fuerzas Armadas "ESPE"
+    *Enunciado del problema:
+	    *Programa que realize hash cerrado de enteros y strings .
+     *Autores:
+        *Curso de Estructura de Datos NRC: 4698
+	*Fecha de creacion: 
+        * 24-06-2022
+	*Fecha de modificacion:
+        * 29-06-2022
+    *GitHub del grupo:	
+        *https://github.com/DavidGLeal/4698_Ordenamientos
+*/
 #pragma once 
 #include <iostream>
 #include "Nodo.h"
@@ -29,7 +42,7 @@ TablaHashCerrada::~TablaHashCerrada(){
 void TablaHashCerrada::eliminar(string cad){
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
-    while (aux == nullptr)
+    while (aux == NULL)
     {
         pos++;
         aux = tabla[pos % NCASILLAS];
@@ -40,12 +53,12 @@ void TablaHashCerrada::eliminar(string cad){
     }
     else
     {
-	while (aux == nullptr)
+	while (aux == NULL)
         {
             pos++;
             aux = tabla[pos % NCASILLAS];
         }	    
-        if (aux->getSig() != nullptr)
+        if (aux->getSig() != NULL)
         {
             while (aux->getSig()->getCadena() != cad)
             {
@@ -73,7 +86,7 @@ void TablaHashCerrada::imprimir(){
 void TablaHashCerrada::buscar (string cad) {
     int pos = hash(cad);
     NodoCircular *aux = tabla[pos];
-    while (aux == nullptr)
+    while (aux == NULL)
     {
         pos++;
         aux = tabla[pos % NCASILLAS];
@@ -83,12 +96,12 @@ void TablaHashCerrada::buscar (string cad) {
     }
     else
     {
-    while (aux == nullptr)
+    while (aux == NULL)
         {
             pos++;
             aux = tabla[pos % NCASILLAS];
         }	    
-        if (aux->getSig() != nullptr)
+        if (aux->getSig() != NULL)
         {
             while (aux->getSig()->getCadena() != cad)
             {
@@ -129,31 +142,6 @@ void TablaHashCerrada::insertar(string cad, int opc)
     }
 }
 
-/*int TablaHashCerrada::buscar(std::string valor) {
-    const int ELEMENTO_NO_ENCONTRADO{-1};
-    int clave{hash(valor)};
-
-    if (this->tabla[clave]->getCadena().compare(valor) == 0)
-        return clave;
-
-    int posiciones = clave + 1;
-    if (posiciones >= NCASILLAS)
-        posiciones -= NCASILLAS;
-
-    bool haEncontradoValor{false};
-    while (posiciones != clave && !haEncontradoValor) {
-        if (this->tabla[posiciones] != nullptr)
-            haEncontradoValor = this->tabla[posiciones]->getCadena().compare(valor) == 0;
-
-        if (!haEncontradoValor)
-            posiciones++;
-
-        if (posiciones >= NCASILLAS)
-            posiciones -= NCASILLAS;
-    }
-
-    return (haEncontradoValor) ? posiciones: ELEMENTO_NO_ENCONTRADO;
-}*/
 
 int TablaHashCerrada::hash(string cad){
     int suma = 0;

@@ -1,3 +1,16 @@
+/*
+	*Universidad de las Fuerzas Armadas "ESPE"
+    *Enunciado del problema:
+	    *Programa que realize hash cerrado de enteros y strings .
+     *Autores:
+        *Curso de Estructura de Datos NRC: 4698
+	*Fecha de creacion: 
+        * 24-06-2022
+	*Fecha de modificacion:
+        * 29-06-2022
+    *GitHub del grupo:	
+        *https://github.com/DavidGLeal/4698_Ordenamientos
+*/
 #pragma once 
 #include <iostream>
 #include "TablaHashInt.h"
@@ -72,7 +85,7 @@ void TablaCerradaEnteros::insertarDoble(int valor){
 void TablaCerradaEnteros::eliminar(int valor){
     int pos = hash(valor);
     NodoCircularEntero *aux = tabla[pos];
-    while (aux == nullptr)
+    while (aux == NULL)
     {
         pos++;
         aux = tabla[pos % NCASILLAS];
@@ -83,12 +96,12 @@ void TablaCerradaEnteros::eliminar(int valor){
     }
     else
     {
-        while (aux == nullptr)
+        while (aux == NULL)
         {
             pos++;
             aux = tabla[pos % NCASILLAS];
         }
-        if (aux->getSig() != nullptr)
+        if (aux->getSig() != NULL)
         {
 		while(aux->getSig()->getValor() != valor){
 		    aux = aux->getSig();
@@ -122,7 +135,7 @@ int TablaCerradaEnteros::buscarLineal(int valor) {
 
     bool haEncontradoValor{false};
     while (posiciones != clave && !haEncontradoValor) {
-        if (this->tabla[posiciones] != nullptr)
+        if (this->tabla[posiciones] != NULL)
             haEncontradoValor = this->tabla[posiciones]->getValor() == valor;
 
         if (!haEncontradoValor)
@@ -152,12 +165,13 @@ int TablaCerradaEnteros::hashlineal(int pos){
 
 //Cuadrático
 int TablaCerradaEnteros::hashCuadratico(int pos){
-	int i=1;
-	while(tabla[pos]!=NULL){
-		pos=pos+(i*i%NCASILLAS);
-		i++;
-	}
-	return pos;
+    int i=0;
+	int suma =0;
+    int indice =0;
+    suma = hash(tabla[pos]->getValor());
+    indice = (pos + i*i) % NCASILLAS;
+    i++;
+	return indice;  
 } 
 
 //Doble hash

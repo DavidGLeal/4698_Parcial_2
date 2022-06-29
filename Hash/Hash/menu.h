@@ -1,3 +1,16 @@
+/*
+	*Universidad de las Fuerzas Armadas "ESPE"
+    *Enunciado del problema:
+	    *Programa que realize hash cerrado de enteros y strings .
+     *Autores:
+        *Curso de Estructura de Datos NRC: 4698
+	*Fecha de creacion: 
+        * 24-06-2022
+	*Fecha de modificacion:
+        * 29-06-2022
+    *GitHub del grupo:	
+        *https://github.com/DavidGLeal/4698_Ordenamientos
+*/
 #include <iostream>
 #include <conio.h>
 #include <stdio.h>
@@ -89,52 +102,48 @@ void MenuIngresoLineal(){
 		{
 			case 1:{
 				system("cls");
-				do{
-					int valor = ingresar_Datosenteros();
-					TablaSL.insertar(valor);
-					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
-					cin >> op;
-				}while(op == "s");
+				
+				int valor = ingresar_Datosenteros();
+				TablaSL.insertar(valor);
+				cout << "\nDato Ingresado" << endl;
 				TablaSL.imprimir();
 				system ("pause");
 				break;
 			}		
 			case 2:{
 				system("cls");
-				do{
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaLT.insertar(cadena);
-					cout << "\n¿Desea ingresar otra? (s/n)"<<endl;
-					cin >> op;
-				}while(op == "s");
-					cout <<"\nTabla hash cerrada"<< endl;
+					cout << "\nDato Ingresado" << endl;
 					TablaLT.imprimir();
 				system ("pause");
 				break;
 			}		
 			case 3:{
 				system("cls");
+				cout <<"Tabla Hash"<<endl;
+				TablaSL.imprimir();
 				int valor = ingresar_Datosenteros();
+				TablaSL.imprimir();
 				TablaSL.eliminar(valor);
 				cout <<"Elemento eliminado"<< endl;
-				TablaSL.imprimir();
 				system ("pause");
 				break;
 			}
 			case 4:{
 				system("cls");
+					TablaLT.imprimir();
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaLT.eliminar(cadena);
-					cout <<"Elemeto eliminado"<< endl;
-					cout <<"\nTabla hash cerrada"<< endl;
-					TablaLT.imprimir();
+					cout <<"\nElemeto eliminado"<< endl;
 				system ("pause");
 				break;
 			}		
 			case 5:{
 				system("cls");
+					TablaSL.imprimir();
 					int valor = ingresar_Datosenteros();
 					TablaSL.buscar(valor);
 				system ("pause");
@@ -142,6 +151,7 @@ void MenuIngresoLineal(){
 			}	
 			case 6:{
 				system("cls");
+					TablaLT.imprimir();
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaLT.buscar(cadena);
@@ -176,52 +186,47 @@ void MenuIngresoCuadratico(){
 		{
 			case 1:{
 				system("cls");
-				do{
 					int valor = ingresar_Datosenteros();
 					TablaSC.insertar(valor);
-					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
-					cin >> op;
-				}while(op == "s");
-				TablaSC.imprimir();
+					cout << "\nDato Ingresado" << endl;		
 				system ("pause");
 				break;
 			}		
 			case 2:{
 				system("cls");
-				do{
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaCT.insertar(cadena); //METODO INSERTAR CUADRATICO
-					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
-					cin >> op;
-				}while(op == "s");
-					cout <<"\nTabla hash cerrada"<< endl;
+					cout << "\nDato Ingresado" << endl;
 					TablaCT.imprimir();
 				system ("pause");
 				break;
 			}		
 			case 3:{
 				system("cls");
+				cout << "Tabla Hash"<<endl;
+				TablaSC.imprimir();
 				int valor = ingresar_Datosenteros();
 				TablaSC.eliminar(valor);
-				cout <<"Elemento eliminado"<< endl;
-				TablaSC.imprimir();
+				cout <<"\nElemento eliminado"<< endl;
 				system ("pause");
 				break;
 			}
 			case 4:{
 				system("cls");
+					cout <<"Tabla Hash"<< endl;
+					TablaCT.imprimir();
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaCT.eliminar(cadena);
-					cout<<"Elemento eliminado"<<endl;
-					cout <<"\nTabla hash cerrada"<< endl;
-					TablaCT.imprimir();
+					cout<<"\nElemento eliminado"<<endl;
 				system ("pause");
 				break;
 			}	
 			case 5:{
 				system("cls");
+					cout <<"Tabla Hash"<< endl;
+					TablaSC.imprimir();
 					int valor = ingresar_Datosenteros();
 					TablaSC.buscar(valor);
 				system ("pause");
@@ -229,6 +234,8 @@ void MenuIngresoCuadratico(){
 			}	
 			case 6:{
 				system("cls");
+					cout <<"Tabla Hash"<< endl;
+					TablaCT.imprimir();
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaCT.buscar(cadena);
@@ -263,45 +270,43 @@ void MenuIngresoDoble(){
 		{
 			case 1:{
 				system("cls");
-				do{
+				
 					int valor = ingresar_Datosenteros();
 					TablaHD.insertar(valor);
-					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
-					cin >> op;
-				}while(op == "s");
-				TablaHD.imprimir();
+					cout << "\nDato Ingresado" << endl;
+					TablaHD.imprimir();
 				system ("pause");
 				break;
 			}		
 			case 2:{
 				system("cls");
-				do{
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaDT.insertar(cadena);
-					cout << "\n¿Desea ingresar otra? (s/n)" << endl;
-					cin >> op;
-				}while(op == "s");
-					cout <<"\nTabla hash cerrada"<< endl;
+					cout << "\nDato Ingresado" << endl;
+					cout <<"Tabla Hash"<< endl;
 					TablaDT.imprimir();
 				system ("pause");
 				break;
 			}		
 			case 3:{
 				system("cls");
+				TablaHD.imprimir();
 				int valor = ingresar_Datosenteros();
 				TablaHD.eliminar(valor);
-				cout <<"Elemento eliminado"<< endl;
+				cout <<"\nElemento eliminado"<< endl;
 				TablaHD.imprimir();
 				system ("pause");
 				break;
 			}
 			case 4:{
 				system("cls");
+					cout <<"Tabla Hash"<< endl;
+					TablaDT.imprimir();
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaDT.eliminar(cadena);
-					cout<<"Elemento eliminado"<<endl;
+					cout<<"\nElemento eliminado"<<endl;
 					cout <<"\nTabla hash cerrada"<< endl;
 					TablaDT.imprimir();
 				system ("pause");
@@ -309,6 +314,8 @@ void MenuIngresoDoble(){
 			}						
 			case 5:{
 				system("cls");
+					cout <<"Tabla Hash"<< endl;
+					TablaHD.imprimir();
 					int valor = ingresar_Datosenteros();
 					TablaHD.buscar(valor);
 				system ("pause");
@@ -316,6 +323,8 @@ void MenuIngresoDoble(){
 			}	
 			case 6:{
 				system("cls");
+					cout <<"Tabla Hash"<< endl;
+					TablaDT.imprimir();
 					cout << "> Ingrese la letra o palabra: ";
 					cadena=IngresoString();
 					TablaDT.buscar(cadena);

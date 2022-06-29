@@ -105,3 +105,5 @@ void TablaCerradaEnteros::buscar(int valor) {
 int TablaCerradaEnteros::hash(int valor){
     return valor % NCASILLAS;
 }
+
+
