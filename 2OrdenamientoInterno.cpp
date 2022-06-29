@@ -272,116 +272,116 @@ int OrdenamientoInterno::getMax(Vector &v){
 */
 void OrdenamientoInterno::ordenarBucket(){
     
-	int c = vector.size();
+	// int c = vector.size();
 	
-	Vector ordenado;
-	int **matriz = new int*[c];
-	for(int z =0;z<c;z++)
-	{
-		matriz[z] = new int[10];
-	}
+	// Vector ordenado;
+	// int **matriz = new int*[c];
+	// for(int z =0;z<c;z++)
+	// {
+	// 	matriz[z] = new int[10];
+	// }
 	
-	int col=10,cnt=0,k=0,d=1,l=0;
-	int *j = new int[c];
+	// int col=10,cnt=0,k=0,d=1,l=0;
+	// int *j = new int[c];
 	
-	for(int x=0;x<c;x++)
-	{
-		for(int w =0;w<10;w++)
-		{
-			matriz[x][w]=0;
-		}
-	}
+	// for(int x=0;x<c;x++)
+	// {
+	// 	for(int w =0;w<10;w++)
+	// 	{
+	// 		matriz[x][w]=0;
+	// 	}
+	// }
 	
-	cout << "Despues primer for"<<endl;
-	int max= *vector.get(0);
-	for(int a=1;a<c;a++)
-    {
-        if(*vector.get(a)>max)
-            max=*vector.get(a);
-    }
-	cout << "Despues 2 for"<<endl;
-    while(max>0)
-    {
-        cnt++;
-        max=max/10;
-    }
+	// cout << "Despues primer for"<<endl;
+	// int max= *vector.get(0);
+	// for(int a=1;a<c;a++)
+    // {
+    //     if(*vector.get(a)>max)
+    //         max=*vector.get(a);
+    // }
+	// cout << "Despues 2 for"<<endl;
+    // while(max>0)
+    // {
+    //     cnt++;
+    //     max=max/10;
+    // }
 	
-	int ap = c;
-	for(int m=0;m<cnt;m++)
-    {
-        for(int i=0;i<c;i++)
-        {    
-			j[i]=0;
-		}
-		cout << "for1"<<endl;
-        for(int y=0;y<c;y++)
-        {
-            k=(abs(vector[y])/d)%10;
-            if(k>=c)
-            {        	
-            	for(int d = c; d<=k;d++)
-            	{
-            		matriz[d] = new int[10];
-            		j[d] =0;
-				}
-				ap=k+1;
-			}
-            matriz[k][j[k]]=*vector.get(y);
-			cout << matriz[k][j[k]] <<endl;
-            j[k]++;
-        }
+	// int ap = c;
+	// for(int m=0;m<cnt;m++)
+    // {
+    //     for(int i=0;i<c;i++)
+    //     {    
+	// 		j[i]=0;
+	// 	}
+	// 	cout << "for1"<<endl;
+    //     for(int y=0;y<c;y++)
+    //     {
+    //         k=(abs(vector[y])/d)%10;
+    //         if(k>=c)
+    //         {        	
+    //         	for(int d = c; d<=k;d++)
+    //         	{
+    //         		matriz[d] = new int[10];
+    //         		j[d] =0;
+	// 			}
+	// 			ap=k+1;
+	// 		}
+    //         matriz[k][j[k]]=*vector.get(y);
+	// 		cout << matriz[k][j[k]] <<endl;
+    //         j[k]++;
+    //     }
         
-         for(int a=0;a<c;a++)
-        {
-        	for(int r=0;r<j[a];r++)
-        	{
+    //      for(int a=0;a<c;a++)
+    //     {
+    //     	for(int r=0;r<j[a];r++)
+    //     	{
         		
-        		for(int o=r;o<j[a];o++)
-        		{
-        		 if(matriz[a][r]>matriz[a][o])
-        			{
-        				int aux = matriz[a][r];
-        			 matriz[a][r] = matriz[a][o];
-        				matriz[a][o] = aux;					 					 				        				
-					}				        			
-				}
-				cout << "for3.2"<<endl;        		
-			}
-			cout << "for3.1"<<endl;
+    //     		for(int o=r;o<j[a];o++)
+    //     		{
+    //     		 if(matriz[a][r]>matriz[a][o])
+    //     			{
+    //     				int aux = matriz[a][r];
+    //     			 matriz[a][r] = matriz[a][o];
+    //     				matriz[a][o] = aux;					 					 				        				
+	// 				}				        			
+	// 			}
+	// 			cout << "for3.2"<<endl;        		
+	// 		}
+	// 		cout << "for3.1"<<endl;
 
-		}
-		cout << "for3"<<endl;
+	// 	}
+	// 	cout << "for3"<<endl;
         
-    	l=0;
-        for(int b=0;b<c;b++)
-        {
-            for(k=0;k<j[b];k++)
-            {
-            	int aux =matriz[b][k];
-                ordenado.push_back(aux);
-                l++;
-            }
-			cout << "for4.1"<<endl;
-        }
-		cout << "for4"<<endl;
+    // 	l=0;
+    //     for(int b=0;b<c;b++)
+    //     {
+    //         for(k=0;k<j[b];k++)
+    //         {
+    //         	int aux =matriz[b][k];
+    //             ordenado.push_back(aux);
+    //             l++;
+    //         }
+	// 		cout << "for4.1"<<endl;
+    //     }
+	// 	cout << "for4"<<endl;
         
-       d*=10;
-    }
+    //    d*=10;
+    // }
 
-	cout << "Despues primer for grande"<<endl;
-	Vector ordenado2;
+	// cout << "Despues primer for grande"<<endl;
+	// Vector ordenado2;
 	
-	for(int m=0;m<ordenado.getElementos();m++){
-		if(m>=ordenado.getElementos()-10){
+	// for(int m=0;m<ordenado.getElementos();m++){
+	// 	if(m>=ordenado.getElementos()-10){
 			
-			int ele=ordenado[m];
-			ordenado2.push_back(ele);
-		}
+	// 		int ele=ordenado[m];
+	// 		ordenado2.push_back(ele);
+	// 	}
 		
-	}
-	cout << "Al menos llego al final"<<endl;
-	imprimir(ordenado2);
-    copiarVector(ordenado2);
+	// }
+	// cout << "Al menos llego al final"<<endl;
+	// imprimir(ordenado2);
+    // copiarVector(ordenado2);
 
 }
 

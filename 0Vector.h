@@ -46,5 +46,7 @@ class Vector {
 
         void imprimir(Vector &vector);
 
+        void unirVectores(Vector &vect);
+
 };
 
