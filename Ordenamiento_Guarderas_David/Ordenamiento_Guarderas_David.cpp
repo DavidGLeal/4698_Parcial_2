@@ -24,9 +24,10 @@ void Ordenamiento_Guarderas_David::ordenamiento_Guarderas_David()
 {
 	int i=0;
 	int max = orde.size();
-	while(i<max)
+	Vector conj;
+	while(i<max && (max-i)>=inter)
 	{
-		Vector conj;
+		
 		for(int j =i;j<i+inter;j++)
 		{	
 			int val = *(orde.get(j));
@@ -36,13 +37,26 @@ void Ordenamiento_Guarderas_David::ordenamiento_Guarderas_David()
 		func.ordenarShellSort();
 		imprimir(func.getVector());
 		i+=inter;
-		conj.~Vector();
+		conj.vaciar();
+	}
+	if(max-i>0)
+	{
+		for(int j =i;j<max;j++)
+		{	
+			int val = *(orde.get(j));
+			conj.push_back(val);
+		}
+		func.copiarVector(conj);
+		func.ordenarShellSort();
+		imprimir(func.getVector());
+		i+=inter;
+		conj.vaciar();
 	}
 }
 
 void Ordenamiento_Guarderas_David::imprimir(Vector vec)
 {
-	for(int i=0;i<getInter();i++)
+	for(int i=0;i<vec.size();i++)
 	{
 		cout<<*vec.get(i)<<"\t";
 	}
