@@ -9,5 +9,5 @@ class ImprimirExterno{
     
     public:
      	void imprimir(string nombre);
-       	 
+           	 
 };

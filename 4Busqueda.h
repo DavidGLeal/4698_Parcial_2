@@ -2,8 +2,10 @@
 #include <iostream>
 #include "0Vector.cpp"
 #include "2OrdenamientoInterno.cpp"
+#include "6ImprimirInterno.h"
 using namespace std;
-class Busqueda{
+
+class Busqueda:  public ImprimirInterno{
 
 	private: 
 		Vector vector;
@@ -24,4 +26,6 @@ class Busqueda{
 		void  setDato(int &a);
 
 		void copiarVector(Vector &_vector);
+
+		void imprimirInterno();
 };

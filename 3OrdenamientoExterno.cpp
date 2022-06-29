@@ -529,3 +529,9 @@ void MetodoExterno::fusiona(int longitud)
     cerrar(&F1);
     cerrar(&F2);
 }
+
+void MetodoExterno::imprimirInterno()
+{
+    imprimir(nombreArchivo);
+    cout << "\n";
+}

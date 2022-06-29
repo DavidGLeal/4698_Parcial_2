@@ -46,4 +46,7 @@ class MetodoExterno: public ImprimirExterno{
         void insertar2(int d, string nom);
         void setN(int n);
 
+        void imprimirInterno();
+
 };
+

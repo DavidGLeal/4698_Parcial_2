@@ -17,3 +17,4 @@ void ImprimirExterno::imprimir(string nombre)
 
   F.close();
 }
+

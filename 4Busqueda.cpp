@@ -98,3 +98,8 @@ void Busqueda::busquedaSecuencial(){
     }    
 }
 
+void Busqueda::imprimirInterno(){
+    imprimir(vector);
+    cout<<"\n";
+}
+

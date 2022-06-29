@@ -260,6 +260,7 @@ void MenuMetExt(){
 				directa->limpiarArchivo();
 				natural->limpiarArchivo();
 				ingresarExternos("OrdenamientoNatural.txt","OrdenamientoDirecto.txt");
+				directa->imprimirInterno();
 				cout<< "\n~~~ Datos ingresados con exito ~~~"<<endl;
 				system("pause");
 
@@ -272,7 +273,7 @@ void MenuMetExt(){
 					directa->ordenarPorDirecta();
 					cout<< "\n~~~ Datos ordenados con exito ~~~"<<endl;
 					cout<<"\n";
-					directa->imprimir("OrdenamientoDirecto.txt");
+					directa->imprimirInterno();
 					cout<<"\n";
 					system("pause");
 				}else{
@@ -289,7 +290,7 @@ void MenuMetExt(){
 					natural->ordenarPorNatural();
 					cout<< "\n~~~ Datos ordenados con exito ~~~"<<endl;
 					cout<<"\n";
-					natural->imprimir("OrdenamientoNatural.txt");
+					natural->imprimirInterno();
 					cout<<"\n";
 					system("pause");
 				}else{
@@ -330,19 +331,25 @@ void MenuBusquedas(){
 				system("cls");
 				ingresarBusqueda();
 				cout<< "\n~~~ Datos ingresados con exito ~~~\n"<<endl;
+				binaria->imprimirInterno();
+				cout<< "\n";
 				system("pause");
 				break;
 			case 2:
 				system("cls");
 				if(ingresarNumeroBuscadoBin()){
+					binaria->imprimirInterno();
 					binaria->busquedaBinaria();
+					cout<< "\n";
 					system("pause");
                 }
 				break;	
 			case 3:{
 				system("cls");
 				if(ingresarNumeroBuscadoSec()){
+					secuencial->imprimirInterno();
 					secuencial->busquedaSecuencial();
+					cout<< "\n";
 					system("pause");
 				}
 				break;
