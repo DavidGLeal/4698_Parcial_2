@@ -11,6 +11,9 @@ int main(int argc, char** argv) {
     obj.insertarNodo(arbol, 79);
     obj.insertarNodo(arbol, 60);
     obj.insertarNodo(arbol, 12);
+    cout<<"----Recorrido en Preorden---";
+    cout<<"\n";
+    obj.preOrden(arbol)
     cout<<"\n";
     system("pause");
 	return 0;
