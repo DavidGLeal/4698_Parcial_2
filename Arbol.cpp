@@ -39,3 +39,19 @@ void Arbol::insertarNodo(Nodo *&arbol, int dato)
         }
     }
 }
+//RECORRIDO EN PREORDEN
+void Arbol::preOrden(Nodo *arbol)
+{
+    if (arbol == NULL)
+    {
+        return;
+        cout<<"No se encuentran datos en el arbol, \narbol vacio...\n";
+    }
+    else
+    {
+        cout<<arbol->getValor()<<"-";
+        preOrden(arbol->getIzquierda());
+        preOrden(arbol->getDerecha());
+    }
+}
+
