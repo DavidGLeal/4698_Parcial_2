@@ -110,3 +110,26 @@ if (arbol == NULL)
 }
 
 
+/**
+ * Imprime el árbol en orden posterior.
+ * 
+ * @param arbol El nodo raíz del árbol.
+ * 
+ * @return el valor del nodo.
+ */
+void Arbol::postOrden(Nodo *arbol){
+	
+	 if (arbol == NULL)
+    {
+        return;
+        cout<<"No se encuentran datos en el arbol, \narbol vacio...\n";
+    }
+    else
+    {
+        postOrden(arbol->getIzquierda());
+        postOrden(arbol->getDerecha());
+		cout<<arbol->getValor()<<"->";
+    }
+} 
+
+
