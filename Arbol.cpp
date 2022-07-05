@@ -91,3 +91,22 @@ void Arbol::preOrden(Nodo *arbol)
     }
 }
 
+//RECORRIDO INORDEN
+void Arbol::inOrden(Nodo *arbol)
+{
+
+if (arbol == NULL)
+    {
+        return;
+        cout<<"No se encuentran datos en el arbol, \narbol vacio...\n";
+    }
+    else
+    {
+     inOrden(arbol->getIzquierda());
+     cout<<arbol->getValor()<<"-";
+     inOrden(arbol->getDerecha());
+	}
+	
+}
+
+
