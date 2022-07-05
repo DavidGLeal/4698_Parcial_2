@@ -6,6 +6,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
     Arbol obj;
+    int num;
 	obj.insertarNodo(arbol, 56);
     obj.insertarNodo(arbol, 53);
     obj.insertarNodo(arbol, 79);
@@ -13,10 +14,16 @@ int main(int argc, char** argv) {
     obj.insertarNodo(arbol, 12);
     cout<<"----Recorrido en Preorden---";
     cout<<"\n";
-    obj.preOrden(arbol)
+    obj.preOrden(arbol);
     cout<<"\n";
-    cout<<"----Recorrido en InOrden---";
+    
+    cout<<"----Buscar---";
     cout<<"\n";
+    cout <<"Ingrese valor a buscar";
+    cin>>num;
+    
+    obj.buscar(arbol,num);
     system("pause");
 	return 0;
+	
 }
