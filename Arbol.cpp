@@ -68,6 +68,63 @@ void Arbol::insertarNodo(Nodo *&arbol, int dato)
     }
 }
 
+//Función mostrar
+void Arbol::mostrar(Nodo *arbol, int contador)
+{
+    if (arbol == NULL)
+    {
+        return;
+    }
+    else
+    {
+        mostrar(arbol->getDerecha(), contador + 1);
+        for (int i = 0; i < contador; i++)
+        {
+            cout << "  ";
+        }
+        cout << arbol->getValor() << endl;
+        mostrar(arbol->getIzquierda(), contador + 1);
+    }
+}
+
+//Calcula el peso de un árbol binario
+int Arbol::peso(Nodo *arbol)
+{
+    if (arbol == NULL)
+        return 0;
+    else
+        return 1 + peso(arbol->getIzquierda()) + peso(arbol->getDerecha());
+}
+
+//Calcula la altura (nivel + 1) de un árbol binario
+int Arbol::altura(Nodo *aux)
+{
+	 if (aux == NULL)
+	    return 0;
+	 if (aux->getIzquierda() == NULL && aux ->getDerecha() == NULL) 
+	    return 1;
+	 return max (altura (aux->getIzquierda()), altura (aux->getDerecha())) + 1; 
+}
+
+//Se complementa con la función "simetrias" y calcula
+//si el árbol es perfecto o imperfecto
+bool Arbol::simetria(Nodo* X, Nodo* Y){
+    if (X == NULL && Y == NULL) {
+        return true;
+    }
+    return (X != NULL && Y != NULL) &&
+        simetria(X->getIzquierda(), Y->getDerecha()) &&
+        simetria(X->getDerecha(), Y->getIzquierda());
+}
+
+bool Arbol::simetrias(Nodo* aux){
+    if (aux == NULL) {
+        return true;
+    }
+ 
+    return simetria(aux->getIzquierda(), aux->getDerecha());
+}
+
 //RECORRIDO EN PREORDEN
 /**
  * *|CURSOR_MARCADOR|*
