@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     else {
         cout << "Arbol Imperfecto";
     }	
-    
+    c
     cout<<"----Recorrido en Preorden---";
     cout<<"\n";
     obj.preOrden(arbol);
