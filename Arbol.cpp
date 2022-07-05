@@ -90,25 +90,22 @@ void Arbol::preOrden(Nodo *arbol)
         preOrden(arbol->getDerecha());
     }
 }
-
-//RECORRIDO INORDEN
-void Arbol::inOrden(Nodo *arbol)
-{
-
-if (arbol == NULL)
-    {
-        return;
-        cout<<"No se encuentran datos en el arbol, \narbol vacio...\n";
-    }
-    else
-    {
-     inOrden(arbol->getIzquierda());
-     cout<<arbol->getValor()<<"-";
-     inOrden(arbol->getDerecha());
-	}
-	
+void Arbol::buscar(Nodo* arbol, int dato){	
+if(arbol == NULL){	 
+   cout<<"No se encuentran datos en el arbol\n";
+}
+else if(arbol->getValor() == dato){
+	cout<<arbol->getValor()<<"\t "<<"Dato encontrado correctamente...\n";
+}
+else if(dato < arbol->getValor()){
+buscar(arbol->getIzquierda(), dato);
+}
+else{
+buscar(arbol->getDerecha(), dato);
+}
 }
 
+<<<<<<< HEAD
 
 /**
  * Imprime el árbol en orden posterior.
@@ -133,3 +130,5 @@ void Arbol::postOrden(Nodo *arbol){
 } 
 
 
+=======
+>>>>>>> 43921ee9ed286a3d641a34c157eddc7e5593c36b

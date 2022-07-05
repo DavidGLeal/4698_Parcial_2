@@ -10,7 +10,7 @@ public:
     Nodo *crearNodo(int);
     void insertarNodo(Nodo *&, int);
     void mostrar(Nodo *, int);
-    bool buscar(Nodo *, int);
+    void buscar(Nodo *, int);
     void preOrden(Nodo *);
     void inOrden(Nodo *);
     void postOrden(Nodo *);
