@@ -90,12 +90,13 @@ void Arbol::preOrden(Nodo *arbol)
         preOrden(arbol->getDerecha());
     }
 }
-bool Arbol::buscar(Nodo* arbol, int dato){
-if(arbol == NULL){
-return false;
+void Arbol::buscar(Nodo* arbol, int dato){
+	
+if(arbol == NULL){	 
+   cout<<"No se encuentran datos en el arbol\n";
 }
 else if(arbol->getValor() == dato){
-return true;
+	cout<<arbol->getValor()<<"\t "<<"Dato encontrado correctamente...\n";
 }
 else if(dato < arbol->getValor()){
 buscar(arbol->getIzquierda(), dato);
@@ -103,5 +104,7 @@ buscar(arbol->getIzquierda(), dato);
 else{
 buscar(arbol->getDerecha(), dato);
 }
+
+
 }
 
