@@ -14,4 +14,8 @@ public:
     void preOrden(Nodo *);
     void inOrden(Nodo *);
     void postOrden(Nodo *);
+    int peso(Nodo *);
+    int altura(Nodo *);
+    bool simetria(Nodo *, Nodo *);
+    bool simetrias(Nodo *);
 };
