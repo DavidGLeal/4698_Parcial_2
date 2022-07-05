@@ -15,6 +15,8 @@ int main(int argc, char** argv) {
     cout<<"\n";
     obj.preOrden(arbol)
     cout<<"\n";
+    cout<<"----Recorrido en InOrden---";
+    cout<<"\n";
     system("pause");
 	return 0;
 }
