@@ -90,4 +90,18 @@ void Arbol::preOrden(Nodo *arbol)
         preOrden(arbol->getDerecha());
     }
 }
+bool Arbol::buscar(Nodo* arbol, int dato){
+if(arbol == NULL){
+return false;
+}
+else if(arbol->getValor() == dato){
+return true;
+}
+else if(dato < arbol->getValor()){
+buscar(arbol->getIzquierda(), dato);
+}
+else{
+buscar(arbol->getDerecha(), dato);
+}
+}
 
