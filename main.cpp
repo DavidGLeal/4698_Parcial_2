@@ -7,13 +7,28 @@ using namespace std;
 int main(int argc, char** argv) {
     Arbol obj;
     int num;
-	obj.insertarNodo(arbol, 56);
+    int cont = 0;
+    obj.insertarNodo(arbol, 56);
     obj.insertarNodo(arbol, 53);
     obj.insertarNodo(arbol, 79);
     obj.insertarNodo(arbol, 60);
     obj.insertarNodo(arbol, 12);
-	obj.insertarNodo(arbol, 55);
-	obj.insertarNodo(arbol, 82);
+    obj.insertarNodo(arbol, 55);
+    obj.insertarNodo(arbol, 82);
+	
+    cout<<"\n";
+    obj.mostrar(arbol,cont);
+    cout<<"\n";
+    cout<<"PESO: "<<obj.peso(arbol);
+    cout<<"\n";
+    cout<<"ALTURA: "<<obj.altura(arbol);
+    cout<<"\n";
+    if (obj.simetrias(arbol)) {
+        cout << "Arbol Perfecto";
+    }
+    else {
+        cout << "Arbol Imperfecto";
+    }
 	
     cout<<"----Recorrido en Preorden---";
     cout<<"\n";
