@@ -68,65 +68,6 @@ void Arbol::insertarNodo(Nodo *&arbol, int dato)
     }
 }
 
-//Función mostrar 👍
-void Arbol::mostrar(Nodo *arbol, int contador)
-{
-    if (arbol == NULL)
-    {
-        return;
-    }
-    else
-    {
-        mostrar(arbol->getDerecha(), contador + 1);
-        for (int i = 0; i < contador; i++)
-        {
-            cout << "  ";
-        }
-        cout << arbol->getValor() << endl;
-        mostrar(arbol->getIzquierda(), contador + 1);
-    }
-}
-
-//Función que calcula el peso de un árbol binario
-int Arbol::peso(Nodo *arbol)
-{
-    if (arbol == NULL)
-        return 0;
-    else
-        return 1 + peso(arbol->getIzquierda()) + peso(arbol->getDerecha());
-}
-
-//Función que calcula la altura (por niveles + 1) de un árbol binario
-int Arbol::altura(Nodo *aux)
-{
-	 if (aux == NULL)
-	    return 0;
-	 if (aux->getIzquierda() == NULL && aux ->getDerecha() == NULL) 
-	    return 1;
-	 return max (altura (aux->getIzquierda()), altura (aux->getDerecha())) + 1; 
-}
-
-//Funciónes que determinan si un árbol es perfecto o no
-//Esta función se complementa con la función "simetias"
-bool Arbol::simetria(Nodo* X, Nodo* Y){
-    if (X == NULL && Y == NULL) {
-        return true;
-    }
-    return (X != NULL && Y != NULL) &&
-        simetria(X->getIzquierda(), Y->getDerecha()) &&
-        simetria(X->getDerecha(), Y->getIzquierda());
-}
-
-//Función que compara los sub - árboles obtenidos en la 
-//función "simetria"
-bool Arbol::simetrias(Nodo* aux){
-    if (aux == NULL) {
-        return true;
-    }
- 
-    return simetria(aux->getIzquierda(), aux->getDerecha());
-}
-
 //RECORRIDO EN PREORDEN
 /**
  * *|CURSOR_MARCADOR|*
@@ -149,6 +90,30 @@ void Arbol::preOrden(Nodo *arbol)
         preOrden(arbol->getDerecha());
     }
 }
+
+/**
+ * Recorrido inOrden.
+ * 
+ * @param arbol Un puntero al nodo de la raíz.
+ * 
+ * @return Dato entero del nodo.
+ */
+void Arbol::inOrden(Nodo *arbol)
+{
+    if (arbol == NULL)
+    {
+        cout<<"No se encuentran datos en el arbol"<<endl;
+        cout<<"El arbol se encuentra vacio"<<endl;
+        return;
+    }
+    else
+    {
+        inOrden(arbol->getIzquierda());
+	cout<<arbol->getValor()<<"->";
+        inOrden(arbol->getDerecha());
+    }
+}
+
 void Arbol::buscar(Nodo* arbol, int dato){	
 if(arbol == NULL){	 
    cout<<"No se encuentran datos en el arbol\n";
