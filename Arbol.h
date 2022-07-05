@@ -11,6 +11,7 @@ public:
     void insertarNodo(Nodo *&, int);
     void mostrar(Nodo *, int);
     void buscar(Nodo *, int);
+    void buscarporNivel(Nodo *, int);
     void preOrden(Nodo *);
     void inOrden(Nodo *);
     void postOrden(Nodo *);

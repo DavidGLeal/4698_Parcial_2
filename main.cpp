@@ -28,26 +28,32 @@ int main(int argc, char** argv) {
     }
     else {
         cout << "Arbol Imperfecto";
-    }
-	
+    }	
+    
     cout<<"----Recorrido en Preorden---";
     cout<<"\n";
     obj.preOrden(arbol);
     cout<<"\n";
     
-    cout<<"----Buscar---";
-    cout<<"\n";
-<<<<<<< HEAD
+
     cout<<"----Recorrido en Preorden---";
     cout<<"\n";
     obj.postOrden(arbol);
     cout<<"\n";
-=======
+
+    cout<<"----Buscar---";
+    cout<<"\n";
     cout <<"Ingrese valor a buscar";
     cin>>num;
-    
     obj.buscar(arbol,num);
->>>>>>> 43921ee9ed286a3d641a34c157eddc7e5593c36b
+ 
+    cout<<"----Buscar por Nivel---";
+    cout<<"\n";
+    cout<<"Ingrese el numero a buscar: ";
+    cin>>num;
+    obj.buscarporNivel(arbol, num);
+    cout<<"\n";
+    
     system("pause");
 	return 0;
 	

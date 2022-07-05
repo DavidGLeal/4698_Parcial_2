@@ -186,7 +186,25 @@ buscar(arbol->getDerecha(), dato);
 }
 }
 
-<<<<<<< HEAD
+
+void Arbol ::buscarporNivel(Nodo* arbol, int num){
+
+    int nivel = 0;
+    while(arbol != NULL){
+        if(arbol->getValor() == num){
+            cout<<"El numero "<<num<<" se encuentra en el nivel "<<nivel<<endl;
+            return;
+        }
+        else if(num < arbol->getValor()){
+            arbol = arbol->getIzquierda();
+        }
+        else{
+            arbol = arbol->getDerecha();
+        }
+        nivel++;
+    }
+    cout<<"El numero "<<num<<" no se encuentra en el arbol"<<endl;
+}
 
 /**
  * Imprime el árbol en orden posterior.
@@ -211,5 +229,3 @@ void Arbol::postOrden(Nodo *arbol){
 } 
 
 
-=======
->>>>>>> 43921ee9ed286a3d641a34c157eddc7e5593c36b
