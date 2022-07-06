@@ -22,9 +22,9 @@ class MenuGUI {
     public:
         MenuGUI() = default;
         void setTitleMenu(const std::string &newTitleOfMenu);
-        void setListOptions(const std::string newListOptions[], const size_t newSizeOfArrayOptions);
+        void setListOptions(const std::string newListOptions[], size_t newSizeOfArrayOptions);
         void setPositionOfMenu(const COORD &newPositionOfMenu);
-        int start();
+        int print();
 };
 
 #endif

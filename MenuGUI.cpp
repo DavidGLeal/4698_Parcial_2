@@ -59,7 +59,7 @@ void MenuGUI::setTitleMenu(const std::string &newTitleOfMenu) {
     this->title = newTitleOfMenu;
 }
 
-void MenuGUI::setListOptions(const std::string newListOptions[], const size_t newSizeOfArrayOptions) {
+void MenuGUI::setListOptions(const std::string newListOptions[], size_t newSizeOfArrayOptions) {
     this->options = newListOptions;
     this->sizeOfArrayOptions = newSizeOfArrayOptions;
 }
@@ -71,7 +71,7 @@ void MenuGUI::setPositionOfMenu(const COORD &newPositionOfMenu) {
     this->arrowPosition.Y = this->menuPosition.Y;
 }
 
-int MenuGUI::start() {
+int MenuGUI::print() {
     printOptions();
 
     bool exit{false};
@@ -82,5 +82,6 @@ int MenuGUI::start() {
     } while (!exit);
 
     HandleConsole::setCursorVisibilitie(true);
+    HandleConsole::setCursorPosition(this->menuPosition.X, (this->menuPosition.Y + this->sizeOfArrayOptions + 2));
     return this->activeOption;
 }

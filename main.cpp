@@ -1,12 +1,12 @@
-#include "Arbol.cpp"
+// #include "Arbol.cpp"
 #include <iostream>
+#include "MenuPrincipal.hpp"
 
-
-Nodo *arbol = NULL;
-using namespace std;
+/* Nodo *arbol = NULL;
+using namespace std; */
 
 int main(int argc, char** argv) {
-    Arbol obj;
+    /* Arbol obj;
     int num;
     int cont = 0;
     obj.insertarNodo(arbol, 56);
@@ -60,7 +60,10 @@ int main(int argc, char** argv) {
     obj.buscarporNivel(arbol, num);
     cout<<"\n";
     
-    system("pause");
-	return 0;
+    system("pause"); */
+    MenuPrincipal menuPrincipal;
+    menuPrincipal.start();
+
+    return 0;
 	
 }
