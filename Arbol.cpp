@@ -210,8 +210,6 @@ void Arbol ::buscarporNivel(Nodo* arbol, int num){
  * Imprime el árbol en orden posterior.
  * 
  * @param arbol El nodo raíz del árbol.
- * 
- * @return el valor del nodo.
  */
 void Arbol::postOrden(Nodo *arbol){
 	
@@ -226,7 +224,15 @@ void Arbol::postOrden(Nodo *arbol){
         postOrden(arbol->getDerecha());
 		cout<<arbol->getValor()<<"->";
     }
-} 
+}
+
+/**
+ *  Imprimir nodos en un nivel actual
+ * 
+ * @param arbol Un puntero al nodo de la raíz.
+ * 
+ * @return Dato entero del nodo.
+ */
 void Arbol::imprimirNivelActual(Nodo* arbol, int nivel)
 {
     if (arbol == NULL)
@@ -238,6 +244,14 @@ void Arbol::imprimirNivelActual(Nodo* arbol, int nivel)
         imprimirNivelActual(arbol->getDerecha(), nivel - 1);
     }
 }
+
+/**
+ * Imprime Recorrido por Amplitud del nodo.
+ * 
+ * @param arbol El nodo raíz del árbol
+ * 
+ * @return valor del Nodo.
+ */
 void Arbol::recorridoNivel(Nodo* arbol)
 {
 	if (arbol == NULL)
