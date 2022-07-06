@@ -186,6 +186,7 @@ buscar(arbol->getDerecha(), dato);
 }
 }
 
+//Es una función para buscar datos que cuenta con dos parámetros
 
 void Arbol ::buscarporNivel(Nodo* arbol, int num){
 
@@ -205,6 +206,8 @@ void Arbol ::buscarporNivel(Nodo* arbol, int num){
     }
     cout<<"El numero "<<num<<" no se encuentra en el arbol"<<endl;
 }
+
+//Es una función para buscar datos que cuenta con dos parámetros
 
 /**
  * Imprime el árbol en orden posterior.
