@@ -1,52 +1,74 @@
+#pragma once
 #include "MenuImprimir.hpp"
+#include "HandleConsole.cpp"
 
-void MenuImprimir::start(Arbol &_arbol) {
-    bool exit{false};
-    while (!exit) {
-        exit = determinarOpcion(this->menu.start(), &_arbol);
-    }
-}
-
-bool MenuImprimir::determinarOpcion(int opcionSeleccionada, Arbol *_arbol) {
-    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 2));
+bool MenuImprimir::determinarOpcion(int opcionSeleccionada) {
     switch (opcionSeleccionada) {
         case 1:
-            impresionPreOrden(_arbol);
+            impresionPreOrden();
             break;
 
         case 2:
-            impresionInOrden(_arbol);
+            impresionInOrden();
             break;
 
         case 3:
-            impresionPosOrden(_arbol);
+            impresionPosOrden();
             break;
 
         case 4:
-            impresionAmplitud(_arbol);
+            impresionAmplitud();
             break;
 
         case 5:
             return true;
             break;
     }
-    cout << "\n" <<endl;
+
+    std::cout << std::endl;
     system("pause");
     return false;
 }
 
-void MenuImprimir::impresionPreOrden(Arbol *&_arbol) { // Para los métodos, es necesario recibir los punteros por referencia.
-    _arbol->preOrden(_arbol->getArbol());
+void MenuImprimir::impresionPreOrden() {
+    std::cout << "Impresion PreOrden: ";
+    this->arbolAImprimir.preOrden(this->arbolAImprimir.getArbol());
 }
 
-void MenuImprimir::impresionInOrden(Arbol *&_arbol) {
-    _arbol->inOrden(_arbol->getArbol());
+void MenuImprimir::impresionInOrden() {
+    std::cout << "Impresion InOrden: ";
+    this->arbolAImprimir.inOrden(this->arbolAImprimir.getArbol());
 }
 
-void MenuImprimir::impresionPosOrden(Arbol *&_arbol) {
-    _arbol->postOrden(_arbol->getArbol());
+void MenuImprimir::impresionPosOrden() {
+    std::cout << "Impresion PosOrden: ";
+    this->arbolAImprimir.postOrden(this->arbolAImprimir.getArbol());
 }
 
-void MenuImprimir::impresionAmplitud(Arbol *&_arbol) {
-    _arbol->recorridoNivel(_arbol->getArbol());
+void MenuImprimir::impresionAmplitud() {
+    std::cout << "Impresion Amplitud: ";
+    this->arbolAImprimir.recorridoNivel(this->arbolAImprimir.getArbol());
+}
+
+MenuImprimir::MenuImprimir(Arbol arbol) {
+    this->arbolAImprimir = arbol;
+    this->menuImprimir.setTitleMenu("MENU IMPRIMIR");
+    this->menuImprimir.setListOptions(
+        new std::string[this->cantidadDeOpciones]{
+            "Pre-Orden",
+            "In-Orden",
+            "Post-Orden",
+            "Amplitud",
+            "Regresar"
+        },
+        this->cantidadDeOpciones
+    );
+    this->menuImprimir.setPositionOfMenu(this->ubicacion);
+}
+
+void MenuImprimir::start() {
+    bool exit{false};
+    while (!exit) {
+        exit = determinarOpcion(this->menuImprimir.print());
+    }
 }

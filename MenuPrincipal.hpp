@@ -6,25 +6,19 @@
 
 class MenuPrincipal {
     private:
-        Nodo *raiz{nullptr};
+        const COORD ubicacion{12, 5};
+        const size_t cantidadDeOpciones{5};
+        MenuGUI menuPrincipal;
         Arbol arbol;
-        const std::string titulo{"MENU PRINCIPAL"};
-        static constexpr size_t cantidadDeOpciones{5};
-        std::string opciones[cantidadDeOpciones]{
-            "1. Agregar",
-            "2. Eliminar",
-            "3. Buscar",
-            "4. Imprimir",
-            "5. Salir"
-        };
-        COORD ubicacion{12, 5};
-        MenuGUI menu = MenuGUI(titulo, opciones, cantidadDeOpciones, ubicacion);
-        bool determinarOpcion(int opcionSeleccionada);
+        Nodo *raiz{nullptr};
+
+        bool determinarOpcion(size_t opcionSeleccionada);
         void agregar();
         void eliminar();
         void buscar();
-        void imprimir();
+
     public:
+        MenuPrincipal();
         void start();
 };
 
