@@ -15,6 +15,7 @@ public:
     void buscarporNivel(Nodo *, int);
     void preOrden(Nodo *);
     void inOrden(Nodo *);
+    void recorridoNivel(Nodo *);
     void postOrden(Nodo *);
     int peso(Nodo *);
     int altura(Nodo *);
