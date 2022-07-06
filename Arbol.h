@@ -19,4 +19,5 @@ public:
     int altura(Nodo *);
     bool simetria(Nodo *, Nodo *);
     bool simetrias(Nodo *);
+    Nodo *eliminar(Nodo*, int)
 };
