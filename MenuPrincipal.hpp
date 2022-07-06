@@ -26,7 +26,6 @@ class MenuPrincipal {
 
     public:
         void start();
-        // Arbol &getArbol();
 };
 
 #endif

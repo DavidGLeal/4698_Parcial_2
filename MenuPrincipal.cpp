@@ -1,6 +1,6 @@
 #include "MenuPrincipal.hpp"
+#include "MenuImprimir.cpp"
 #include "Input.cpp"
-#include "HandleConsole.cpp"
 #include <iostream>
 
 void MenuPrincipal::start() {
@@ -12,6 +12,7 @@ void MenuPrincipal::start() {
 }
 
 bool MenuPrincipal::determinarOpcion(int opcionSeleccionada) {
+    MenuImprimir menuImprimir;
     switch (opcionSeleccionada) {
         case 1:
             agregar();
@@ -26,6 +27,7 @@ bool MenuPrincipal::determinarOpcion(int opcionSeleccionada) {
             break;
 
         case 4:
+            menuImprimir.start(&this->arbol);
             break;
 
         case 5:
@@ -39,10 +41,13 @@ bool MenuPrincipal::determinarOpcion(int opcionSeleccionada) {
 void MenuPrincipal::agregar() {
     
     HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 2));
+
     std::cout << "Ingrese un numero entero a guardar en el arbol: ";
     int valor = Input::integerNumber(1, 4);
+
     HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 3));
     this->arbol.insertarNodo(this->raiz, valor);
+
     system("pause");
 }
 
@@ -53,24 +58,19 @@ void MenuPrincipal::eliminar() {
     int valor = Input::integerNumber(1, 4);
 
     HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 3));
-    Nodo *nodoEliminado = this->arbol.eliminarNodo(this->raiz, valor);
-
-    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 4));
-    std::cout << ((nodoEliminado == nullptr) ? "No se elimino el dato" : "Se elimino el dato");
+    this->arbol.eliminarNodo(this->raiz, valor);
 
     system("pause");
-    
 }
 
 void MenuPrincipal::buscar() {
     HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 2));
+
     std::cout << "Ingrese un numero entero a buscar en el arbol: ";
     int valor = Input::integerNumber(1, 4);
+
     HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 3));
     this->arbol.buscar(this->raiz, valor);
+
     system("pause");
 }
-
-// Arbol &MenuPrincipal::getArbol() {
-//     return this->arbol;
-// }
