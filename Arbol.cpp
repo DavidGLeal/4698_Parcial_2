@@ -210,6 +210,8 @@ void Arbol ::buscarporNivel(Nodo* arbol, int num){
  * Imprime el árbol en orden posterior.
  * 
  * @param arbol El nodo raíz del árbol.
+ * 
+ * @return Dato entero del nodo.
  */
 void Arbol::postOrden(Nodo *arbol){
 	
@@ -230,8 +232,6 @@ void Arbol::postOrden(Nodo *arbol){
  *  Imprimir nodos en un nivel actual
  * 
  * @param arbol Un puntero al nodo de la raíz.
- * 
- * @return Dato entero del nodo.
  */
 void Arbol::imprimirNivelActual(Nodo* arbol, int nivel)
 {
