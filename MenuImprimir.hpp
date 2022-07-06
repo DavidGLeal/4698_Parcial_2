@@ -1,7 +1,7 @@
 #ifndef MENU_IMPRIMIR_HPP
 #define MENU_IMPRIMIR_HPP
-
-#include "Arbol.h"
+#include "MenuGUI.cpp"
+#include "Arbol.cpp"
 
 class MenuImprimir {
     private:

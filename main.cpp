@@ -1,6 +1,7 @@
 #include "Arbol.cpp"
 #include <iostream>
 
+
 Nodo *arbol = NULL;
 using namespace std;
 

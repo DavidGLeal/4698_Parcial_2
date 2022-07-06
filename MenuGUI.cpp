@@ -1,3 +1,4 @@
+#pragma once
 #include "MenuGUI.hpp"
 #include "HandleConsole.cpp"
 #include <conio.h>

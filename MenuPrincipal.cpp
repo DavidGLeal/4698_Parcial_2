@@ -1,3 +1,4 @@
+#pragma once
 #include "MenuPrincipal.hpp"
 #include "MenuImprimir.cpp"
 #include "Input.cpp"
