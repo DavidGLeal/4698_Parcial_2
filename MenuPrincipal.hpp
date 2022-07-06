@@ -1,21 +1,30 @@
 #ifndef MENU_PRINCIPAL_HPP
 #define MENU_PRINCIPAL_HPP
 
-#include "MenuGUI.hpp"
+#include "MenuGUI.cpp"
+#include "Arbol.cpp"
 
 class MenuPrincipal {
     private:
-        const COORD ubicacion{12, 5};
-        const size_t cantidadDeOpciones{5};
-        MenuGUI menuPrincipal;
-
-        bool determinarOpcion(size_t opcionSeleccionada);
+        Nodo *raiz{nullptr};
+        Arbol arbol;
+        const std::string titulo{"MENU PRINCIPAL"};
+        static constexpr size_t cantidadDeOpciones{5};
+        std::string opciones[cantidadDeOpciones]{
+            "1. Agregar",
+            "2. Eliminar",
+            "3. Buscar",
+            "4. Imprimir",
+            "5. Salir"
+        };
+        COORD ubicacion{12, 5};
+        MenuGUI menu = MenuGUI(titulo, opciones, cantidadDeOpciones, ubicacion);
+        bool determinarOpcion(int opcionSeleccionada);
         void agregar();
         void eliminar();
         void buscar();
-
+        void imprimir();
     public:
-        MenuPrincipal();
         void start();
 };
 

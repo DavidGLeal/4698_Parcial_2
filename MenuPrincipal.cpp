@@ -1,11 +1,25 @@
 #include "MenuPrincipal.hpp"
-// #include "MenuImprimir.hpp"
-#include "Input.hpp"
-#include "HandleConsole.hpp"
+#include "MenuImprimir.cpp"
+#include "Input.cpp"
 #include <iostream>
 
-bool MenuPrincipal::determinarOpcion(size_t opcionSeleccionada) {
-    
+MenuPrincipal menu;
+int main()
+{
+    menu.start();
+    return 0;
+}
+
+void MenuPrincipal::start() {
+    this->arbol.setArbol(this->raiz);
+    bool exit{false};
+    while (!exit) {
+        exit = determinarOpcion(this->menu.start());
+    }
+}
+
+bool MenuPrincipal::determinarOpcion(int opcionSeleccionada) {
+    MenuImprimir menuImprimir;
     switch (opcionSeleccionada) {
         case 1:
             agregar();
@@ -20,7 +34,8 @@ bool MenuPrincipal::determinarOpcion(size_t opcionSeleccionada) {
             break;
 
         case 4:
-            
+            this->arbol.setArbol(this->raiz); // Es necesario refactorizar al árbol con su nodo raíz.
+            menuImprimir.start(arbol);
             break;
 
         case 5:
@@ -32,53 +47,38 @@ bool MenuPrincipal::determinarOpcion(size_t opcionSeleccionada) {
 }
 
 void MenuPrincipal::agregar() {
+    
+    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 2));
 
-    std::cout << "Ingrese un numero entero a guardar en: ";
+    std::cout << "Ingrese un numero entero a guardar en el arbol: ";
     int valor = Input::integerNumber(1, 4);
 
-    HandleConsole::setCursorPosition(ubicacion.X, (ubicacion.Y + cantidadDeOpciones + 3));
+    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 3));
+    this->arbol.insertarNodo(this->raiz, valor);
 
     system("pause");
 }
 
 void MenuPrincipal::eliminar() {
+    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 2));
     
-    std::cout << "Ingrese un numero entero a eliminar: ";
+    std::cout << "Ingrese un numero entero a eliminar del arbol: ";
     int valor = Input::integerNumber(1, 4);
 
-    HandleConsole::setCursorPosition(ubicacion.X, (ubicacion.Y + cantidadDeOpciones + 3));
+    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 3));
+    this->arbol.eliminarNodo(this->raiz, valor);
 
     system("pause");
 }
 
 void MenuPrincipal::buscar() {
+    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 2));
 
     std::cout << "Ingrese un numero entero a buscar en el arbol: ";
     int valor = Input::integerNumber(1, 4);
 
-    HandleConsole::setCursorPosition(ubicacion.X, (ubicacion.Y + cantidadDeOpciones + 3));
+    HandleConsole::setCursorPosition(this->ubicacion.X, (this->ubicacion.Y + this->cantidadDeOpciones + 3));
+    this->arbol.buscar(this->raiz, valor);
 
     system("pause");
-}
-
-MenuPrincipal::MenuPrincipal() {
-    this->menuPrincipal.setTitleMenu("MENU PRINCIPAL");
-    this->menuPrincipal.setListOptions(
-        new std::string[this->cantidadDeOpciones]{
-            "Ingresar",
-            "Eliminar",
-            "Buscar",
-            "Imprimir",
-            "Salir"
-        },
-        this->cantidadDeOpciones
-    );
-    this->menuPrincipal.setPositionOfMenu(this->ubicacion);
-}
-
-void MenuPrincipal::start() {
-    bool exit{false};
-    while (!exit) {
-        exit = determinarOpcion(this->menuPrincipal.print());
-    }
 }

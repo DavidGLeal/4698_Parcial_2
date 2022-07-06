@@ -1,9 +1,9 @@
 #include "MenuImprimir.hpp"
 
-void MenuImprimir::start(Arbol *_arbol) {
+void MenuImprimir::start(Arbol &_arbol) {
     bool exit{false};
     while (!exit) {
-        exit = determinarOpcion(this->menu.start(), _arbol);
+        exit = determinarOpcion(this->menu.start(), &_arbol);
     }
 }
 
@@ -30,22 +30,23 @@ bool MenuImprimir::determinarOpcion(int opcionSeleccionada, Arbol *_arbol) {
             return true;
             break;
     }
+    cout << "\n" <<endl;
     system("pause");
     return false;
 }
 
-void MenuImprimir::impresionPreOrden(Arbol *_arbol) {
-    arbol->preOrden(arbol->getArbol());
+void MenuImprimir::impresionPreOrden(Arbol *&_arbol) { // Para los métodos, es necesario recibir los punteros por referencia.
+    _arbol->preOrden(_arbol->getArbol());
 }
 
-void MenuImprimir::impresionInOrden(Arbol *_arbol) {
-    arbol->inOrden(arbol->getArbol());
+void MenuImprimir::impresionInOrden(Arbol *&_arbol) {
+    _arbol->inOrden(_arbol->getArbol());
 }
 
-void MenuImprimir::impresionPosOrden(Arbol *_arbol) {
-    arbol->postOrden(arbol->getArbol());
+void MenuImprimir::impresionPosOrden(Arbol *&_arbol) {
+    _arbol->postOrden(_arbol->getArbol());
 }
 
-void MenuImprimir::impresionAmplitud(Arbol *_arbol) {
-    arbol->recorridoNivel(arbol->getArbol());
+void MenuImprimir::impresionAmplitud(Arbol *&_arbol) {
+    _arbol->recorridoNivel(_arbol->getArbol());
 }

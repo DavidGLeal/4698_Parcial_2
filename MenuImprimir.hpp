@@ -1,7 +1,7 @@
 #ifndef MENU_IMPRIMIR_HPP
 #define MENU_IMPRIMIR_HPP
-#include "MenuGUI.cpp"
-#include "Arbol.cpp"
+
+#include "Arbol.h"
 
 class MenuImprimir {
     private:
@@ -19,13 +19,14 @@ class MenuImprimir {
         MenuGUI menu = MenuGUI(titulo, opciones, cantidadDeOpciones, ubicacion);
 
         bool determinarOpcion(int opcionSeleccionada, Arbol *_arbol);
-        void impresionPreOrden(Arbol *_arbol);
-        void impresionInOrden(Arbol *_arbol);
-        void impresionPosOrden(Arbol *_arbol);
-        void impresionAmplitud(Arbol *_arbol);
+        void imprimir();
+        void impresionPreOrden(Arbol *&_arbol); // Para los métodos, es necesario recibir los punteros por referencia.
+        void impresionInOrden(Arbol *&_arbol);
+        void impresionPosOrden(Arbol *&_arbol);
+        void impresionAmplitud(Arbol *&_arbol);
 
     public:
-        void start(Arbol *_arbol);
+        void start(Arbol &_arbol);
 };
 
 #endif
