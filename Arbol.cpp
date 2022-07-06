@@ -159,9 +159,9 @@ void Arbol::inOrden(Nodo *arbol)
 {
     if (arbol == NULL)
     {
+	return;
         cout<<"No se encuentran datos en el arbol"<<endl;
         cout<<"El arbol se encuentra vacio"<<endl;
-        return;
     }
     else
     {
