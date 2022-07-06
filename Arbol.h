@@ -4,6 +4,7 @@ class Arbol
 {
 private:
     Nodo *arbol = NULL;
+    void imprimirNivelActual(Nodo *, int); /Metodo para que funcione el recorrido por nivel
 public:
     void setArbol(Nodo *);
     Nodo *getArbol();
