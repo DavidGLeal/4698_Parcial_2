@@ -4,7 +4,7 @@ class Arbol
 {
 private:
     Nodo *arbol = NULL;
-    void imprimirNivelActual(Nodo *, int); /Metodo para que funcione el recorrido por nivel
+    void imprimirNivelActual(Nodo *, int); //Metodo para que funcione el recorrido por nivel
 public:
     void setArbol(Nodo *);
     Nodo *getArbol();
@@ -21,5 +21,5 @@ public:
     int altura(Nodo *);
     bool simetria(Nodo *, Nodo *);
     bool simetrias(Nodo *);
-    Nodo *eliminarNodo(Nodo*, int)
+    Nodo *eliminarNodo(Nodo *, int);
 };
