@@ -6,12 +6,12 @@
 
 class MenuGUI {
     private:
-        COORD menuPosition{4, 4};
-        COORD arrowPosition{static_cast<SHORT>(this->menuPosition.X - 2), this->menuPosition.Y};
-        const std::string *options{nullptr};
+        COORD menuPosition{};
+        COORD arrowPosition{};
         std::string title{};
-        size_t sizeOfArrayOptions{};
-        size_t activeOption{1};
+        const std::string *options{nullptr};
+        size_t sizeOfArrayOptions;
+        short activeOption{1};
 
         void printOptions();
         void printArrow();
@@ -20,11 +20,8 @@ class MenuGUI {
         bool switchOption(int keyPressed);
 
     public:
-        MenuGUI() = default;
-        void setTitleMenu(const std::string &newTitleOfMenu);
-        void setListOptions(const std::string newListOptions[], size_t newSizeOfArrayOptions);
-        void setPositionOfMenu(const COORD &newPositionOfMenu);
-        int print();
+        MenuGUI(const std::string &titleOfMenu, std::string listOptions[], size_t sizeOfListOptions, COORD positionOfMenu);
+        int start();
 };
 
 #endif
