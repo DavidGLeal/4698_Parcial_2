@@ -34,9 +34,14 @@ int main(int argc, char** argv) {
     cout<<"\n";
     obj.preOrden(arbol);
     cout<<"\n";
+
+    cout<<"----Recorrido en Inorden---";
+    cout<<"\n";
+    obj.inOrden(arbol);
+    cout<<"\n";
     
 
-    cout<<"----Recorrido en Preorden---";
+    cout<<"----Recorrido en Postorden---";
     cout<<"\n";
     obj.postOrden(arbol);
     cout<<"\n";
