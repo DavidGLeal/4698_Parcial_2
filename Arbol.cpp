@@ -211,7 +211,7 @@ void Arbol ::buscarporNivel(Nodo* arbol, int num){
  * 
  * @param arbol El nodo raíz del árbol.
  * 
- * @return el valor del nodo.
+ * @return Dato entero del nodo.
  */
 void Arbol::postOrden(Nodo *arbol){
 	
@@ -226,6 +226,80 @@ void Arbol::postOrden(Nodo *arbol){
         postOrden(arbol->getDerecha());
 		cout<<arbol->getValor()<<"->";
     }
-} 
+}
 
+/**
+ *  Imprimir nodos en un nivel actual
+ * 
+ * @param arbol Un puntero al nodo de la raíz.
+ */
+void Arbol::imprimirNivelActual(Nodo* arbol, int nivel)
+{
+    if (arbol == NULL)
+        return;
+    if (nivel == 1)
+        cout << arbol->getValor()<< " ";
+    else if (nivel > 1) {
+        imprimirNivelActual(arbol->getIzquierda(), nivel - 1);
+        imprimirNivelActual(arbol->getDerecha(), nivel - 1);
+    }
+}
 
+/**
+ * Imprime Recorrido por Amplitud del nodo.
+ * 
+ * @param arbol El nodo raíz del árbol
+ * 
+ * @return valor del Nodo.
+ */
+void Arbol::recorridoNivel(Nodo* arbol)
+{
+	if (arbol == NULL)
+    {
+        cout<<"No se encuentran datos en el arbol"<<endl;
+        cout<<"El arbol se encuentra vacio"<<endl;
+        return;
+    }
+    int h = altura(arbol);
+    int i;
+    for (i = 1; i <= h; i++)
+        imprimirNivelActual(arbol, i);
+}
+
+Nodo *Arbol::eliminarNodo(Nodo* raiz, int dato){
+	
+    if (raiz == NULL)
+        return raiz;
+    if (dato < raiz->getValor())
+        raiz->setIzquierda(eliminarNodo(raiz->getIzquierda(), dato));
+
+    else if (dato > raiz->getValor())
+        raiz->setDerecha(eliminarNodo(raiz->getDerecha(), dato));
+    else {
+        if (raiz->getIzquierda() == NULL) {
+            Nodo* temp = raiz->getDerecha();
+            delete(raiz);
+            return temp;
+        }
+        else if (raiz->getDerecha() == NULL) {
+            Nodo* temp = raiz->getIzquierda();
+            delete(raiz);
+            return temp;
+        }else{
+        	auto getmax = [](Nodo* raiz){
+			Nodo* aux = new Nodo();
+		    	aux=raiz;		
+		    	while (aux && aux->getDerecha()) {
+		        aux = aux->getDerecha();
+		    	}
+		    return aux;	
+		};
+		
+        	Nodo* temp = getmax(raiz->getIzquierda());
+
+        	raiz->setValor(temp->getValor());
+        	raiz->setIzquierda(eliminarNodo(raiz->getIzquierda(), temp->getValor()));	
+		}        
+    }
+    return raiz;
+}
