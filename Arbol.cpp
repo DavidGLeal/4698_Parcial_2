@@ -227,28 +227,28 @@ void Arbol::postOrden(Nodo *arbol){
 		cout<<arbol->getValor()<<"->";
     }
 } 
-void Arbol::imprimirNivelActual(Nodo* raiz, int nivel)
+void Arbol::imprimirNivelActual(Nodo* arbol, int nivel)
 {
-    if (raiz == NULL)
+    if (arbol == NULL)
         return;
     if (nivel == 1)
-        cout << raiz->getValor()<< " ";
+        cout << arbol->getValor()<< " ";
     else if (nivel > 1) {
-        imprimirNivelActual(raiz->getIzquierda(), nivel - 1);
-        imprimirNivelActual(raiz->getDerecha(), nivel - 1);
+        imprimirNivelActual(arbol->getIzquierda(), nivel - 1);
+        imprimirNivelActual(arbol->getDerecha(), nivel - 1);
     }
 }
-void Arbol::recorridoNivel(Nodo* raiz)
+void Arbol::recorridoNivel(Nodo* arbol)
 {
-	if (raiz == NULL)
+	if (arbol == NULL)
     {
         cout<<"No se encuentran datos en el arbol"<<endl;
         cout<<"El arbol se encuentra vacio"<<endl;
         return;
     }
-    int h = altura(raiz);
+    int h = altura(arbol);
     int i;
     for (i = 1; i <= h; i++)
-        imprimirNivelActual(raiz, i);
+        imprimirNivelActual(arbol, i);
 }
 
