@@ -1,6 +1,5 @@
-#pragma once
 #include "MenuGUI.hpp"
-#include "HandleConsole.cpp"
+#include "HandleConsole.hpp"
 #include <conio.h>
 #include <iostream>
 
@@ -56,12 +55,18 @@ bool MenuGUI::switchOption(int keyPressed) {
     return false;
 }
 
-MenuGUI::MenuGUI(const std::string &titleOfMenu, std::string listOptions[], size_t sizeOfListOptions, COORD positionOfMenu) {
-    this->title = titleOfMenu;
-    this->options = listOptions;
-    this->sizeOfArrayOptions = sizeOfListOptions;
-    this->menuPosition.X = positionOfMenu.X;
-    this->menuPosition.Y = positionOfMenu.Y;
+void MenuGUI::setTitleMenu(const std::string &newTitleOfMenu) {
+    this->title = newTitleOfMenu;
+}
+
+void MenuGUI::setListOptions(const std::string newListOptions[], const size_t newSizeOfArrayOptions) {
+    this->options = newListOptions;
+    this->sizeOfArrayOptions = newSizeOfArrayOptions;
+}
+
+void MenuGUI::setPositionOfMenu(const COORD &newPositionOfMenu) {
+    this->menuPosition.X = newPositionOfMenu.X;
+    this->menuPosition.Y = newPositionOfMenu.Y;
     this->arrowPosition.X = this->menuPosition.X - 2;
     this->arrowPosition.Y = this->menuPosition.Y;
 }
