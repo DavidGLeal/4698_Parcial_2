@@ -252,3 +252,40 @@ void Arbol::recorridoNivel(Nodo* arbol)
         imprimirNivelActual(arbol, i);
 }
 
+Nodo *Arbol::eliminarNodo(Nodo* raiz, int dato){
+	
+    if (raiz == NULL)
+        return raiz;
+    if (dato < raiz->getValor())
+        raiz->setIzquierda(eliminarNodo(raiz->getIzquierda(), dato));
+
+    else if (dato > raiz->getValor())
+        raiz->setDerecha(eliminarNodo(raiz->getDerecha(), dato));
+    else {
+        if (raiz->getIzquierda() == NULL) {
+            Nodo* temp = raiz->getDerecha();
+            delete(raiz);
+            return temp;
+        }
+        else if (raiz->getDerecha() == NULL) {
+            Nodo* temp = raiz->getIzquierda();
+            delete(raiz);
+            return temp;
+        }else{
+        	auto getmax = [](Nodo* raiz){
+			Nodo* aux = new Nodo();
+		    	aux=raiz;		
+		    	while (aux && aux->getDerecha()) {
+		        aux = aux->getDerecha();
+		    	}
+		    return aux;	
+		};
+		
+        	Nodo* temp = getmax(raiz->getIzquierda());
+
+        	raiz->setValor(temp->getValor());
+        	raiz->setIzquierda(eliminarNodo(raiz->getIzquierda(), temp->getValor()));	
+		}        
+    }
+    return raiz;
+}
