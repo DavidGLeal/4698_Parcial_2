@@ -2,11 +2,12 @@
 #define MENU_PRINCIPAL_HPP
 
 #include "MenuGUI.cpp"
-// #include "Arbol.h"
+#include "Arbol.cpp"
 
 class MenuPrincipal {
     private:
-        // Arbol arbol;
+        Nodo *raiz{nullptr};
+        Arbol arbol;
         const std::string titulo{"MENU PRINCIPAL"};
         static constexpr size_t cantidadDeOpciones{5};
         std::string opciones[cantidadDeOpciones]{
