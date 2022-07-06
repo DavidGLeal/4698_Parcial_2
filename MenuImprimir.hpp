@@ -6,7 +6,7 @@
 class MenuImprimir {
     private:
         Arbol arbolAImprimir;
-        const size_t cantidadDeOpciones{5};
+        const size_t cantidadDeOpciones{6};
         COORD ubicacion{12, 5};
         MenuGUI menuImprimir;
 
@@ -15,6 +15,7 @@ class MenuImprimir {
         void impresionInOrden();
         void impresionPosOrden();
         void impresionAmplitud();
+        void impresionModoGrafico();
 
     public:
         MenuImprimir(Arbol arbol);

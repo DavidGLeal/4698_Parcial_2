@@ -21,6 +21,10 @@ bool MenuImprimir::determinarOpcion(int opcionSeleccionada) {
             break;
 
         case 5:
+            impresionModoGrafico();
+            break;
+
+        case 6:
             return true;
             break;
     }
@@ -50,6 +54,11 @@ void MenuImprimir::impresionAmplitud() {
     this->arbolAImprimir.recorridoNivel(this->arbolAImprimir.getArbol());
 }
 
+void MenuImprimir::impresionModoGrafico() {
+    std::cout << "Impresion Grafica:\n";
+    this->arbolAImprimir.mostrar(this->arbolAImprimir.getArbol(), 0);
+}
+
 MenuImprimir::MenuImprimir(Arbol arbol) {
     this->arbolAImprimir = arbol;
     this->menuImprimir.setTitleMenu("MENU IMPRIMIR");
@@ -59,6 +68,7 @@ MenuImprimir::MenuImprimir(Arbol arbol) {
             "In-Orden",
             "Post-Orden",
             "Amplitud",
+            "Grafico",
             "Regresar"
         },
         this->cantidadDeOpciones
