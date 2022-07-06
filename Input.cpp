@@ -1,3 +1,4 @@
+#pragma once
 #include "Input.hpp"
 #include <iostream>
 #include <conio.h>
