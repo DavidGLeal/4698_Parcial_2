@@ -1,6 +1,6 @@
 // #include "Arbol.cpp"
 #include <iostream>
-#include "MenuPrincipal.hpp"
+#include "MenuPrincipal.cpp"
 
 /* Nodo *arbol = NULL;
 using namespace std; */
