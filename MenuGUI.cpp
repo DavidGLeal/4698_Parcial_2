@@ -1,10 +1,11 @@
+#pragma once
 #include "MenuGUI.hpp"
-#include "HandleConsole.hpp"
+#include "HandleConsole.cpp"
 #include <conio.h>
 #include <iostream>
 
 void MenuGUI::printOptions() {
-    system("clear");
+    system("cls");
     HandleConsole::setCursorVisibilitie(false);
     HandleConsole::setCursorPosition(this->menuPosition.X + 1, this->menuPosition.Y);
     std::cout << title;
@@ -55,17 +56,23 @@ bool MenuGUI::switchOption(int keyPressed) {
     return false;
 }
 
-MenuGUI::MenuGUI(const std::string &titleOfMenu, std::string listOptions[], size_t sizeOfListOptions, COORD positionOfMenu) {
-    this->title = titleOfMenu;
-    this->options = listOptions;
-    this->sizeOfArrayOptions = sizeOfListOptions;
-    this->menuPosition.X = positionOfMenu.X;
-    this->menuPosition.Y = positionOfMenu.Y;
+void MenuGUI::setTitleMenu(const std::string &newTitleOfMenu) {
+    this->title = newTitleOfMenu;
+}
+
+void MenuGUI::setListOptions(const std::string newListOptions[], size_t newSizeOfArrayOptions) {
+    this->options = newListOptions;
+    this->sizeOfArrayOptions = newSizeOfArrayOptions;
+}
+
+void MenuGUI::setPositionOfMenu(const COORD &newPositionOfMenu) {
+    this->menuPosition.X = newPositionOfMenu.X;
+    this->menuPosition.Y = newPositionOfMenu.Y;
     this->arrowPosition.X = this->menuPosition.X - 2;
     this->arrowPosition.Y = this->menuPosition.Y;
 }
 
-int MenuGUI::start() {
+int MenuGUI::print() {
     printOptions();
 
     bool exit{false};
@@ -76,5 +83,6 @@ int MenuGUI::start() {
     } while (!exit);
 
     HandleConsole::setCursorVisibilitie(true);
+    HandleConsole::setCursorPosition(this->menuPosition.X, (this->menuPosition.Y + this->sizeOfArrayOptions + 2));
     return this->activeOption;
 }

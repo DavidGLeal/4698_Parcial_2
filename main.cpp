@@ -1,11 +1,12 @@
-#include "Arbol.cpp"
+// #include "Arbol.cpp"
 #include <iostream>
+#include "MenuPrincipal.cpp"
 
-Nodo *arbol = NULL;
-using namespace std;
+/* Nodo *arbol = NULL;
+using namespace std; */
 
 int main(int argc, char** argv) {
-    Arbol obj;
+    /* Arbol obj;
     int num;
     int cont = 0;
     obj.insertarNodo(arbol, 56);
@@ -34,9 +35,14 @@ int main(int argc, char** argv) {
     cout<<"\n";
     obj.preOrden(arbol);
     cout<<"\n";
+
+    cout<<"----Recorrido en Inorden---";
+    cout<<"\n";
+    obj.inOrden(arbol);
+    cout<<"\n";
     
 
-    cout<<"----Recorrido en Preorden---";
+    cout<<"----Recorrido en Postorden---";
     cout<<"\n";
     obj.postOrden(arbol);
     cout<<"\n";
@@ -54,7 +60,10 @@ int main(int argc, char** argv) {
     obj.buscarporNivel(arbol, num);
     cout<<"\n";
     
-    system("pause");
-	return 0;
+    system("pause"); */
+    MenuPrincipal menuPrincipal;
+    menuPrincipal.start();
+
+    return 0;
 	
 }

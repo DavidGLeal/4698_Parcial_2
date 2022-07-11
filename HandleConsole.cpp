@@ -1,3 +1,4 @@
+#pragma once
 #include "HandleConsole.hpp"
 
 void HandleConsole::setCursorPosition(SHORT x, SHORT y) {
