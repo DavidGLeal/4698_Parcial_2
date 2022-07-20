@@ -1,9 +1,15 @@
 /*
-Autores: Johan Romo, Cristhopher Villamarín.
-Fecha de creacion: 16/07/2022
-Fecha de modificacion: 19/07/2022
-Grupo 11
-Github del grupo: jaromo3@espe.edu.ec, cavillamarin9@espe.edu.ec
+	*Universidad de las Fuerzas Armadas "ESPE"
+    *Enunciado del problema:
+	    *Programa que realize hash cerrado de enteros y strings .
+     *Autores:
+        *Curso de Estructura de Datos NRC: 4698
+	*Fecha de creacion: 
+        * 24-06-2022
+	*Fecha de modificacion:
+        * 29-06-2022
+    *GitHub del grupo:	
+        
 */
 
 #ifndef HASH_H
