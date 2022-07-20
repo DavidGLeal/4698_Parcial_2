@@ -1,7 +1,7 @@
 /*
 	*Universidad de las Fuerzas Armadas "ESPE"
     *Enunciado del problema:
-	    *Programa que realize hash abierto.
+	    *Programa que realice hash abierto.
      *Autores:
         *Curso de Estructura de Datos NRC: 4698
 	*Fecha de creacion: 
