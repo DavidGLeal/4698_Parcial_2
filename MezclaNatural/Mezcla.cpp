@@ -1,0 +1,117 @@
+#include "Mezcla.h"
+
+Mezcla::Mezcla(){
+
+}
+
+void Mezcla::Mostrar(FILE *fich)
+{
+    char linea[128];
+
+    rewind(fich);
+    fgets(linea, 128, fich);
+    while (!feof(fich))
+    {
+        puts(linea);
+        fgets(linea, 128, fich);
+    }
+}
+
+void Mezcla::Mezcla_(FILE *fich)
+{
+    int ordenado;
+    FILE *aux[2];
+    do
+    {
+        aux[0] = fopen("aux1.txt", "w+");
+        aux[1] = fopen("aux2.txt", "w+");
+        rewind(fich);
+        Separar(fich, aux);
+        rewind(aux[0]);
+        rewind(aux[1]);
+        rewind(fich);
+        ordenado = Mezclar(fich, aux);
+        fclose(aux[0]);
+        fclose(aux[1]);
+    } while (!ordenado);
+    remove("aux1.txt");
+    remove("aux2.txt");
+}
+
+void Mezcla::Separar(FILE *fich, FILE **aux)
+{
+    char linea[128], anterior[2][128];
+    int salida = 0;
+    strcpy(anterior[0], "");
+    strcpy(anterior[1], "");
+    fgets(linea, 128, fich);
+    while (!feof(fich))
+    {
+        if (salida == 0 && strcmp(linea, anterior[0]) < 0)
+            salida = 1;
+        else if (salida == 1 && strcmp(linea, anterior[1]) < 0)
+            salida = 0;
+        strcpy(anterior[salida], linea);
+        fputs(linea, aux[salida]);
+        fgets(linea, 128, fich);
+    }
+}
+
+int Mezcla::Mezclar(FILE *fich, FILE **aux)
+{
+    char ultima[128], linea[2][128], anterior[2][128];
+    int entrada;
+    int tramos = 0;
+    fgets(linea[0], 128, aux[0]);
+    fgets(linea[1], 128, aux[1]);
+    strcpy(ultima, "");
+    strcpy(anterior[0], "");
+    strcpy(anterior[1], "");
+
+    while (!feof(aux[0]) && !feof(aux[1]))
+    {
+
+        if (strcmp(linea[0], linea[1]) <= 0)
+            entrada = 0;
+        else
+            entrada = 1;
+
+        strcpy(anterior[entrada], linea[entrada]);
+
+        fputs(linea[entrada], fich);
+
+        fgets(linea[entrada], 128, aux[entrada]);
+
+        if (strcmp(anterior[entrada], linea[entrada]) > 0)
+        {
+            if (!entrada)
+                entrada = 1;
+            else
+                entrada = 0;
+            tramos++;
+
+            do
+            {
+                strcpy(anterior[entrada], linea[entrada]);
+                fputs(linea[entrada], fich);
+                fgets(linea[entrada], 128, aux[entrada]);
+            } while (!feof(aux[entrada]) && strcmp(anterior[entrada], linea[entrada]) <= 0);
+        }
+    }
+
+    if (!feof(aux[0]))
+        tramos++;
+    while (!feof(aux[0]))
+    {
+        fputs(linea[0], fich);
+        fgets(linea[0], 128, aux[0]);
+    }
+    if (!feof(aux[1]))
+        tramos++;
+    while (!feof(aux[1]))
+    {
+        fputs(linea[1], fich);
+        fgets(linea[1], 128, aux[1]);
+    }
+    return (tramos == 1);
+}
