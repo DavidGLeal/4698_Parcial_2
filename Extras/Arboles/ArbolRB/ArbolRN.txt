@@ -1,0 +1,4 @@
+78(NEGRO) es raiz principal
+56(NEGRO) es Hijo izquierdo de 78(NEGRO)
+76(ROJO) es Hijo derecho de 56(NEGRO)
+98(NEGRO) es Hijo derecho de 78(NEGRO)
