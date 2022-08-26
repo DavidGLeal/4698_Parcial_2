@@ -1,0 +1,10 @@
+NEGRO
+ 8,4
+NO
+ 7,6,3
+NODO
+ 5
+NOMBRE
+ 20,3
+NOS
+ 14,9
