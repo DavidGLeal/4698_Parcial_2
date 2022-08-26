@@ -1,0 +1,8 @@
+﻿  ProyectoMatlab.cpp
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Extra_Matlab-Python\ProyectoMatlab\ProyectoMatlab\BigO.h(50,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Extra_Matlab-Python\ProyectoMatlab\ProyectoMatlab\BigO.h(69,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Extra_Matlab-Python\ProyectoMatlab\ProyectoMatlab\BigO.h(88,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Extra_Matlab-Python\ProyectoMatlab\ProyectoMatlab\BigO.h(119,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Extra_Matlab-Python\ProyectoMatlab\ProyectoMatlab\BigO.h(143,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Extra_Matlab-Python\ProyectoMatlab\ProyectoMatlab\Matlab.h(83,8): warning C4101: 'obj': variable local sin referencia
+  ProyectoMatlab.vcxproj -> C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Extra_Matlab-Python\ProyectoMatlab\x64\Debug\ProyectoMatlab.exe
