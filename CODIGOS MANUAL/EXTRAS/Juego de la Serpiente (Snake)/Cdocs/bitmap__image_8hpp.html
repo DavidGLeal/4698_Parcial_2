@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Referencia del Archivo bitmap_image.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del Archivo bitmap_image.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div>
+<p><a href="bitmap__image_8hpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitmap__image.html">bitmap_image</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgb__store.html">rgb_store</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classimage__drawer.html">image_drawer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a05373e5dc0bf7af74e74048e6b165424"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a05373e5dc0bf7af74e74048e6b165424">rgb_to_ycbcr</a> (const unsigned int &amp;length, double *red, double *green, double *blue, double *y, double *cb, double *cr)</td></tr>
+<tr class="separator:a05373e5dc0bf7af74e74048e6b165424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d04e712892779b036416737c434672"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a18d04e712892779b036416737c434672">ycbcr_to_rgb</a> (const unsigned int &amp;length, double *y, double *cb, double *cr, double *red, double *green, double *blue)</td></tr>
+<tr class="separator:a18d04e712892779b036416737c434672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94583f0b20f57bcd3c8c87e05435806d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a94583f0b20f57bcd3c8c87e05435806d">subsample</a> (const unsigned int &amp;width, const unsigned int &amp;height, const double *source, unsigned int &amp;w, unsigned int &amp;h, double **dest)</td></tr>
+<tr class="separator:a94583f0b20f57bcd3c8c87e05435806d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add624a93b7e79720922c42c28d6b60cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#add624a93b7e79720922c42c28d6b60cc">upsample</a> (const unsigned int &amp;width, const unsigned int &amp;height, const double *source, unsigned int &amp;w, unsigned int &amp;h, double **dest)</td></tr>
+<tr class="separator:add624a93b7e79720922c42c28d6b60cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a311e3ed1db65c09a1ebd767c1c3da3d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a311e3ed1db65c09a1ebd767c1c3da3d1">checkered_pattern</a> (const unsigned int x_width, const unsigned int y_width, const unsigned char value, const <a class="el" href="classbitmap__image.html#a87a9c6eeed645f246848d76988926b50">bitmap_image::color_plane</a> color, <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image)</td></tr>
+<tr class="separator:a311e3ed1db65c09a1ebd767c1c3da3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5adcfaaa016e535c910d846dd16804dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a5adcfaaa016e535c910d846dd16804dc">checkered_pattern</a> (const unsigned int x_width, const unsigned int y_width, const unsigned char red, const unsigned char green, const unsigned char blue, <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image)</td></tr>
+<tr class="separator:a5adcfaaa016e535c910d846dd16804dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8736de2d814c85c2affac6a3b6d315a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a8736de2d814c85c2affac6a3b6d315a1">plasma</a> (<a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image, const double &amp;x, const double &amp;y, const double &amp;width, const double &amp;height, const double &amp;c1, const double &amp;c2, const double &amp;c3, const double &amp;c4, const double &amp;roughness=3.0, const <a class="el" href="structrgb__store.html">rgb_store</a> colormap[]=0)</td></tr>
+<tr class="separator:a8736de2d814c85c2affac6a3b6d315a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b82c5f42432c5d2913c70996db70cf2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a0b82c5f42432c5d2913c70996db70cf2">psnr_region</a> (const unsigned int &amp;x, const unsigned int &amp;y, const unsigned int &amp;width, const unsigned int &amp;height, const <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image1, const <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image2)</td></tr>
+<tr class="separator:a0b82c5f42432c5d2913c70996db70cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2dd575b2a7662baa5ecca87fe2ef0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a2e2dd575b2a7662baa5ecca87fe2ef0b">hierarchical_psnr_r</a> (const double &amp;x, const double &amp;y, const double &amp;width, const double &amp;height, const <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image1, <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image2, const double &amp;threshold, const <a class="el" href="structrgb__store.html">rgb_store</a> colormap[])</td></tr>
+<tr class="separator:a2e2dd575b2a7662baa5ecca87fe2ef0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d3910f3bd3ea0e50f1e6638bd1942f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a3d3910f3bd3ea0e50f1e6638bd1942f1">hierarchical_psnr</a> (<a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image1, <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;image2, const double threshold, const <a class="el" href="structrgb__store.html">rgb_store</a> colormap[])</td></tr>
+<tr class="separator:a3d3910f3bd3ea0e50f1e6638bd1942f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae245345c0baa4861f6401b6e2aa00362"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#ae245345c0baa4861f6401b6e2aa00362">autumn_colormap</a> [1000]</td></tr>
+<tr class="separator:ae245345c0baa4861f6401b6e2aa00362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82aca327dfa8fbdfcd19fc7159c4e90e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a82aca327dfa8fbdfcd19fc7159c4e90e">copper_colormap</a> [1000]</td></tr>
+<tr class="separator:a82aca327dfa8fbdfcd19fc7159c4e90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98afeb1512e0398109232d0c19404583"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a98afeb1512e0398109232d0c19404583">gray_colormap</a> [1000]</td></tr>
+<tr class="separator:a98afeb1512e0398109232d0c19404583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03aedc303e62fabc4fb482e23f5eb473"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a03aedc303e62fabc4fb482e23f5eb473">hot_colormap</a> [1000]</td></tr>
+<tr class="separator:a03aedc303e62fabc4fb482e23f5eb473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ab6fdb3a80bb52e94477a93bc16b76"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#ac8ab6fdb3a80bb52e94477a93bc16b76">hsv_colormap</a> [1000]</td></tr>
+<tr class="separator:ac8ab6fdb3a80bb52e94477a93bc16b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2f0f34a55c16d8a410966591cad53d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#aeb2f0f34a55c16d8a410966591cad53d">jet_colormap</a> [1000]</td></tr>
+<tr class="separator:aeb2f0f34a55c16d8a410966591cad53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3f7c0f52b7f8a40da3a3551ac5a249"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#aeb3f7c0f52b7f8a40da3a3551ac5a249">prism_colormap</a> [1000]</td></tr>
+<tr class="separator:aeb3f7c0f52b7f8a40da3a3551ac5a249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a854ca9797fbb5abb07f356825e66c471"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#a854ca9797fbb5abb07f356825e66c471">vga_colormap</a> [1000]</td></tr>
+<tr class="separator:a854ca9797fbb5abb07f356825e66c471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f113009012adebba3eff00e9b1c54d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitmap__image_8hpp.html#af1f113009012adebba3eff00e9b1c54d">yarg_colormap</a> [1000]</td></tr>
+<tr class="separator:af1f113009012adebba3eff00e9b1c54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a5adcfaaa016e535c910d846dd16804dc" name="a5adcfaaa016e535c910d846dd16804dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5adcfaaa016e535c910d846dd16804dc">&#9670;&nbsp;</a></span>checkered_pattern() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkered_pattern </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>x_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>y_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char&#160;</td>
+          <td class="paramname"><em>blue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a311e3ed1db65c09a1ebd767c1c3da3d1" name="a311e3ed1db65c09a1ebd767c1c3da3d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a311e3ed1db65c09a1ebd767c1c3da3d1">&#9670;&nbsp;</a></span>checkered_pattern() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkered_pattern </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>x_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>y_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbitmap__image.html#a87a9c6eeed645f246848d76988926b50">bitmap_image::color_plane</a>&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d3910f3bd3ea0e50f1e6638bd1942f1" name="a3d3910f3bd3ea0e50f1e6638bd1942f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d3910f3bd3ea0e50f1e6638bd1942f1">&#9670;&nbsp;</a></span>hierarchical_psnr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hierarchical_psnr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td>
+          <td class="paramname"><em>colormap</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e2dd575b2a7662baa5ecca87fe2ef0b" name="a2e2dd575b2a7662baa5ecca87fe2ef0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2dd575b2a7662baa5ecca87fe2ef0b">&#9670;&nbsp;</a></span>hierarchical_psnr_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hierarchical_psnr_r </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td>
+          <td class="paramname"><em>colormap</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8736de2d814c85c2affac6a3b6d315a1" name="a8736de2d814c85c2affac6a3b6d315a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8736de2d814c85c2affac6a3b6d315a1">&#9670;&nbsp;</a></span>plasma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void plasma </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>c2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>c3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>c4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>roughness</em> = <code>3.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgb__store.html">rgb_store</a>&#160;</td>
+          <td class="paramname"><em>colormap</em>[] = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b82c5f42432c5d2913c70996db70cf2" name="a0b82c5f42432c5d2913c70996db70cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b82c5f42432c5d2913c70996db70cf2">&#9670;&nbsp;</a></span>psnr_region()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double psnr_region </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbitmap__image.html">bitmap_image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05373e5dc0bf7af74e74048e6b165424" name="a05373e5dc0bf7af74e74048e6b165424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05373e5dc0bf7af74e74048e6b165424">&#9670;&nbsp;</a></span>rgb_to_ycbcr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgb_to_ycbcr </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>blue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>cr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94583f0b20f57bcd3c8c87e05435806d" name="a94583f0b20f57bcd3c8c87e05435806d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94583f0b20f57bcd3c8c87e05435806d">&#9670;&nbsp;</a></span>subsample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void subsample </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add624a93b7e79720922c42c28d6b60cc" name="add624a93b7e79720922c42c28d6b60cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add624a93b7e79720922c42c28d6b60cc">&#9670;&nbsp;</a></span>upsample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void upsample </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18d04e712892779b036416737c434672" name="a18d04e712892779b036416737c434672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d04e712892779b036416737c434672">&#9670;&nbsp;</a></span>ycbcr_to_rgb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ycbcr_to_rgb </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>cr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>blue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="ae245345c0baa4861f6401b6e2aa00362" name="ae245345c0baa4861f6401b6e2aa00362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae245345c0baa4861f6401b6e2aa00362">&#9670;&nbsp;</a></span>autumn_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> autumn_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82aca327dfa8fbdfcd19fc7159c4e90e" name="a82aca327dfa8fbdfcd19fc7159c4e90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82aca327dfa8fbdfcd19fc7159c4e90e">&#9670;&nbsp;</a></span>copper_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> copper_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98afeb1512e0398109232d0c19404583" name="a98afeb1512e0398109232d0c19404583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98afeb1512e0398109232d0c19404583">&#9670;&nbsp;</a></span>gray_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> gray_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03aedc303e62fabc4fb482e23f5eb473" name="a03aedc303e62fabc4fb482e23f5eb473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03aedc303e62fabc4fb482e23f5eb473">&#9670;&nbsp;</a></span>hot_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> hot_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8ab6fdb3a80bb52e94477a93bc16b76" name="ac8ab6fdb3a80bb52e94477a93bc16b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ab6fdb3a80bb52e94477a93bc16b76">&#9670;&nbsp;</a></span>hsv_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> hsv_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb2f0f34a55c16d8a410966591cad53d" name="aeb2f0f34a55c16d8a410966591cad53d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb2f0f34a55c16d8a410966591cad53d">&#9670;&nbsp;</a></span>jet_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> jet_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb3f7c0f52b7f8a40da3a3551ac5a249" name="aeb3f7c0f52b7f8a40da3a3551ac5a249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3f7c0f52b7f8a40da3a3551ac5a249">&#9670;&nbsp;</a></span>prism_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> prism_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a854ca9797fbb5abb07f356825e66c471" name="a854ca9797fbb5abb07f356825e66c471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a854ca9797fbb5abb07f356825e66c471">&#9670;&nbsp;</a></span>vga_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> vga_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1f113009012adebba3eff00e9b1c54d" name="af1f113009012adebba3eff00e9b1c54d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f113009012adebba3eff00e9b1c54d">&#9670;&nbsp;</a></span>yarg_colormap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgb__store.html">rgb_store</a> yarg_colormap[1000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

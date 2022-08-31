@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Fichero Fuente GameLevel.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GameLevel.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_level_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef GAME_LEVEL_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define GAME_LEVEL_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_array_list_8hpp.html">ArrayList.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_block_8hpp.html">Block.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_game_level.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game_level.html">GameLevel</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> renderWalls();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_level.html#aaf195c15f6f371812e95cb25fe3390e5">renderLevel</a>(<span class="keyword">const</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#acbfc92e17095096f4b2b911da01752e2">level</a>, <a class="code hl_class" href="class_array_list.html">ArrayList&lt;Block&gt;</a>&amp; blocks);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_level.html#a1d24e124df2c3a348654d9d94d382046">renderScore</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_array_list_8hpp_html"><div class="ttname"><a href="_array_list_8hpp.html">ArrayList.hpp</a></div><div class="ttdoc">Data structure that use a dinamic array.</div></div>
+<div class="ttc" id="a_block_8hpp_html"><div class="ttname"><a href="_block_8hpp.html">Block.hpp</a></div><div class="ttdoc">Object that will be an obstacle to the snake.</div></div>
+<div class="ttc" id="aclass_array_list_html"><div class="ttname"><a href="class_array_list.html">ArrayList&lt; Block &gt;</a></div></div>
+<div class="ttc" id="aclass_game_level_html"><div class="ttname"><a href="class_game_level.html">GameLevel</a></div><div class="ttdef"><b>Definition:</b> GameLevel.hpp:16</div></div>
+<div class="ttc" id="aclass_game_level_html_a1d24e124df2c3a348654d9d94d382046"><div class="ttname"><a href="class_game_level.html#a1d24e124df2c3a348654d9d94d382046">GameLevel::renderScore</a></div><div class="ttdeci">static void renderScore()</div><div class="ttdoc">Render o update score on console.</div><div class="ttdef"><b>Definition:</b> GameLevel.cpp:69</div></div>
+<div class="ttc" id="aclass_game_level_html_aaf195c15f6f371812e95cb25fe3390e5"><div class="ttname"><a href="class_game_level.html#aaf195c15f6f371812e95cb25fe3390e5">GameLevel::renderLevel</a></div><div class="ttdeci">static void renderLevel(const short level, ArrayList&lt; Block &gt; &amp;blocks)</div><div class="ttdoc">Render a specified level and charge blocks list.</div><div class="ttdef"><b>Definition:</b> GameLevel.cpp:37</div></div>
+<div class="ttc" id="anamespace_game_information_html_acbfc92e17095096f4b2b911da01752e2"><div class="ttname"><a href="namespace_game_information.html#acbfc92e17095096f4b2b911da01752e2">GameInformation::level</a></div><div class="ttdeci">short level</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

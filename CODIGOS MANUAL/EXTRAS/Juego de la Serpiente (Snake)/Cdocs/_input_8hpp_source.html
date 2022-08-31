@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Fichero Fuente Input.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Input.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_input_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef INPUT_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define INPUT_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_input.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_input.html">Input</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_input.html#a1c23974f46ed7a86c5d18e220fd91afb">unsignedIntegerNumber</a>(<span class="keywordtype">short</span> minimumDigits, <span class="keywordtype">short</span> maximumDigits);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_input.html#a066601ef8e601a59765a3592d3f68ea7">unsignedRealNumber</a>(<span class="keywordtype">short</span> minimumDigits, <span class="keywordtype">short</span> maximumDigits);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_input.html#acb0512989a6bdab561b5d52815b5fbde">integerNumber</a>(<span class="keywordtype">short</span> minimumDigits, <span class="keywordtype">short</span> maximumDigits);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_input.html#a454255137b82490351be71b711f96cd8">realNumber</a>(<span class="keywordtype">short</span> minimumDigits, <span class="keywordtype">short</span> maximumDigits);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">static</span> std::string <a class="code hl_function" href="class_input.html#a7c4b39e39cd2472547b54457590102a3">word</a>(<span class="keywordtype">short</span> minimumCharacters, <span class="keywordtype">short</span> maximumCharacters);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">static</span> std::string <a class="code hl_function" href="class_input.html#a7ee3cd76fb0bed9e7615243722b66f40">digits</a>(<span class="keywordtype">short</span> minimumDigits, <span class="keywordtype">short</span> maximumDigits);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">static</span> std::string <a class="code hl_function" href="class_input.html#ac710d335dcaece145553dee29f2521d0">alphabetic</a>(<span class="keywordtype">short</span> minimumLetters, <span class="keywordtype">short</span> maximumLetters);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keyword">static</span> std::string <a class="code hl_function" href="class_input.html#a8647c1880d7f24b333e17ab2169b0198">alphanumeric</a>(<span class="keywordtype">short</span> minimumCharacters, <span class="keywordtype">short</span> maximumCharacters);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">static</span> std::string <a class="code hl_function" href="class_input.html#aa31c7158b802ba2b275541a7a1c32942">password</a>(<span class="keywordtype">short</span> minimumCharacters, <span class="keywordtype">short</span> maximumCharacters);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_input_html"><div class="ttname"><a href="class_input.html">Input</a></div><div class="ttdef"><b>Definition:</b> Input.hpp:15</div></div>
+<div class="ttc" id="aclass_input_html_a066601ef8e601a59765a3592d3f68ea7"><div class="ttname"><a href="class_input.html#a066601ef8e601a59765a3592d3f68ea7">Input::unsignedRealNumber</a></div><div class="ttdeci">static double unsignedRealNumber(short minimumDigits, short maximumDigits)</div><div class="ttdoc">Enter numeric and '.' character. Throw: DigitsOutOfBoundsException.</div><div class="ttdef"><b>Definition:</b> Input.cpp:40</div></div>
+<div class="ttc" id="aclass_input_html_a1c23974f46ed7a86c5d18e220fd91afb"><div class="ttname"><a href="class_input.html#a1c23974f46ed7a86c5d18e220fd91afb">Input::unsignedIntegerNumber</a></div><div class="ttdeci">static int unsignedIntegerNumber(short minimumDigits, short maximumDigits)</div><div class="ttdoc">Enter numeric characters. Throw: DigitsOutOfBoundException.</div><div class="ttdef"><b>Definition:</b> Input.cpp:5</div></div>
+<div class="ttc" id="aclass_input_html_a454255137b82490351be71b711f96cd8"><div class="ttname"><a href="class_input.html#a454255137b82490351be71b711f96cd8">Input::realNumber</a></div><div class="ttdeci">static double realNumber(short minimumDigits, short maximumDigits)</div><div class="ttdoc">Enter numeric, '.' and '-' characters. Throw: DigitsOutOfBoundsException.</div><div class="ttdef"><b>Definition:</b> Input.cpp:135</div></div>
+<div class="ttc" id="aclass_input_html_a7c4b39e39cd2472547b54457590102a3"><div class="ttname"><a href="class_input.html#a7c4b39e39cd2472547b54457590102a3">Input::word</a></div><div class="ttdeci">static std::string word(short minimumCharacters, short maximumCharacters)</div><div class="ttdoc">Enter alphabetics characters.</div><div class="ttdef"><b>Definition:</b> Input.cpp:194</div></div>
+<div class="ttc" id="aclass_input_html_a7ee3cd76fb0bed9e7615243722b66f40"><div class="ttname"><a href="class_input.html#a7ee3cd76fb0bed9e7615243722b66f40">Input::digits</a></div><div class="ttdeci">static std::string digits(short minimumDigits, short maximumDigits)</div><div class="ttdoc">Enter numericc characters. Util for numbers greather or equals than ten digits.</div><div class="ttdef"><b>Definition:</b> Input.cpp:227</div></div>
+<div class="ttc" id="aclass_input_html_a8647c1880d7f24b333e17ab2169b0198"><div class="ttname"><a href="class_input.html#a8647c1880d7f24b333e17ab2169b0198">Input::alphanumeric</a></div><div class="ttdeci">static std::string alphanumeric(short minimumCharacters, short maximumCharacters)</div><div class="ttdoc">Enter alphabetics and numeric characters and also space key.</div><div class="ttdef"><b>Definition:</b> Input.cpp:308</div></div>
+<div class="ttc" id="aclass_input_html_aa31c7158b802ba2b275541a7a1c32942"><div class="ttname"><a href="class_input.html#aa31c7158b802ba2b275541a7a1c32942">Input::password</a></div><div class="ttdeci">static std::string password(short minimumCharacters, short maximumCharacters)</div><div class="ttdoc">Enter alphanumeric characters.</div><div class="ttdef"><b>Definition:</b> Input.cpp:357</div></div>
+<div class="ttc" id="aclass_input_html_ac710d335dcaece145553dee29f2521d0"><div class="ttname"><a href="class_input.html#ac710d335dcaece145553dee29f2521d0">Input::alphabetic</a></div><div class="ttdeci">static std::string alphabetic(short minimumLetters, short maximumLetters)</div><div class="ttdoc">Enter alphabetics characters and also space key.</div><div class="ttdef"><b>Definition:</b> Input.cpp:259</div></div>
+<div class="ttc" id="aclass_input_html_acb0512989a6bdab561b5d52815b5fbde"><div class="ttname"><a href="class_input.html#acb0512989a6bdab561b5d52815b5fbde">Input::integerNumber</a></div><div class="ttdeci">static int integerNumber(short minimumDigits, short maximumDigits)</div><div class="ttdoc">Enter numeric and '-' characters. Throw: DigitsOutOfBoundsException.</div><div class="ttdef"><b>Definition:</b> Input.cpp:91</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Fichero Fuente Marquee.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Marquee.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_marquee_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef MARQUEE_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define MARQUEE_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_marquee.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_marquee.html">Marquee</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">const</span> <span class="keywordtype">short</span> defaultVelocity{7};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        std::string message{};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">short</span> limitLeft{};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">short</span> limitRight{};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">short</span> verticalPosition{};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">short</span> velocity{};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">bool</span> pause { <span class="keyword">false</span> };</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> renderMarquee(<span class="keywordtype">short</span> x);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> renderMarquee(<span class="keyword">const</span> std::string&amp; substring, <span class="keywordtype">short</span> x);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">void</span> clearMarquee(<span class="keywordtype">short</span> x);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_function" href="class_marquee.html#afde334281092d90f887a8fdd86c7ded6">Marquee</a>(<span class="keyword">const</span> std::string&amp; initialMessage, <span class="keywordtype">short</span> xLimitleft, <span class="keywordtype">short</span> xLimitRight);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_marquee.html#a814e022415b02eb9575e4046e8cf865c">setVerticalPosition</a>(<span class="keywordtype">short</span> y);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_marquee.html#a0f75e4ab92d84a856ce56660b7c639ef">setVelocity</a>(<span class="keywordtype">short</span> velocity);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_marquee.html#aa56bd46b7f5c9f0dc0906bfa30a600f4">print</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_marquee.html#a19234bb5083dce8ce3a43bb63039e1be">pauseExecution</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_marquee.html#ac700c32c541f3978c73a8e79f003ace0">resumeExecution</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_marquee_html"><div class="ttname"><a href="class_marquee.html">Marquee</a></div><div class="ttdef"><b>Definition:</b> Marquee.hpp:15</div></div>
+<div class="ttc" id="aclass_marquee_html_a0f75e4ab92d84a856ce56660b7c639ef"><div class="ttname"><a href="class_marquee.html#a0f75e4ab92d84a856ce56660b7c639ef">Marquee::setVelocity</a></div><div class="ttdeci">void setVelocity(short velocity)</div><div class="ttdoc">Set the velocity of print.</div><div class="ttdef"><b>Definition:</b> Marquee.cpp:32</div></div>
+<div class="ttc" id="aclass_marquee_html_a19234bb5083dce8ce3a43bb63039e1be"><div class="ttname"><a href="class_marquee.html#a19234bb5083dce8ce3a43bb63039e1be">Marquee::pauseExecution</a></div><div class="ttdeci">void pauseExecution()</div><div class="ttdoc">Pause the render of marquee.</div><div class="ttdef"><b>Definition:</b> Marquee.cpp:87</div></div>
+<div class="ttc" id="aclass_marquee_html_a814e022415b02eb9575e4046e8cf865c"><div class="ttname"><a href="class_marquee.html#a814e022415b02eb9575e4046e8cf865c">Marquee::setVerticalPosition</a></div><div class="ttdeci">void setVerticalPosition(short y)</div><div class="ttdoc">Set the vertical position of the message, when the value is zero the marquee will be print at the top...</div><div class="ttdef"><b>Definition:</b> Marquee.cpp:28</div></div>
+<div class="ttc" id="aclass_marquee_html_aa56bd46b7f5c9f0dc0906bfa30a600f4"><div class="ttname"><a href="class_marquee.html#aa56bd46b7f5c9f0dc0906bfa30a600f4">Marquee::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Start the printing of marquee.</div><div class="ttdef"><b>Definition:</b> Marquee.cpp:49</div></div>
+<div class="ttc" id="aclass_marquee_html_ac700c32c541f3978c73a8e79f003ace0"><div class="ttname"><a href="class_marquee.html#ac700c32c541f3978c73a8e79f003ace0">Marquee::resumeExecution</a></div><div class="ttdeci">void resumeExecution()</div><div class="ttdoc">Resumes the printing of the marquee.</div><div class="ttdef"><b>Definition:</b> Marquee.cpp:91</div></div>
+<div class="ttc" id="aclass_marquee_html_afde334281092d90f887a8fdd86c7ded6"><div class="ttname"><a href="class_marquee.html#afde334281092d90f887a8fdd86c7ded6">Marquee::Marquee</a></div><div class="ttdeci">Marquee(const std::string &amp;initialMessage, short xLimitleft, short xLimitRight)</div><div class="ttdoc">Construct a new Marquee object.</div><div class="ttdef"><b>Definition:</b> Marquee.cpp:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

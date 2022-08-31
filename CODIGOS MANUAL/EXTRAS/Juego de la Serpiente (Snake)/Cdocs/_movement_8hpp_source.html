@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Fichero Fuente Movement.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Movement.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_movement_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MOVEMENT_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MOVEMENT_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27c">    4</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27c">Movement</a> : <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_enumvalue" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca46c48bec0d282018b9d167eef7711b2c">up</a>,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca74e8333ad11685ff3bdae589c8f6e34d">down</a>,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca811882fecd5c7618d7099ebbd39ea254">left</a>,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca7c4f29407893c334a6cb7a87bf045c0d">right</a>,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_enumvalue" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca76170c222beeb3223aac44f645a74941">noMovement</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_movement_8hpp_html_a04e6ec5a57b56b60f22fdbbf0407d27c"><div class="ttname"><a href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27c">Movement</a></div><div class="ttdeci">Movement</div><div class="ttdef"><b>Definition:</b> Movement.hpp:4</div></div>
+<div class="ttc" id="a_movement_8hpp_html_a04e6ec5a57b56b60f22fdbbf0407d27ca46c48bec0d282018b9d167eef7711b2c"><div class="ttname"><a href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca46c48bec0d282018b9d167eef7711b2c">Movement::up</a></div><div class="ttdeci">@ up</div></div>
+<div class="ttc" id="a_movement_8hpp_html_a04e6ec5a57b56b60f22fdbbf0407d27ca74e8333ad11685ff3bdae589c8f6e34d"><div class="ttname"><a href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca74e8333ad11685ff3bdae589c8f6e34d">Movement::down</a></div><div class="ttdeci">@ down</div></div>
+<div class="ttc" id="a_movement_8hpp_html_a04e6ec5a57b56b60f22fdbbf0407d27ca76170c222beeb3223aac44f645a74941"><div class="ttname"><a href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca76170c222beeb3223aac44f645a74941">Movement::noMovement</a></div><div class="ttdeci">@ noMovement</div></div>
+<div class="ttc" id="a_movement_8hpp_html_a04e6ec5a57b56b60f22fdbbf0407d27ca7c4f29407893c334a6cb7a87bf045c0d"><div class="ttname"><a href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca7c4f29407893c334a6cb7a87bf045c0d">Movement::right</a></div><div class="ttdeci">@ right</div></div>
+<div class="ttc" id="a_movement_8hpp_html_a04e6ec5a57b56b60f22fdbbf0407d27ca811882fecd5c7618d7099ebbd39ea254"><div class="ttname"><a href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27ca811882fecd5c7618d7099ebbd39ea254">Movement::left</a></div><div class="ttdeci">@ left</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

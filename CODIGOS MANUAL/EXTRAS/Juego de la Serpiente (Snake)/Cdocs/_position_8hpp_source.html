@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Fichero Fuente Position.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Position.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_position_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef POSITION_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define POSITION_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_movement_8hpp.html">Movement.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_position.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_position.html">Position</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">short</span> x{};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">short</span> y{};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> copy(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_function" href="class_position.html#ae25feea011c6b9e5f965651a4cdfaf85">Position</a>(<span class="keywordtype">short</span> _x = 0, <span class="keywordtype">short</span> _y = 0);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="class_position.html#ae25feea011c6b9e5f965651a4cdfaf85">Position</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">short</span> <a class="code hl_function" href="class_position.html#a006d7dd38af5fb56054ea1ddebf7ded4">getX</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">short</span> <a class="code hl_function" href="class_position.html#ae992bee0364e8af0807ec46c608f1d07">getY</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_position.html#a0e10c40a2d4a118bc09ea64d0b19ead9">move</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27c">Movement</a> direction, <span class="keyword">const</span> <span class="keywordtype">short</span> positions = 1);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_position.html#a54a89ac929425a373c69e96e953a43d7">isToTheLeftOf</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; _position) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_position.html#a880dd772f951a9ce422ab7201c55fbf9">isToTheRightOf</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; _position) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_position.html#a6dfea7e9fe17b560e061e6e047e80a7c">isAboveOf</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; _position) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_position.html#a6ec1eb9ff5796e791c36fbfa212d9845">isBelowOf</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; _position) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_position.html#afb8a5a1fb15fbe32d86fd76c51d1a7e8">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; position);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="class_position.html#a252461545da1948f7d52ae03f62ab2d2">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; positionA, <span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; positionB);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="class_position.html#ae3dc846393152b2fed812b9018e47141">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; positionA, <span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; positionB);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>};</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_movement_8hpp_html"><div class="ttname"><a href="_movement_8hpp.html">Movement.hpp</a></div></div>
+<div class="ttc" id="a_movement_8hpp_html_a04e6ec5a57b56b60f22fdbbf0407d27c"><div class="ttname"><a href="_movement_8hpp.html#a04e6ec5a57b56b60f22fdbbf0407d27c">Movement</a></div><div class="ttdeci">Movement</div><div class="ttdef"><b>Definition:</b> Movement.hpp:4</div></div>
+<div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Position.hpp:15</div></div>
+<div class="ttc" id="aclass_position_html_a006d7dd38af5fb56054ea1ddebf7ded4"><div class="ttname"><a href="class_position.html#a006d7dd38af5fb56054ea1ddebf7ded4">Position::getX</a></div><div class="ttdeci">short getX() const</div><div class="ttdoc">Get x coordinate.</div><div class="ttdef"><b>Definition:</b> Position.cpp:14</div></div>
+<div class="ttc" id="aclass_position_html_a0e10c40a2d4a118bc09ea64d0b19ead9"><div class="ttname"><a href="class_position.html#a0e10c40a2d4a118bc09ea64d0b19ead9">Position::move</a></div><div class="ttdeci">void move(const Movement direction, const short positions=1)</div><div class="ttdoc">Modified the x or y coordinate in a specified direction.</div><div class="ttdef"><b>Definition:</b> Position.cpp:22</div></div>
+<div class="ttc" id="aclass_position_html_a252461545da1948f7d52ae03f62ab2d2"><div class="ttname"><a href="class_position.html#a252461545da1948f7d52ae03f62ab2d2">Position::operator==</a></div><div class="ttdeci">friend bool operator==(const Position &amp;positionA, const Position &amp;positionB)</div><div class="ttdoc">A position is equal an another if x and y coodinates are equals.</div><div class="ttdef"><b>Definition:</b> Position.cpp:61</div></div>
+<div class="ttc" id="aclass_position_html_a54a89ac929425a373c69e96e953a43d7"><div class="ttname"><a href="class_position.html#a54a89ac929425a373c69e96e953a43d7">Position::isToTheLeftOf</a></div><div class="ttdeci">bool isToTheLeftOf(const Position &amp;_position) const</div><div class="ttdoc">Verify the relative position with another position object.</div><div class="ttdef"><b>Definition:</b> Position.cpp:41</div></div>
+<div class="ttc" id="aclass_position_html_a6dfea7e9fe17b560e061e6e047e80a7c"><div class="ttname"><a href="class_position.html#a6dfea7e9fe17b560e061e6e047e80a7c">Position::isAboveOf</a></div><div class="ttdeci">bool isAboveOf(const Position &amp;_position) const</div><div class="ttdoc">Verify the relative position with another position object.</div><div class="ttdef"><b>Definition:</b> Position.cpp:49</div></div>
+<div class="ttc" id="aclass_position_html_a6ec1eb9ff5796e791c36fbfa212d9845"><div class="ttname"><a href="class_position.html#a6ec1eb9ff5796e791c36fbfa212d9845">Position::isBelowOf</a></div><div class="ttdeci">bool isBelowOf(const Position &amp;_position) const</div><div class="ttdoc">Verify the relative position with another position object.</div><div class="ttdef"><b>Definition:</b> Position.cpp:53</div></div>
+<div class="ttc" id="aclass_position_html_a880dd772f951a9ce422ab7201c55fbf9"><div class="ttname"><a href="class_position.html#a880dd772f951a9ce422ab7201c55fbf9">Position::isToTheRightOf</a></div><div class="ttdeci">bool isToTheRightOf(const Position &amp;_position) const</div><div class="ttdoc">Verify the relative position with another position object.</div><div class="ttdef"><b>Definition:</b> Position.cpp:45</div></div>
+<div class="ttc" id="aclass_position_html_ae25feea011c6b9e5f965651a4cdfaf85"><div class="ttname"><a href="class_position.html#ae25feea011c6b9e5f965651a4cdfaf85">Position::Position</a></div><div class="ttdeci">Position(short _x=0, short _y=0)</div><div class="ttdoc">Construct a new Position object.</div><div class="ttdef"><b>Definition:</b> Position.cpp:8</div></div>
+<div class="ttc" id="aclass_position_html_ae3dc846393152b2fed812b9018e47141"><div class="ttname"><a href="class_position.html#ae3dc846393152b2fed812b9018e47141">Position::operator!=</a></div><div class="ttdeci">friend bool operator!=(const Position &amp;positionA, const Position &amp;positionB)</div><div class="ttdef"><b>Definition:</b> Position.cpp:65</div></div>
+<div class="ttc" id="aclass_position_html_ae992bee0364e8af0807ec46c608f1d07"><div class="ttname"><a href="class_position.html#ae992bee0364e8af0807ec46c608f1d07">Position::getY</a></div><div class="ttdeci">short getY() const</div><div class="ttdoc">Get y coordinate.</div><div class="ttdef"><b>Definition:</b> Position.cpp:18</div></div>
+<div class="ttc" id="aclass_position_html_afb8a5a1fb15fbe32d86fd76c51d1a7e8"><div class="ttname"><a href="class_position.html#afb8a5a1fb15fbe32d86fd76c51d1a7e8">Position::operator=</a></div><div class="ttdeci">void operator=(const Position &amp;position)</div><div class="ttdef"><b>Definition:</b> Position.cpp:57</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
