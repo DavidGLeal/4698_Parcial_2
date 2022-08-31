@@ -221,3 +221,20 @@ void NodoTrie::BorrarPalabra(NodoTrie *r, const char *palabra)
       }
    }
 }
+int main()
+{
+    NodoTrie* arbol = new NodoTrie();
+    char* mascara = new char;
+    cout <<endl <<"---- Impresion del Arbol Trie ----" <<endl;
+    arbol->Insertar(arbol, "artemisa");
+    arbol->Insertar(arbol, "arte");
+    arbol->Insertar(arbol, "artista");
+    arbol->Insertar(arbol, "lira");
+    arbol->Insertar(arbol, "venado");
+    arbol->Insertar(arbol, "vino");
+    arbol->Insertar(arbol, "reliquia");
+    arbol->Insertar(arbol, "relinchar");
+    arbol->imprimirRamas(arbol, mascara);
+    cout <<endl <<"---- Lista de Palabras ----" <<endl;
+    arbol->imprimirTodasLasPalabras(arbol,mascara);
+}
