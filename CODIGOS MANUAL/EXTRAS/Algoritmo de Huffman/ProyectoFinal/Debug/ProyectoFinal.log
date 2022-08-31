@@ -1,0 +1,12 @@
+﻿  ProyectoFinal.cpp
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\registro.h(102,6): warning C4101: 'option': variable local sin referencia
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(57,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(62,28): warning C4838: la conversión de 'int' en 'SHORT' requiere una conversión de restricción
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(46,13): warning C4101: 'alto': variable local sin referencia
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(147,21): warning C4101: 'e': variable local sin referencia
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(156,7): warning C4101: 'a': variable local sin referencia
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(160,7): warning C4101: 'repite': variable local sin referencia
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(157,7): warning C4101: 'opc': variable local sin referencia
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(312,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\ProyectoFinal\menu_Principal.h(153): warning C4715: '<lambda_5b9c9b8eaae52cec7f30db424028085f>::operator()': no todas las rutas de acceso de control devuelven un valor
+  ProyectoFinal.vcxproj -> C:\Users\Diego Portilla\Desktop\Grupo final de Estructuras\Grupo3P\Proyecto Final\ProyectoFinal\ProyectoFinal\Debug\ProyectoFinal.exe
