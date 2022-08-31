@@ -238,4 +238,5 @@ int main()
     arbol->imprimirTodasLasPalabras(arbol,mascara);
     delete arbol;
     delete mascara;
+    return 0;
 }
