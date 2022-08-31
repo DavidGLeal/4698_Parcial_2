@@ -236,4 +236,6 @@ int main()
     arbol->imprimirRamas(arbol, mascara);
     cout <<endl <<"---- Lista de Palabras ----" <<endl;
     arbol->imprimirTodasLasPalabras(arbol,mascara);
+    delete arbol;
+    delete mascara;
 }
