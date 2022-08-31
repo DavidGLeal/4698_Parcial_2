@@ -1,7 +1,6 @@
 // ---------------------------------------
 // ESTRUCTURA DE DATOS - 4698
 // UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
-// ALMEIDA, CALAPAQUI, HERNANDEZ Y JARA
 // ---------------------------------------
 #define NUMERO_DE_LETRAS 26
 #include <iostream>
