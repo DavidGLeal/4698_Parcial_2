@@ -1,0 +1,12 @@
+ Rojo: 255	 Rojo: 255	 Rojo: 65	
+ Verde: 255	 Verde: 0	 Verde: 0	
+ Azul: 255	 Azul: 0	 Azul: 190	
+
+ Rojo: 128	 Rojo: 192	 Rojo: 128	
+ Verde: 0	 Verde: 0	 Verde: 0	
+ Azul: 127	 Azul: 63	 Azul: 127	
+
+ Rojo: 129	 Rojo: 66	 Rojo: 192	
+ Verde: 0	 Verde: 0	 Verde: 0	
+ Azul: 126	 Azul: 189	 Azul: 63	
+

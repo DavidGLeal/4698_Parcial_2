@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Fichero Fuente SettingsMenu.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SettingsMenu.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_settings_menu_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef SETTINGS_MENU_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define SETTINGS_MENU_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_position_8hpp.html">Position.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_color_8hpp.html">Color.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_game_information_8hpp.html">GameInformation.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_settings_menu.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_settings_menu.html">SettingsMenu</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_class" href="class_position.html">Position</a> position{};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        std::string title{ <span class="stringliteral">&quot;         Configuraciones&quot;</span> };</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> size{4};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">const</span> std::string options[size] {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="stringliteral">&quot;Nivel inicial&quot;</span>,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="stringliteral">&quot;Puntaje necesario&quot;</span>,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="stringliteral">&quot;Velocidad&quot;</span>,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="stringliteral">&quot;             Regresar&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        };</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">const</span> <span class="keywordtype">short</span>* values[size - 1] {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            &amp;<a class="code hl_variable" href="namespace_game_information.html#acbfc92e17095096f4b2b911da01752e2">GameInformation::level</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            &amp;<a class="code hl_variable" href="namespace_game_information.html#a64ffed271df0db1244f3e45af808e84b">GameInformation::scoreForNextLevel</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            &amp;<a class="code hl_variable" href="namespace_game_information.html#afbd19807d2e35472bc9017725509729f">GameInformation::velocity</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_enumeration" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a> titleColor{ <a class="code hl_enumvalue" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0abda9643ac6601722a28f238714274da4">Color::red</a> };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_enumeration" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a> selectedOption{ <a class="code hl_enumvalue" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0a48d6215903dff56238e52e8891380c8f">Color::blue</a> };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_enumeration" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a> unselectedOption{ <a class="code hl_enumvalue" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0a9f27410725ab8cc8854a2769c7a516b8">Color::green</a> };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">short</span> maxStringSize() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">void</span> renderOption(<span class="keyword">const</span> <span class="keywordtype">short</span> option, <span class="keyword">const</span> <a class="code hl_enumeration" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a> color) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">void</span> renderSelectedOption(<span class="keyword">const</span> <span class="keywordtype">short</span> option) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">void</span> renderScreen() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_function" href="class_settings_menu.html#ab8d4ac8b1f57d4812f232d5aea22f1dd">SettingsMenu</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_position.html">Position</a>&amp; _position = <a class="code hl_class" href="class_position.html">Position</a>{});</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_menu.html#a36a8d849afc16168107ef0f749b6d71a">setTitleColor</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a> color);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_menu.html#a82e7290358074c79f78dbafe4624adb8">setUnselectedOptionColor</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a> color);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_menu.html#a6e94368f018028e6ef4413016e648151">setSelectedOptionColor</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a> color);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_menu.html#a8dee5d656bc0525b0e7ff2e99c4773e1">render</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_color_8hpp_html"><div class="ttname"><a href="_color_8hpp.html">Color.hpp</a></div></div>
+<div class="ttc" id="a_color_8hpp_html_aab3ec7aa9ff5d8a806b29fb9b3fc17d0"><div class="ttname"><a href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0">Color</a></div><div class="ttdeci">Color</div><div class="ttdef"><b>Definition:</b> Color.hpp:4</div></div>
+<div class="ttc" id="a_color_8hpp_html_aab3ec7aa9ff5d8a806b29fb9b3fc17d0a48d6215903dff56238e52e8891380c8f"><div class="ttname"><a href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0a48d6215903dff56238e52e8891380c8f">Color::blue</a></div><div class="ttdeci">@ blue</div></div>
+<div class="ttc" id="a_color_8hpp_html_aab3ec7aa9ff5d8a806b29fb9b3fc17d0a9f27410725ab8cc8854a2769c7a516b8"><div class="ttname"><a href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0a9f27410725ab8cc8854a2769c7a516b8">Color::green</a></div><div class="ttdeci">@ green</div></div>
+<div class="ttc" id="a_color_8hpp_html_aab3ec7aa9ff5d8a806b29fb9b3fc17d0abda9643ac6601722a28f238714274da4"><div class="ttname"><a href="_color_8hpp.html#aab3ec7aa9ff5d8a806b29fb9b3fc17d0abda9643ac6601722a28f238714274da4">Color::red</a></div><div class="ttdeci">@ red</div></div>
+<div class="ttc" id="a_game_information_8hpp_html"><div class="ttname"><a href="_game_information_8hpp.html">GameInformation.hpp</a></div></div>
+<div class="ttc" id="a_position_8hpp_html"><div class="ttname"><a href="_position_8hpp.html">Position.hpp</a></div><div class="ttdoc">Class used to place an object in a position on the screen.</div></div>
+<div class="ttc" id="aclass_position_html"><div class="ttname"><a href="class_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> Position.hpp:15</div></div>
+<div class="ttc" id="aclass_settings_menu_html"><div class="ttname"><a href="class_settings_menu.html">SettingsMenu</a></div><div class="ttdef"><b>Definition:</b> SettingsMenu.hpp:18</div></div>
+<div class="ttc" id="aclass_settings_menu_html_a36a8d849afc16168107ef0f749b6d71a"><div class="ttname"><a href="class_settings_menu.html#a36a8d849afc16168107ef0f749b6d71a">SettingsMenu::setTitleColor</a></div><div class="ttdeci">void setTitleColor(const Color color)</div><div class="ttdoc">Set the Title Color object.</div><div class="ttdef"><b>Definition:</b> SettingsMenu.cpp:50</div></div>
+<div class="ttc" id="aclass_settings_menu_html_a6e94368f018028e6ef4413016e648151"><div class="ttname"><a href="class_settings_menu.html#a6e94368f018028e6ef4413016e648151">SettingsMenu::setSelectedOptionColor</a></div><div class="ttdeci">void setSelectedOptionColor(const Color color)</div><div class="ttdoc">Set the Selected Option Color object.</div><div class="ttdef"><b>Definition:</b> SettingsMenu.cpp:58</div></div>
+<div class="ttc" id="aclass_settings_menu_html_a82e7290358074c79f78dbafe4624adb8"><div class="ttname"><a href="class_settings_menu.html#a82e7290358074c79f78dbafe4624adb8">SettingsMenu::setUnselectedOptionColor</a></div><div class="ttdeci">void setUnselectedOptionColor(const Color color)</div><div class="ttdoc">Set the Unselected Option Color object.</div><div class="ttdef"><b>Definition:</b> SettingsMenu.cpp:54</div></div>
+<div class="ttc" id="aclass_settings_menu_html_a8dee5d656bc0525b0e7ff2e99c4773e1"><div class="ttname"><a href="class_settings_menu.html#a8dee5d656bc0525b0e7ff2e99c4773e1">SettingsMenu::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Start algorithm and return the selected option.</div><div class="ttdef"><b>Definition:</b> SettingsMenu.cpp:62</div></div>
+<div class="ttc" id="aclass_settings_menu_html_ab8d4ac8b1f57d4812f232d5aea22f1dd"><div class="ttname"><a href="class_settings_menu.html#ab8d4ac8b1f57d4812f232d5aea22f1dd">SettingsMenu::SettingsMenu</a></div><div class="ttdeci">SettingsMenu(const Position &amp;_position=Position{})</div><div class="ttdoc">Construct a new Settings Menu object.</div><div class="ttdef"><b>Definition:</b> SettingsMenu.cpp:48</div></div>
+<div class="ttc" id="anamespace_game_information_html_a64ffed271df0db1244f3e45af808e84b"><div class="ttname"><a href="namespace_game_information.html#a64ffed271df0db1244f3e45af808e84b">GameInformation::scoreForNextLevel</a></div><div class="ttdeci">short scoreForNextLevel</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:15</div></div>
+<div class="ttc" id="anamespace_game_information_html_acbfc92e17095096f4b2b911da01752e2"><div class="ttname"><a href="namespace_game_information.html#acbfc92e17095096f4b2b911da01752e2">GameInformation::level</a></div><div class="ttdeci">short level</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:14</div></div>
+<div class="ttc" id="anamespace_game_information_html_afbd19807d2e35472bc9017725509729f"><div class="ttname"><a href="namespace_game_information.html#afbd19807d2e35472bc9017725509729f">GameInformation::velocity</a></div><div class="ttdeci">short velocity</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SnakeGame: Fichero Fuente GameInformation.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="SnakeGame-Icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">SnakeGame
+   </div>
+   <div id="projectbrief">Snake game, where the snake is automatically moved.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GameInformation.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_information_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef GAME_INFORMATION_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define GAME_INFORMATION_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespace_game_information.html">    4</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_game_information.html">GameInformation</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespace_game_information.html#af018db5d39da67d1c92387b64ae41eca">    5</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#af018db5d39da67d1c92387b64ae41eca">width</a>{20};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespace_game_information.html#af2546513adf892fac6a93abe6142647c">    6</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#af2546513adf892fac6a93abe6142647c">hight</a>{15};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a0bc1d32b57709e3128820190dcaf6d9b">    7</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a0bc1d32b57709e3128820190dcaf6d9b">leftWall</a>{10};</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a14c65ff7e2d8a66779aa10c433597d32">    8</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a14c65ff7e2d8a66779aa10c433597d32">rightWall</a>{<a class="code hl_variable" href="namespace_game_information.html#a0bc1d32b57709e3128820190dcaf6d9b">leftWall</a> + <a class="code hl_variable" href="namespace_game_information.html#af018db5d39da67d1c92387b64ae41eca">width</a> + 1};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a448aad31c1501350376bf771bdd62328">    9</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a448aad31c1501350376bf771bdd62328">superiorWall</a>{5};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespace_game_information.html#aa6ab78b6e44347ab3dd779b09e3659e1">   10</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#aa6ab78b6e44347ab3dd779b09e3659e1">inferiorWall</a>{<a class="code hl_variable" href="namespace_game_information.html#a448aad31c1501350376bf771bdd62328">superiorWall</a> + <a class="code hl_variable" href="namespace_game_information.html#af2546513adf892fac6a93abe6142647c">hight</a> + 1};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a9d5aad29c48888d41102ca0aa0586b95">   11</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a9d5aad29c48888d41102ca0aa0586b95">levels</a>{3};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a43c5d945d7bdbf27142c58562086db5f">   12</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a43c5d945d7bdbf27142c58562086db5f">maxScore</a>{100};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a238184401f79d64a730c6bc44e1c7775">   13</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a238184401f79d64a730c6bc44e1c7775">maxVelocity</a>{5};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespace_game_information.html#acbfc92e17095096f4b2b911da01752e2">   14</a></span>    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#acbfc92e17095096f4b2b911da01752e2">level</a>{1};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a64ffed271df0db1244f3e45af808e84b">   15</a></span>    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a64ffed271df0db1244f3e45af808e84b">scoreForNextLevel</a>{30};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespace_game_information.html#a4ec48386afab80e0c035d537449bd959">   16</a></span>    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#a4ec48386afab80e0c035d537449bd959">score</a>{};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_game_information.html#afbd19807d2e35472bc9017725509729f">   17</a></span>    <span class="keyword">inline</span> <span class="keywordtype">short</span> <a class="code hl_variable" href="namespace_game_information.html#afbd19807d2e35472bc9017725509729f">velocity</a>{3};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespace_game_information_html"><div class="ttname"><a href="namespace_game_information.html">GameInformation</a></div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:4</div></div>
+<div class="ttc" id="anamespace_game_information_html_a0bc1d32b57709e3128820190dcaf6d9b"><div class="ttname"><a href="namespace_game_information.html#a0bc1d32b57709e3128820190dcaf6d9b">GameInformation::leftWall</a></div><div class="ttdeci">constexpr short leftWall</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:7</div></div>
+<div class="ttc" id="anamespace_game_information_html_a14c65ff7e2d8a66779aa10c433597d32"><div class="ttname"><a href="namespace_game_information.html#a14c65ff7e2d8a66779aa10c433597d32">GameInformation::rightWall</a></div><div class="ttdeci">constexpr short rightWall</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:8</div></div>
+<div class="ttc" id="anamespace_game_information_html_a238184401f79d64a730c6bc44e1c7775"><div class="ttname"><a href="namespace_game_information.html#a238184401f79d64a730c6bc44e1c7775">GameInformation::maxVelocity</a></div><div class="ttdeci">constexpr short maxVelocity</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:13</div></div>
+<div class="ttc" id="anamespace_game_information_html_a43c5d945d7bdbf27142c58562086db5f"><div class="ttname"><a href="namespace_game_information.html#a43c5d945d7bdbf27142c58562086db5f">GameInformation::maxScore</a></div><div class="ttdeci">constexpr short maxScore</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:12</div></div>
+<div class="ttc" id="anamespace_game_information_html_a448aad31c1501350376bf771bdd62328"><div class="ttname"><a href="namespace_game_information.html#a448aad31c1501350376bf771bdd62328">GameInformation::superiorWall</a></div><div class="ttdeci">constexpr short superiorWall</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:9</div></div>
+<div class="ttc" id="anamespace_game_information_html_a4ec48386afab80e0c035d537449bd959"><div class="ttname"><a href="namespace_game_information.html#a4ec48386afab80e0c035d537449bd959">GameInformation::score</a></div><div class="ttdeci">short score</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:16</div></div>
+<div class="ttc" id="anamespace_game_information_html_a64ffed271df0db1244f3e45af808e84b"><div class="ttname"><a href="namespace_game_information.html#a64ffed271df0db1244f3e45af808e84b">GameInformation::scoreForNextLevel</a></div><div class="ttdeci">short scoreForNextLevel</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:15</div></div>
+<div class="ttc" id="anamespace_game_information_html_a9d5aad29c48888d41102ca0aa0586b95"><div class="ttname"><a href="namespace_game_information.html#a9d5aad29c48888d41102ca0aa0586b95">GameInformation::levels</a></div><div class="ttdeci">constexpr short levels</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:11</div></div>
+<div class="ttc" id="anamespace_game_information_html_aa6ab78b6e44347ab3dd779b09e3659e1"><div class="ttname"><a href="namespace_game_information.html#aa6ab78b6e44347ab3dd779b09e3659e1">GameInformation::inferiorWall</a></div><div class="ttdeci">constexpr short inferiorWall</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:10</div></div>
+<div class="ttc" id="anamespace_game_information_html_acbfc92e17095096f4b2b911da01752e2"><div class="ttname"><a href="namespace_game_information.html#acbfc92e17095096f4b2b911da01752e2">GameInformation::level</a></div><div class="ttdeci">short level</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:14</div></div>
+<div class="ttc" id="anamespace_game_information_html_af018db5d39da67d1c92387b64ae41eca"><div class="ttname"><a href="namespace_game_information.html#af018db5d39da67d1c92387b64ae41eca">GameInformation::width</a></div><div class="ttdeci">constexpr short width</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:5</div></div>
+<div class="ttc" id="anamespace_game_information_html_af2546513adf892fac6a93abe6142647c"><div class="ttname"><a href="namespace_game_information.html#af2546513adf892fac6a93abe6142647c">GameInformation::hight</a></div><div class="ttdeci">constexpr short hight</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:6</div></div>
+<div class="ttc" id="anamespace_game_information_html_afbd19807d2e35472bc9017725509729f"><div class="ttname"><a href="namespace_game_information.html#afbd19807d2e35472bc9017725509729f">GameInformation::velocity</a></div><div class="ttdeci">short velocity</div><div class="ttdef"><b>Definition:</b> GameInformation.hpp:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
